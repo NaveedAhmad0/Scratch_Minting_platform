@@ -1,15 +1,18 @@
 import React from "react";
 import image from "../../assets/Group 889.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faFileCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import "./about.css";
 
 function About() {
 	return (
 		<>
 			<div className="container-fluid mt-5 d-flex">
-				<div className="col-6">
-					<p>The Story</p>
+				<div className="col-md-6 text-left">
+					<p><span style={{ color: "#61A62D" }}>The </span>Story</p>
 					<h1 className="text-black">
-						AboutSmart
+					<span style={{ color: "#61A62D" }}>About</span>Smart
 						<br />
 						Moneyrevolution
 					</h1>
@@ -20,29 +23,31 @@ function About() {
 						Hampden-Sydney Collegein Virginia,looked upon eof the more obscure
 						Latin words,consectetur,from a Lorem Ipsum passage,
 					</p>
-					<p>Nullanonorciajustoefficiturmaximus.</p>
-					<p>Inidantequiserattempusluctus.</p>
-					<p>Duisviverranislegetmattisgravida.</p>
+					<p><FontAwesomeIcon style={{color:"#61A62D"}} icon={faCircleCheck} />Nullanonorciajustoefficiturmaximus.</p>
+					<p><FontAwesomeIcon style={{color:"#61A62D"}} icon={ faCircleCheck} />Inidantequiserattempusluctus.</p>
+					<p><FontAwesomeIcon style={{color:"#61A62D"}} icon={ faCircleCheck} />Duisviverranislegetmattisgravida.</p>
 				</div>
 				<div className="col-6">
-					<p>Meet The Artist</p>
+					<p><span style={{ color: "#61A62D" }}>Meet</span> The Artist</p>
 					<img src={image} alt="imge" width={220} height={220} />
 				</div>
 			</div>
 			<div className="container-fluid px-5 mt-5 text-left">
-				<p>Easy Steps</p>
+				<p><span style={{ color: "#61A62D" }}>Easy</span> Steps</p>
 				<h1>
-					About Smart <br />
+				<span style={{ color: "#61A62D" }}>About</span> Smart <br />
 					money revolution
 				</h1>
 			</div>
+			<br></br>
+			<br></br>
 			<div className="container d-flex m-auto">
 				<div>
 					<div className="circle text-white">
 						<h1>1</h1>
 					</div>
 					<br />
-					<h6>hdfkjahf</h6>
+					<h5>connect your wallet</h5>
 				</div>
 				<div className="dashline"></div>
 
@@ -51,9 +56,9 @@ function About() {
 						<h1>2</h1>
 					</div>
 					<br />
-					<h6>
+					<h5>
 						Select Your <br /> Quantity
-					</h6>
+					</h5>
 				</div>
 				<div className="dashline"></div>
 
@@ -62,7 +67,7 @@ function About() {
 						<h1>3</h1>
 					</div>
 					<br />
-					<h6>sahfdkj</h6>
+					<h5>Confirm The Section</h5>
 				</div>
 				<div className="dashline"></div>
 
@@ -71,7 +76,7 @@ function About() {
 						<h1>4</h1>
 					</div>
 					<br />
-					<h6>bkashkalhsd</h6>
+					<h5>Receive Your NFTs</h5>
 				</div>
 			</div>
 		</>

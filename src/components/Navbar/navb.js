@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import "../Navbar/nav.css"
 function Navbar() {
 	return (
 		<div className="container-fluid mt-4">

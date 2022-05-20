@@ -10,7 +10,7 @@ import "./about.css";
 function About() {
   return (
     <>
-      <div className="container d-flex" style={{paddingTop:"5%"}}>
+      <div id="about" className="container d-flex" style={{paddingTop:"5%"}}>
         <div className="col-md-6 text-left">
           <p>
             <span style={{ color: "#61A62D" }}>The </span>Story
@@ -90,7 +90,7 @@ function About() {
             <h1>1</h1>
           </div>
           <br />
-          <h5>connect your wallet</h5>
+          <h5 className="text-black">connect your wallet</h5>
         </div>
         <div className="dashline"></div>
 
@@ -99,7 +99,7 @@ function About() {
             <h1>2</h1>
           </div>
           <br />
-          <h5>
+          <h5 className="text-black">
             Select Your <br /> Quantity
           </h5>
         </div>
@@ -110,7 +110,7 @@ function About() {
             <h1>3</h1>
           </div>
           <br />
-          <h5>Confirm The Section</h5>
+          <h5 className="text-black">Confirm The Section</h5>
         </div>
         <div className="dashline"></div>
 
@@ -119,7 +119,7 @@ function About() {
             <h1>4</h1>
           </div>
           <br />
-          <h5>Receive Your NFTs</h5>
+          <h5 className="text-black">Receive Your NFTs</h5>
         </div>
       </div>
     </>

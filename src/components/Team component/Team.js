@@ -7,7 +7,7 @@ import "./team.css";
 
 function Team() {
 	return (
-		<div className="team-style">
+		<div id="team" className="team-style">
 			<p><span style={{ color: "green" }}>Team</span> Members</p>
 			<h1><span style={{ color: "green", fontStyle:"'Poppins', sans-serif" }}>Meet</span> The Crew</h1>
 			<div className="container ">

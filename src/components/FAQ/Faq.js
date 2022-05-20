@@ -3,7 +3,7 @@ import "./faq.css";
 import QuestionOne from "./Question1";
 function Faq() {
 	return (
-		<div className="container d-flex">
+		<div id="faq" className="container d-flex">
 			<div className="col-6 text-left faq-style">
 				<p><span style={{color:"green"}}>Easy</span> Steps</p>
 				<h1 style={{marginLeft:"-15%", fontSize:"2.5rem"}}>

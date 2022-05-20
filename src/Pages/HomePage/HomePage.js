@@ -21,6 +21,9 @@ function HomePage() {
 			<About />
 			<br />
 			<Roadmap />
+			<br></br>
+			<br></br>
+			<br></br>
 			<br />
 			<Team />
 			<br />

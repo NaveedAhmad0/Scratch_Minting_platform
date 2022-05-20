@@ -17,7 +17,7 @@ function Collection() {
 		backgroundRepeat: "no-repeat",
 	};
 	return (
-		<div style={myStyle}>
+		<div id="home" style={myStyle}>
 			<Navbar />
 			<div className="container mt-5 d-flex" id="collection">
 				<div className="col-10">

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/VectorLogo.svg";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { FaTelegramPlane } from "react-icons/fa";
 import "./footer.css";
 

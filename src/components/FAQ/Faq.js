@@ -3,28 +3,28 @@ import "./faq.css";
 import QuestionOne from "./Question1";
 function Faq() {
 	return (
-		<div className="container-fluid d-flex">
-			<div className="col-6 text-left">
-				<p>Easy Steps</p>
-				<h2>
-					Frequently Asked <br /> Questions
-				</h2>
+		<div className="container d-flex">
+			<div className="col-6 text-left faq-style">
+				<p><span style={{color:"green"}}>Easy</span> Steps</p>
+				<h1 style={{marginLeft:"-15%", fontSize:"2.5rem"}}>
+					<span style={{color:"green"}}>Frequently</span> Asked <br /> Questions
+				</h1>
 				<br />
 				<br />
-				<p>Dont Get Your Answer?</p>
+				<p>Don't get your Answer?</p>
 
 				<p>
-					Feel Free to Leave a message , <span> Ask Here</span>
+					Feel Free to leave a message, <span style={{color:"green"}}>Ask Here!</span>
 				</p>
 			</div>
 			<div className="col-6">
 				<QuestionOne />
-				<br />
+				{/* <br />
 				<QuestionOne />
 				<br />
 				<QuestionOne />
 				<br />
-				<QuestionOne />
+				<QuestionOne /> */}
 			</div>
 		</div>
 	);

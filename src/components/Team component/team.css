@@ -1,0 +1,21 @@
+.container {
+    margin-bottom: 80px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    justify-content: space-between;
+}
+
+.team-style p {
+    font-size: 1.2rem;
+        font-family:'Poppins', sans-serif;
+}
+
+.mycard h6{
+    text-align: center;
+    margin-right: 23%;
+    margin-top: -5%;
+} 

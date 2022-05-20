@@ -1,5 +1,10 @@
 .community{
-    background-color: lightgoldenrodyellow;
+    background-color: #c9dec5;
     padding-top: 10%;
     padding-bottom: 8%;
+    font-family:'Poppins', sans-serif;
+}
+
+.join-btn {
+    background-color: green;
 }

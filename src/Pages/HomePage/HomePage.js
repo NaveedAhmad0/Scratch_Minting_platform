@@ -16,7 +16,7 @@ function HomePage() {
 			{/* <Navbar /> */}
 			<Collection />
 			{/* </div> */}
-			<br/>
+			<br />
 			<Card />
 			<About />
 			<br />
@@ -27,7 +27,7 @@ function HomePage() {
 			<Faq />
 			<br />
 			<Community />
-			<br />
+			{/* <br /> */}
 			<Footer />
 		</div>
 	);

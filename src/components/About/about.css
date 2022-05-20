@@ -11,3 +11,10 @@
     height: 0px;
     border: 1px dashed green;
 }
+.card1{
+    border: 1px solid #D9D9D9;
+}
+.meet{
+    min-width: fit-content;
+    margin-right: -8rem;
+}

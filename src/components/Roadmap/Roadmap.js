@@ -1,6 +1,10 @@
 import React from "react";
 import "./roadmap.css";
 import img1 from "../../assets/Group 889.png";
+import logo1 from "../../assets/smart-city-assets/1.svg";
+import logo2 from "../../assets/smart-city-assets/2.svg";
+import logo3 from "../../assets/smart-city-assets/3.svg";
+import logo4 from "../../assets/smart-city-assets/4.svg";
 
 function Roadmap() {
   return (
@@ -15,11 +19,11 @@ function Roadmap() {
         </h1>
       </div>
       <br />
-      <div className="container-fluid d-flex">
+      <div className="container d-flex">
         <div class="card">
           <div style={{ padding: "2%" }} className="col-10 d-flex">
             <div className="box">
-              <h1 style={{ paddingTop: "15%" }}>10%</h1>
+              <h1 style={{ paddingTop: "" }}>10%</h1>
             </div>
             <div className="text container text-left">
               <h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
@@ -30,16 +34,16 @@ function Roadmap() {
             </div>
           </div>
         </div>
-        <div className="col-2">
-          <img src={img1} alt="nft" />
+        <div className="col-2" id="card22">
+          <img src={logo1} className="logo" height={200} width={100} alt="nft" />
         </div>
       </div>
 <br></br>
-      <div className="container-fluid d-flex">
+      <div className="container d-flex">
         <div class="card">
           <div style={{ padding: "2%" }} className="col-10 d-flex">
             <div className="box">
-              <h1 style={{ paddingTop: "15%" }}>20%</h1>
+              <h1 style={{ paddingTop: "" }}>20%</h1>
             </div>
             <div className="text container text-left">
               <h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
@@ -51,15 +55,15 @@ function Roadmap() {
           </div>
         </div>
         <div className="col-2">
-          <img src={img1} alt="nft" />
+          <img src={logo2} className="logo" height={200} width={100} alt="nft" />
         </div>
       </div>
 <br></br>
-	  <div className="container-fluid d-flex">
+	  <div className="container d-flex">
         <div class="card">
           <div style={{ padding: "2%" }} className="col-10 d-flex">
             <div className="box">
-              <h1 style={{ paddingTop: "15%" }}>50%</h1>
+              <h1 style={{ paddingTop: "" }}>50%</h1>
             </div>
             <div className="text container text-left">
               <h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
@@ -71,15 +75,15 @@ function Roadmap() {
           </div>
         </div>
         <div className="col-2">
-          <img src={img1} alt="nft" />
+          <img src={logo3} className="logo" height={200} width={100} alt="nft" />
         </div>
       </div>
 <br></br>
-	  <div className="container-fluid d-flex">
+	  <div className="container d-flex">
         <div class="card">
           <div style={{ padding: "2%" }} className="col-10 d-flex">
             <div className="box">
-              <h1 style={{ paddingTop: "15%" }}>70%</h1>
+              <h1 style={{ paddingTop: "" }}>70%</h1>
             </div>
             <div className="text container text-left">
               <h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
@@ -91,16 +95,16 @@ function Roadmap() {
           </div>
         </div>
         <div className="col-2">
-          <img src={img1} alt="nft" />
+          <img src={logo4} className="logo" height={200} width={100} alt="nft" />
         </div>
       </div>
 <br>
 </br>
-	  <div className="container-fluid d-flex ">
+	  <div className="container d-flex ">
         <div class="card">
           <div style={{ padding: "2%" }} className="col-10 d-flex ">
             <div className="box">
-              <h1 style={{ paddingTop: "15%" }}>100%</h1>
+              <h1 style={{ paddingTop: "" }}>100%</h1>
             </div>
             <div className="text container text-left">
               <h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
@@ -112,7 +116,7 @@ function Roadmap() {
           </div>
         </div>
         <div className="col-2">
-          <img src={img1} alt="nft" />
+          <img src={logo3} className="logo" height={200} width={100} alt="nft" />
         </div>
       </div>
 <br></br>

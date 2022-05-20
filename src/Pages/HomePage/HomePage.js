@@ -12,8 +12,11 @@ import Team from "../../components/Team component/Team";
 function HomePage() {
 	return (
 		<div>
-			<Navbar />
+			{/* <div className="" style={{backgroundColor:"#1F2F4A"}}> */}
+			{/* <Navbar /> */}
 			<Collection />
+			{/* </div> */}
+			<br/>
 			<Card />
 			<About />
 			<br />

@@ -18,6 +18,8 @@ function HomePage() {
 			{/* </div> */}
 			<br />
 			<Card />
+			<br></br>
+			<br></br>
 			<About />
 			<br />
 			<Roadmap />

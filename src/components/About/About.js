@@ -58,7 +58,7 @@ function About() {
             {/* <div class="container overflow-hidden">
               <div class="row gx-5">
                 <div class="col"> */}
-                  <h6 className="meet">
+                  <h6 className="meet text-left">
                     <span style={{ color: "#61A62D" }}>Meet</span> The Artist
                   </h6>
                   <br></br>

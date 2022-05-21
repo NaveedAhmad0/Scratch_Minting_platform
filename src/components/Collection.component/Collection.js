@@ -2,7 +2,7 @@ import React from "react";
 import image from "../../assets/Group 889.png";
 import "../Collection.component/Collection.css";
 import Navbar from "../../components/Navbar/navb";
-import bgimg from "../../assets/smart-city-assets/bg.jpg";
+import bgimg from "../../assets/smart-city-assets/bg.png";
 import img1 from "../../assets/smart-city-assets/v.png";
 import img2 from "../../assets/smart-city-assets/c.png";
 import img3 from "../../assets/smart-city-assets/d.png";
@@ -21,7 +21,7 @@ function Collection() {
       <Navbar />
       <div className="container mt-5 d-flex" id="collection">
         <div class="row">
-          <div class="col-sm-6 col-md-8">
+          <div class="col-sm-6 col-md-7">
             <div
               className="text-left" id="css1"
               // style={{ marginLeft: "5%", marginTop: "5%" }}
@@ -50,7 +50,7 @@ function Collection() {
           <button className="btn btn-success">Whitelist Now</button> */}
             </div>
           </div>
-          <div className="col-sm-6 col-md-4" >
+          <div className="col-sm-6 col-md-5" >
             {/* <img src={image} alt="imge" width={220} height={220} /> */}
 
             <img

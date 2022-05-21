@@ -40,7 +40,7 @@ function Roadmap() {
           <div class="col-6 col-md-2" style={{padding:"1%"}}>
             <div className="" id="">
               <img
-                src={logo1}
+                src={logo3}
                 className="logo1"
                 height={200}
                 width={200}
@@ -96,7 +96,7 @@ function Roadmap() {
           <div class="col-6 col-md-2" style={{padding:"1%"}}>
             <div className="" id="">
               <img
-                src={logo1}
+                src={logo2}
                 className="logo1"
                 height={200}
                 width={200}
@@ -124,7 +124,7 @@ function Roadmap() {
           <div class="col-6 col-md-2" style={{padding:"1%"}}>
             <div className="" id="">
               <img
-                src={logo1}
+                src={logo3}
                 className="logo1"
                 height={200}
                 width={200}
@@ -152,7 +152,7 @@ function Roadmap() {
           <div class="col-6 col-md-2" style={{padding:"1%"}}>
             <div className="" id="">
               <img
-                src={logo1}
+                src={logo4}
                 className="logo1"
                 height={200}
                 width={200}

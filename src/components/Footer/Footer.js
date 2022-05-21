@@ -12,7 +12,7 @@ function Footer() {
 					<Col lg="3" md="6" sm="6">
 						<div className="logo-footer">
 							<img src={logo} alt="Logo" />
-							<p className="text-left">
+							<p className="text-left text-left1">
 								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 								Exercitationem, provident!
 							</p>
@@ -22,19 +22,19 @@ function Footer() {
 					<Col lg="2" md="3" sm="6" className="sitemap-style">
 						<h5>Sitemap</h5>
 						<div className="list__item">
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Home</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">About</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Roadmap</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">FAQ</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Articles</a>
 							</h6>
 						</div>
@@ -43,19 +43,19 @@ function Footer() {
 					<Col lg="2" md="3" sm="6" className="sitemap-style">
 						<h5>Sitemap</h5>
 						<div className="list__item">
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Home</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">About</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Roadmap</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">FAQ</a>
 							</h6>
-							<h6>
+							<h6 className="css1234">
 								<a href="#">Articles</a>
 							</h6>
 						</div>

@@ -16,7 +16,7 @@ h5 {
     padding-bottom: 30px;
 }
 
-h6 {
+.css1234{
     text-align: left;
     padding-left: 50px;
 }
@@ -81,7 +81,7 @@ h6 {
     font-family:'Poppins', sans-serif;
 }
 
-.text-left {
+.text-left1 {
     font-family:'Poppins', sans-serif;
     margin-left: 5%;
 }

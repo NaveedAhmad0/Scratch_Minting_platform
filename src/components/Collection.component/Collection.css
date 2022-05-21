@@ -5,6 +5,8 @@
 #icon123{
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: 1px;
+  font-weight: bolder;
+  font-size: 4.3vw;
 }
 .button123 {
     background-color: #4CAF50;
@@ -34,3 +36,20 @@
   .bgimg{
     /* background-image: ; */
   }
+  #css1{
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  .img2{
+    margin-top: 48%;
+    margin-right: 41%;
+  }
+  .img3{
+    z-index: 1;
+    margin-right: -25%;
+    margin-top: -32rem;
+  }
+  .img4{
+    margin-top: -137%;
+    margin-left: 86%;
+}

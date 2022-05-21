@@ -17,4 +17,19 @@
 .meet{
     min-width: fit-content;
     margin-right: -8rem;
+    font-weight: 400;
+}
+@media only screen and (max-width: 700px) {
+    .dashline{
+         display: none;
+    }
+    .circleline{
+        flex-direction: column;
+    }
+    .circle{
+        margin-right: 5in !important;
+    }
+    /* #css1111{
+        margin-left: -3.5in;
+    } */
 }

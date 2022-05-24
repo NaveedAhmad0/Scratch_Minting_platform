@@ -44,13 +44,13 @@ function Collection() {
                 <span style={{ color: "#61A62D" }}>23 apr 04:00H</span>
               </h6>
               <br></br>
-              <button className="button123">Mint Now</button>
+              <button className="button123" id="mintbutton">Mint Now</button>
               <button className="button123">Whitelist Now</button>
               {/* <button className="btn btn-success mr-3">Mint Now</button>
           <button className="btn btn-success">Whitelist Now</button> */}
             </div>
           </div>
-          <div className="col-sm-6 col-md-5" >
+          <div className="col-sm-6 col-md-5 cssnft" style={{marginLeft:"-4rem"}} >
             {/* <img src={image} alt="imge" width={220} height={220} /> */}
 
             <img

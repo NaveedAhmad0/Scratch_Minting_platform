@@ -69,7 +69,7 @@ function Footer() {
 								className="newsletter"
 								placeholder="Email address"
 							/>
-							<button className="btn btn-success fly-btn">
+							<button id="footerbutton" className="btn btn-success fly-btn">
 								<FaTelegramPlane />
 							</button>
 						</div>

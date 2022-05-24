@@ -22,7 +22,7 @@ function Roadmap() {
         <div class="row g-0">
           <div class="col-sm-6 col-md-10" style={{padding:"1%"}}>
             <div class="card">
-              <div style={{ padding: "2%" }} className="col-10 d-flex">
+              <div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
                 <div className="box">
                   <h1 style={{ fontWeight: "900" }}>10%</h1>
                 </div>
@@ -37,7 +37,7 @@ function Roadmap() {
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-2" style={{padding:"1%"}}>
+          <div class="col-6 col-md-2 cssroadimg" style={{padding:"1%"}}>
             <div className="" id="">
               <img
                 src={logo3}
@@ -50,7 +50,7 @@ function Roadmap() {
           </div>
           <div class="col-sm-6 col-md-10" style={{padding:"1%"}}>
             <div class="card">
-              <div style={{ padding: "2%" }} className="col-10 d-flex">
+              <div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
                 <div className="box">
                   <h1 style={{ fontWeight: "900" }}>20%</h1>
                 </div>
@@ -65,7 +65,7 @@ function Roadmap() {
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-2" style={{padding:"1%"}}>
+          <div class="col-6 col-md-2 cssroadimg" style={{padding:"1%"}}>
             <div className="" id="">
               <img
                 src={logo1}
@@ -78,7 +78,7 @@ function Roadmap() {
           </div>
           <div class="col-sm-6 col-md-10" style={{padding:"1%"}}>
             <div class="card">
-              <div style={{ padding: "2%" }} className="col-10 d-flex">
+              <div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
                 <div className="box">
                   <h1 style={{ fontWeight: "900" }}>50%</h1>
                 </div>
@@ -93,7 +93,7 @@ function Roadmap() {
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-2" style={{padding:"1%"}}>
+          <div class="col-6 col-md-2 cssroadimg" style={{padding:"1%"}}>
             <div className="" id="">
               <img
                 src={logo2}
@@ -106,7 +106,7 @@ function Roadmap() {
           </div>
           <div class="col-sm-6 col-md-10" style={{padding:"1%"}}>
             <div class="card">
-              <div style={{ padding: "2%" }} className="col-10 d-flex">
+              <div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
                 <div className="box">
                   <h1 style={{ fontWeight: "900" }}>70%</h1>
                 </div>
@@ -121,7 +121,7 @@ function Roadmap() {
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-2" style={{padding:"1%"}}>
+          <div class="col-6 col-md-2 cssroadimg" style={{padding:"1%"}}>
             <div className="" id="">
               <img
                 src={logo3}
@@ -134,7 +134,7 @@ function Roadmap() {
           </div>
           <div class="col-sm-6 col-md-10" style={{padding:"1%"}}>
             <div class="card">
-              <div style={{ padding: "2%" }} className="col-10 d-flex">
+              <div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
                 <div className="box">
                   <h1 style={{ fontWeight: "900" }}>100%</h1>
                 </div>
@@ -149,7 +149,7 @@ function Roadmap() {
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-2" style={{padding:"1%"}}>
+          <div class="col-6 col-md-2 cssroadimg" style={{padding:"1%"}}>
             <div className="" id="">
               <img
                 src={logo4}

@@ -21,7 +21,7 @@ function Navbar() {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				{/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
+				{/* <div className="responsive-navbar-nav" /> */}
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav m-auto">
 						<li className="nav-item active">

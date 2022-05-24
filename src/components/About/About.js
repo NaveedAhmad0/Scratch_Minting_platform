@@ -63,30 +63,31 @@ function About() {
                   </h6>
                   <br></br>
                   <div
-                    className=" d-flex justify-content-between"
+                    className="d-flex justify-content-between cssabout1"
                     style={{ paddingTop: "" }}
                   >
-                    <div class="card" style={{ width: "18rem" }}>
-                      <img
+                    
+                    <div class="card" id="csscard" style={{ padding: "1%",marginRight:"4%" }}>
+                      <img style={{width:"18rem", padding:"11%" ,height:"20rem"}}
                         class="card-img-top"
                         src={pic2}
                         alt="Card image cap"
                       />
-                      <div class="card-body">
-                        <h5 class="card-title text-black">Berneice Tran</h5>
-                        <p class="card-text">Founder</p>
+                      <div class="card-body" style={{padding:""}}>
+                        <h5 class="card-title text-black" style={{fontWeight:"600",marginTop:"-38px"}}>Berneice Tran</h5>
+                        <p class="card-text" style={{marginTop:"-31px"}}>Founder</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                       </div>
                     </div>
-                    <div class="card" style={{ width: "18rem" }}>
-                      <img
+                    <div class="card" id="csscard1" style={{padding:"1%"}}>
+                      <img id="cssimg177" style={{width:"18rem", padding:"11%" ,height:"20rem"}}
                         class="card-img-top"
                         src={pic3}
                         alt="Card image cap"
                       />
-                      <div class="card-body" style={{ height: "1rem" }}>
-                        <h5 class="card-title text-black">Naathan Bean</h5>
-                        <p class="card-text">Co-Founder</p>
+                      <div class="card-body" style={{ height: "" }}>
+                        <h5 class="card-title text-black" style={{fontWeight:"600",marginTop:"-38px"}}>Naathan Bean</h5>
+                        <p class="card-text" style={{marginTop:"-31px"}}>Co-Founder</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                       </div>
                     </div>

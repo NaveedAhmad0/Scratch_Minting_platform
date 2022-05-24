@@ -53,3 +53,38 @@
     margin-top: -107%;
     margin-left: 75%;
 }
+@media only screen and (max-width: 700px) {
+  #icon123{
+    font-size: 10.3vw;
+  }
+  .cssnft{
+    display: none;
+  }
+  #mintbutton{
+    width:56%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #icon123{
+    font-size: 12.3vw;
+  }
+  
+  /* button{
+    width: 56%;
+  } */
+  .cssnft{
+    display: none;
+  }
+  /* .img2 {
+    margin-top: 54%;
+    margin-right: 41%;
+}
+.img3 {
+  z-index: 1;
+  margin-top: -32rem;
+}
+.img4 {
+  margin-top: -50%;
+  margin-left: auto;
+} */
+}

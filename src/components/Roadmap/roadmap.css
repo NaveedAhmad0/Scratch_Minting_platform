@@ -33,4 +33,21 @@
     .logo1{
         width: auto;
     }
+    .cssroad{
+        padding: 6% !important;
+    }
+    .cssroadimg{
+        display:none;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .logo1{
+        width: auto;
+    }
+    .cssroad{
+        padding: 6% !important;
+    }
+    .cssroadimg{
+        display:none;
+    }
 }

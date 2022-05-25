@@ -12,16 +12,30 @@
     border: 1px dashed green;
 }
 #csscard{
-    width: 22rem;
-    border: none;
-    border-left-style: outset;
-    border-bottom-style: ridge;
+    width: 17rem;
+    /* height: 320rem; */
+    padding: 3%;
+     margin-right: 4%;
+    /* border: none; */
+    border: 1px solid lightgrey;
+    /* border-bottom-style: ridge; */
 }
 #csscard1{
     width: 22rem;
     border: none;
     border-right-style: inset;
     border-bottom-style: ridge;
+}
+#aboutImage{
+    width: 13rem !important;
+    height: 14rem !important;
+}
+.card-title{
+    font-size: medium;
+    font-weight: 500;
+}
+.card-text{
+    font-size: small;
 }
 .card1{
     border: 1px solid #D9D9D9;
@@ -49,13 +63,14 @@
         flex-direction: column;
      } */
     #csscard1{
-        /* width: 16rem; */
+        width: 16rem;
         /* border: none;
         border-right-style: inset;
         border-bottom-style: ridge; */
     }
-    #cssimg177{
-        width: 16rem !important;
+    
+    #aboutImage{
+        height: 20rem !important;
     }
     .list_box {
         padding-left: 2px !important;
@@ -82,6 +97,33 @@
     }
     #csscard{
         width: 17rem !important;
+    }
+    /* #css1111{
+        margin-left: -3.5in;
+    } */
+}
+@media only screen and (max-width: 560px) {
+    .dashline{
+         display: none;
+    }
+    .circleline{
+        flex-direction: column;
+    }
+    .circle{
+        margin-left: 1in !important;
+    }
+    .csscard{
+        width: 8rem  !important;
+    }
+    .cssabout1{
+       flex-direction: column;
+    }
+    #aboutImage{
+    width:15rem !important;
+    }
+    #csscard{
+       margin-left: 8%;
+       margin-bottom: 2%;
     }
     /* #css1111{
         margin-left: -3.5in;

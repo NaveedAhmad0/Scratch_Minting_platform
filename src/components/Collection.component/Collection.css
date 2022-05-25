@@ -1,4 +1,4 @@
-/* #collection{
+/* /* #collection{
     background-color: #1F2F4A;
 } */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap');
@@ -87,4 +87,102 @@
   margin-top: -50%;
   margin-left: auto;
 } */
+} */
+#collection{
+  margin-top: 20px; 
+}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap');
+#icon123{
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  font-size: 4.3vw;
+}
+.mystyle{
+  background-image: url(../../assets/smart-city-assets/bg.png);
+		/* height: 120vh; */
+		background-size: "cover";
+		background-repeat: "no-repeat";
+    width: 100%;
+}
+.button123 {
+    /* background-color: #4CAF50; */
+    background: transparent;
+    border-radius: 5px;
+  margin-right: 10px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid white;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  /* .button123 { */
+       
+      /* color: black;  */
+      /* border: 2px solid #4CAF50; */
+  /* } */
+  
+  .button123:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  #css1{
+    margin-top: 5%;
+    text-align: left;
+    /* margin-left: 5%; */
+  }
+  #css1 h6{
+    font-weight: 300;
+  }
+  .img2{
+    margin-top: 28%;
+    margin-right: 61%;
+  }
+  .img3 {
+    z-index: 1;
+    margin-right: 1%;
+    margin-top: -28rem;
+}
+  .img4 {
+    margin-top: -87%;
+    margin-left: 60%;
+}
+
+@media (max-width: 800px) {
+  .img2{
+    width: 25vw;
+  }
+  .img3{
+
+  }
+  .img4{
+
+  }
+}
+@media (max-width: 753px) {
+  .img2{
+    display: none;
+   
+  }
+  .img3{
+    /* width: 40vw; */
+    display: none;
+
+  }
+  .img4{
+    /* width: 22vw;
+     */
+    display: none;
+  }
+}
+@media(max-width:480px) {
+  #icon123{
+    font-size: 7vw;
+  }
 }

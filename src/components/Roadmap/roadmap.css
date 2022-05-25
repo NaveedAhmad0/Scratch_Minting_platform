@@ -2,13 +2,23 @@
     background-color: #F0FCE8;
 }
 .box{
-    padding: 6%;
-    width: 27em;
+    padding: 4%;
+    width: 13em;
     height: 135px;
-    background-color: green;
+    background-color: #558a1a;
 
 }
-.box h1{
+.cssroad{
+    height: 11rem;
+}
+.cssroadimg{
+    background-color: white;
+    border: 1px solid lightgrey;
+    height: 11rem;
+    align-self: center;
+    /* width: 13rem; */
+}
+.box h2{
     color: white;
 }
 #card22{
@@ -27,9 +37,11 @@
 .logo1{
     inline-size: -webkit-fill-available;
     background-color: #F4F4F4;
-    border: outset;
+    padding: 8px;
+    align-self: center;
+    border: 1px solid lightgrey;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 790px) {
     .logo1{
         width: auto;
     }
@@ -39,13 +51,78 @@
     .cssroadimg{
         display:none;
     }
+    .RoadMapText h4{
+        font-size: 5vw;
+    }
+    .cssroadimg{
+        display:none;
+    }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 700px) {
     .logo1{
         width: auto;
     }
+    .RoadMapText p{
+        font-size: xx-small !important;
+    }
+    .box{
+        height: 150px;
+        align-self: center;
+    }
+    .box h2{
+        padding-top: 20px;
+    }
     .cssroad{
         padding: 6% !important;
+        height: 12rem;
+    }
+    .RoadMapText h4{
+        font-size: 5vw;
+    }
+    .cssroadimg{
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .logo1{
+        width: auto;
+    }
+    .RoadMapText p{
+        font-size: x-small !important;
+    }
+    .box{
+        height: 100px;
+        align-self: center;
+    }
+    .box h2{
+        padding-top: 20px;
+    }
+    .cssroad{
+        padding: 6% !important;
+        height: 12rem;
+    }
+    .cssroadimg{
+        display:none;
+    }
+}
+@media only screen and (max-width: 413px) {
+    .logo1{
+        width: auto;
+    }
+    .RoadMapText p{
+        font-size: xx-small !important;
+    }
+    .box{
+        height: 100px;
+        align-self: center;
+    }
+    .box h2{
+        padding-top: 20px;
+    }
+    .cssroad{
+        padding: 6% !important;
+        height: 12rem;
     }
     .cssroadimg{
         display:none;

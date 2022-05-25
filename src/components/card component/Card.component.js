@@ -38,7 +38,7 @@ function Card() {
 		</div>
 		<div class="col">
         <div className="card2">
-          <img src={logo4} alt="" className="logo" height={200} width={10} />
+          <img src={logo4} alt="" className="logo" height={200} width={100} />
         </div>
 		</div>
       </div>

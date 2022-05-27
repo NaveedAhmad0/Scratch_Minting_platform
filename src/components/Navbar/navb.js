@@ -3,7 +3,7 @@ import React from "react";
 import "../Navbar/nav.css";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
 
-function Navbar() {
+function Navbar({connect}) {
 	return (
 		<div id="nbn" className="container">
 			<nav className="navbar navbar-expand-lg m-auto">
@@ -54,7 +54,7 @@ function Navbar() {
 						className="button37"
 						// className=""
 						id="btn"
-						type="submit">
+						type="submit" onClick={()=>{connect()}}>
 						Connect
 					</button>
 				</div>

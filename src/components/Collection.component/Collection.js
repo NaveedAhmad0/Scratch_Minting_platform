@@ -90,7 +90,7 @@
 
 // export default Collection;
 
-import React from "react";
+import React,{useState} from "react";
 // import image from "../../assets/Group 889.png";
 import "../Collection.component/Collection.css";
 import Navbar from "../../components/Navbar/navb";
@@ -98,10 +98,52 @@ import img1 from "../../assets/smart-city-assets/v.png";
 import img2 from "../../assets/smart-city-assets/c.png";
 import img3 from "../../assets/smart-city-assets/d.png";
 
-function Collection() {
+function Collection({connect,account,smartContract,CONFIG}) {
+
+	const [feedback,setFeedback]=useState('')
+	const [claimingNft,setClaimingNft]=useState('')
+           
+
+	const mintNFTs = async() => {
+		console.log(account,smartContract)
+		let cost = CONFIG.WEI_COST;
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalCostWei = String(cost);
+		let totalGasLimit = String(gasLimit);
+	   
+		setClaimingNft(true);
+	 
+		smartContract.methods
+		  .mint()
+		  .send({
+			gasLimit: String(totalGasLimit),
+			gasPrice: '3000000',
+			from:account,
+			to:CONFIG.CONTRACT_ADDRESS,
+			value: totalCostWei,
+		  })
+		  .once("error", (err) => {
+			setFeedback("Sorry, something went wrong please try again later.");
+			setClaimingNft(false);
+			setTimeout(()=>{
+			  setFeedback('')
+			},3000)
+		  })
+		  .then(() => {
+	  
+			setFeedback(
+			  `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+			);
+			setClaimingNft(false);
+			setTimeout(()=>{
+			  setFeedback('')
+			},3000)
+		  });
+	  };
+
 	return (
 		<div id="home" className="mystyle">
-			<Navbar />
+			<Navbar connect={connect} />
 			<div className="container mt-5 mb-3 d-flex" id="collection">
 				<div className="row">
 					<div className="col-sm-12 col-md-6 col-lg-6">
@@ -119,7 +161,7 @@ function Collection() {
 								<span style={{ color: "#61A62D" }}>23 apr 04:00H</span>
 							</h6>
 							<br></br>
-							<button className="button123">Mint Now</button>
+							<button className="button123" onClick={()=>{mintNFTs()}}>Mint Now</button>
 							<button className="button123">Whitelist Now</button>
 						</div>
 					</div>

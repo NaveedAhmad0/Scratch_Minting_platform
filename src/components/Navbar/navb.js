@@ -2,15 +2,14 @@
 import React from "react";
 import "../Navbar/nav.css";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
+import { shortenAddress } from "../../utils/shortenAddress";
 
-function Navbar({connect}) {
+function Navbar({ connect, address }) {
+	// connect = null;
 	return (
 		<div id="nbn" className="container">
 			<nav className="navbar navbar-expand-lg m-auto">
 				<img id="navimg" className="navbar-brand" src={logo} alt="LOGO" />
-				{/* <a className="navbar-brand" href="#"> */}
-				{/* {logo}
-				</a> */}
 				<button
 					className="navbar-toggler responsive-navbar-nav"
 					type="button"
@@ -54,8 +53,11 @@ function Navbar({connect}) {
 						className="button37"
 						// className=""
 						id="btn"
-						type="submit" onClick={()=>{connect()}}>
-						Connect
+						type="submit"
+						onClick={() => {
+							connect();
+						}}>
+						{shortenAddress(address)}
 					</button>
 				</div>
 			</nav>

@@ -1,7 +1,6 @@
 .footer {
     padding-top: 70px;
     background-color: black;
-    /* height: 100%; */
     min-height: 50vh;
     display: flex;
     justify-content: space-evenly;

@@ -1,7 +1,5 @@
 .wrapper {
   display: flex;
-  /* height: 100vh;
-  width: 100vw; */
   justify-content: center;
   align-items: center;
 }
@@ -9,7 +7,6 @@
 .accordian {
   width: 500px;
   font-family:'Poppins', sans-serif;
-  /* margin-right: 5% ; */
 }
 
 .item {
@@ -18,7 +15,6 @@
   padding: 10px 20px;
 }
 .faq-style h1{
-  /* margin-left: -15%; */
   font-size: 2.5rem;
 }
 
@@ -54,7 +50,6 @@
 .faq-style p {
   font-size: 1.2rem;
   font-family:'Poppins', sans-serif;
-  /* margin-left: -15%; */
 }
 
 .content-ans {
@@ -81,13 +76,11 @@
   .faq-style p {
     font-size: 1rem;
     font-family:'Poppins', sans-serif;
-    /* margin-left: -15%; */
   }
   .faq-style h1 {
     font-size: 1.5rem;
     font-weight: 700;
     font-family:'Poppins', sans-serif;
-    /* margin-left: -15%; */
   }
   
 }

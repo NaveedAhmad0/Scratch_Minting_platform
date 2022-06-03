@@ -1,6 +1,3 @@
-/* /* #collection{
-    background-color: #1F2F4A;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap');
 #icon123{
   font-family: 'Roboto Condensed', sans-serif;
@@ -33,9 +30,6 @@
     color: white;
   }
   
-  .bgimg{
-    /* background-image: ; */
-  }
   #css1{
     margin-top: 5%;
     margin-left: 5%;
@@ -68,26 +62,12 @@
   #icon123{
     font-size: 12.3vw;
   }
-  
-  /* button{
-    width: 56%;
-  } */
+
   .cssnft{
     display: none;
   }
-  /* .img2 {
-    margin-top: 54%;
-    margin-right: 41%;
+  
 }
-.img3 {
-  z-index: 1;
-  margin-top: -32rem;
-}
-.img4 {
-  margin-top: -50%;
-  margin-left: auto;
-} */
-} */
 #collection{
   margin-top: 20px; 
 }
@@ -106,7 +86,6 @@
     width: 100%;
 }
 .button123 {
-    /* background-color: #4CAF50; */
     background: transparent;
     border-radius: 5px;
   margin-right: 10px;
@@ -122,11 +101,7 @@
     cursor: pointer;
   }
   
-  /* .button123 { */
-       
-      /* color: black;  */
-      /* border: 2px solid #4CAF50; */
-  /* } */
+
   
   .button123:hover {
     background-color: #4CAF50;
@@ -135,7 +110,6 @@
   #css1{
     margin-top: 5%;
     text-align: left;
-    /* margin-left: 5%; */
   }
   #css1 h6{
     font-weight: 300;
@@ -158,12 +132,6 @@
   .img2{
     width: 25vw;
   }
-  .img3{
-
-  }
-  .img4{
-
-  }
 }
 @media (max-width: 753px) {
   .img2{
@@ -171,7 +139,6 @@
    
   }
   .img3{
-    /* width: 40vw; */
     display: none;
 
   }

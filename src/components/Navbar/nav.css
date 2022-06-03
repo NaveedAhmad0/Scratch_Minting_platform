@@ -1,6 +1,5 @@
 a:hover {
     color: #4CAF50 !important;
-    /* color: white; */
   }
   a{
     text-decoration: none;
@@ -12,14 +11,7 @@ a:hover {
   #navimg{
      height: 7rem !important;
   }
-  #btn{
-    /* background-color: #4CAF50 !important; */
-    
-  }
-  /* <!-- HTML !--> */
-/* <button class="button-37" role="button">Button 37</button> */
-
-/* CSS */
+  
 .button37 {
   background-color: #13aa52;
   border: 1px solid #13aa52;

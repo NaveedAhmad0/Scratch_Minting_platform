@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "../Navbar/nav.css";
+// import { shortenAddress } from "../../utils/shortenAddress";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
-import { shortenAddress } from "../../utils/shortenAddress";
 
 function Navbar({ connect, address }) {
-	// connect = null;
 	return (
 		<div id="nbn" className="container">
 			<nav className="navbar navbar-expand-lg m-auto">
@@ -20,7 +19,6 @@ function Navbar({ connect, address }) {
 					aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				{/* <div className="responsive-navbar-nav" /> */}
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav m-auto">
 						<li className="nav-item active">
@@ -57,7 +55,9 @@ function Navbar({ connect, address }) {
 						onClick={() => {
 							connect();
 						}}>
-						{shortenAddress(address)}
+						{address
+							? `${address.slice(0, 5)}...${address.slice(address.length - 4)}`
+							: "Connect"}
 					</button>
 				</div>
 			</nav>

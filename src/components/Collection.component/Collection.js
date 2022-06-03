@@ -88,41 +88,23 @@
 // 	);
 // }
 
-// .then((res) => {
-// 	console.log(res);
-// 	axios.post(
-// 		"https://scratch-backend.herokuapp.com/api/user/create-user",
-// 		{
-// 			userAddress: `${res.from}`,
-// 			transactionHash: `${res.transactionHash}`,
-// 			transactionTime: new Date().toISOString(),
-// 		}
-// 	);
-// })
-// .then(function (response) {
-// 	console.log("Data sent to api", response);
-// })
-// .catch(function (error) {
-// 	console.log(error);
-// })
-
 // export default Collection;
 
 import React, { useState } from "react";
 // import image from "../../assets/Group 889.png";
-import axios from "axios";
 import "../Collection.component/Collection.css";
 import Navbar from "../../components/Navbar/navb";
 import img1 from "../../assets/smart-city-assets/v.png";
 import img2 from "../../assets/smart-city-assets/c.png";
 import img3 from "../../assets/smart-city-assets/d.png";
+import axios from "axios";
 
 function Collection({ connect, account, smartContract, CONFIG }) {
 	const [feedback, setFeedback] = useState("");
 	const [claimingNft, setClaimingNft] = useState("");
 
 	const mintNFTs = async () => {
-		console.log(account, smartContract);
+		console.log("Smart Contract", smartContract);
 		let cost = CONFIG.WEI_COST;
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalCostWei = String(cost);
@@ -131,7 +113,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 		setClaimingNft(true);
 
 		smartContract.methods
-			.mint()
+			.mint(account, 1)
 			.send({
 				gasLimit: String(totalGasLimit),
 				gasPrice: "40000000000",
@@ -148,16 +130,18 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 			})
 			.then((res) => {
 				console.log(res);
-				axios.post(
-					"https://scratch-backend.herokuapp.com/api/user/create-user",
-					{
+				axios
+					.post("https://scratch-backend.herokuapp.com/api/user/create-user", {
 						userAddress: `${res.from}`,
 						transactionHash: `${res.transactionHash}`,
 						transactionTime: new Date().toISOString(),
-					}
-				);
-			})
-			.then(() => {
+					})
+					.then(function (response) {
+						console.log("Data sent to api", response);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
 				setFeedback(
 					`WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
 				);

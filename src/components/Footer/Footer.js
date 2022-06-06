@@ -23,19 +23,19 @@ function Footer() {
 						<h5>Sitemap</h5>
 						<div className="list__item">
 							<h6 className="css1234">
-								<a href="#">Home</a>
+								<a href="#home">Home</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">About</a>
+								<a href="#about">About</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">Roadmap</a>
+								<a href="#roadmap">Roadmap</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">FAQ</a>
+								<a href="#faq">FAQ</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">Articles</a>
+								<a href="#articles">Articles</a>
 							</h6>
 						</div>
 					</Col>
@@ -44,19 +44,19 @@ function Footer() {
 						<h5>Sitemap</h5>
 						<div className="list__item">
 							<h6 className="css1234">
-								<a href="#">Home</a>
+								<a href="#home">Home</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">About</a>
+								<a href="#about">About</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">Roadmap</a>
+								<a href="#roadmap">Roadmap</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">FAQ</a>
+								<a href="#faq">FAQ</a>
 							</h6>
 							<h6 className="css1234">
-								<a href="#">Articles</a>
+								<a href="#articles">Articles</a>
 							</h6>
 						</div>
 					</Col>
@@ -77,61 +77,6 @@ function Footer() {
 				</Row>
 			</Container>
 		</footer>
-
-		// <div className="container-fluid footer text-white d-flex">
-		// 	<div className="col-3">
-		// 		<img src={logo} alt="Logo" />
-		// 		<p className="text-left">
-		// 			Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-		// 			Exercitationem, provident!
-		// 		</p>
-		// 	</div>
-		// 	<div className="col-3">
-		// 		<div>
-		// 			<h3>Sitemap</h3>
-		// 			<div>
-		// 				<a href="#">Home</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">About</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">Roadmap</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">FAQ</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">Articles</a>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// 	<div className="col-3">
-		// 		<div>
-		// 			<h3>Sitemap</h3>
-		// 			<div>
-		// 				<a href="#">Home</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">About</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">Roadmap</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">FAQ</a>
-		// 			</div>
-		// 			<div>
-		// 				<a href="#">Articles</a>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// 	<div className="col-3">
-		// 		<h3>Sitemap</h3>
-		// 		<input type="text" name="" placeholder="Email Address" />
-		// 		<button className="btn btn-success">icon</button>
-		// 	</div>
-		// </div>
 	);
 }
 

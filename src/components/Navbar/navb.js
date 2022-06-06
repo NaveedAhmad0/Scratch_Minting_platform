@@ -1,7 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "../Navbar/nav.css";
-// import { shortenAddress } from "../../utils/shortenAddress";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
 
 function Navbar({ connect, address }) {
@@ -49,7 +47,6 @@ function Navbar({ connect, address }) {
 					</ul>
 					<button
 						className="button37"
-						// className=""
 						id="btn"
 						type="submit"
 						onClick={() => {
@@ -57,7 +54,7 @@ function Navbar({ connect, address }) {
 						}}>
 						{address
 							? `${address.slice(0, 5)}...${address.slice(address.length - 4)}`
-							: "Connect"}
+							: "Connect Wallet"}
 					</button>
 				</div>
 			</nav>

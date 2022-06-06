@@ -8,10 +8,9 @@ import "./about.css";
 function About() {
 	return (
 		<>
-			{/* <div  className="container d-flex" style={{paddingTop:"5%"}}> */}
-			<div id="about" class="container">
-				<div class="row">
-					<div class="col-sm-6">
+			<div id="about" className="container">
+				<div className="row">
+					<div className="col-sm-6">
 						<div className="text-left">
 							<p>
 								<span style={{ color: "#61A62D" }}>The </span>Story
@@ -52,7 +51,7 @@ function About() {
 							</p>
 						</div>
 					</div>
-					<div class="col-sm-6">
+					<div className="col-sm-6">
 						<h6 className="meet text-left">
 							<span style={{ color: "#61A62D" }}>Meet</span> The Artist
 						</h6>
@@ -65,35 +64,28 @@ function About() {
 									src={pic2}
 									alt="CardImgCap"
 								/>
-								<div class="card-body" style={{ padding: "" }}>
-									<h5 class="card-title text-black">Berneice Tran</h5>
-									<p class="card-text" style={{ marginTop: "-31px" }}>
+								<div className="card-body" style={{ padding: "" }}>
+									<h5 className="card-title text-black">Berneice Tran</h5>
+									<p className="card-text" style={{ marginTop: "-31px" }}>
 										Founder
 									</p>
-									{/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
 								</div>
 							</div>
 							<div className="card" id="csscard">
 								<img
-									// id="cssimg177"
 									id="aboutImage"
-									// style={{ width: "18rem", padding: "11%", height: "20rem" }}
 									className="card-img-top"
 									src={pic3}
 									alt="CardImage"
 								/>
-								<div class="card-body">
-									<h5 class="card-title text-black">Nathan Bean</h5>
-									<p class="card-text" style={{ marginTop: "-33px" }}>
+								<div className="card-body">
+									<h5 className="card-title text-black">Nathan Bean</h5>
+									<p className="card-text" style={{ marginTop: "-33px" }}>
 										Co-Founder
 									</p>
-									{/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
 								</div>
 							</div>
 						</div>
-						{/* </div>
-              </div>
-            </div> */}
 					</div>
 				</div>
 				<div className="container mt-5 text-left">

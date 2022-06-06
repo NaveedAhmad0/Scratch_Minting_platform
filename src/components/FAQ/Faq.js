@@ -23,12 +23,6 @@ function Faq() {
 			</div>
 			<div className="col-6">
 				<QuestionOne />
-				{/* <br />
-				<QuestionOne />
-				<br />
-				<QuestionOne />
-				<br />
-				<QuestionOne /> */}
 			</div>
 		</div>
 	);

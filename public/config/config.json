@@ -1,12 +1,12 @@
 {
-    "CONTRACT_ADDRESS": "0x35CF0eAE5cDd1D00B387c61631D62c88EAB7e5B3",
+    "CONTRACT_ADDRESS": "0x8Cd78bbEE154734F64897EcaD541104D68ab8602",
     "NETWORK": {
       "NAME": "Rinkeby Test Network",
       "SYMBOL": "ETH",
       "ID": 4
     },
-    "NFT_NAME": "TEST",
-    "SYMBOL": "TEST",
+    "NFT_NAME": "ScratchNFT",
+    "SYMBOL": "SNT",
     "WEI_COST": 1000000000000000,
     "GAS_LIMIT":250000
     }

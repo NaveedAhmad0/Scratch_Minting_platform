@@ -30,6 +30,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 				value: totalCostWei,
 			})
 			.once("error", (err) => {
+				console.log(err);
 				setFeedback("Sorry, something went wrong please try again later.");
 				setClaimingNft(false);
 				setTimeout(() => {
@@ -60,7 +61,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 			})
 			.catch((error) => {
 				if (error.code === 4001) {
-					alert("User Denied Transaction Signature.");
+					alert(error.message);
 				} else {
 					console.error(error);
 				}

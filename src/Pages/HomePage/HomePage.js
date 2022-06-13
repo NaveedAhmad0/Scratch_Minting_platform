@@ -5,16 +5,15 @@ import Collection from "../../components/Collection.component/Collection";
 import Community from "../../components/Community Component/Community";
 import Faq from "../../components/FAQ/Faq";
 import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/navb";
 import Roadmap from "../../components/Roadmap/Roadmap";
 import Team from "../../components/Team component/Team";
 import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
-import abi from "config/abi";
+import abi from "config/abi.json";
 
 function HomePage() {
 	const [account, setAccount] = useState("");
-	const [smartContract, setSmartContract] = useState("");
+	const [smartContract, setSmartContract] = useState(null);
 	const [web3data, setWeb3data] = useState();
 	const [error, setError] = useState("");
 
@@ -58,6 +57,9 @@ function HomePage() {
 		getConfig();
 	}, []);
 
+	useEffect(() => {
+		console.log(smartContract);
+	}, [smartContract]);
 	console.log(account);
 
 	const connect = async () => {
@@ -73,6 +75,7 @@ function HomePage() {
 				const networkId = await ethereum.request({
 					method: "net_version",
 				});
+				alert("Connected to the wallet Successfully");
 
 				if (networkId == CONFIG.NETWORK.ID) {
 					const SmartContractObj = new web3.eth.Contract(
@@ -81,13 +84,12 @@ function HomePage() {
 					);
 					setSmartContract(SmartContractObj);
 					setWeb3data(web3data);
-					alert("Connected to the wallet Successfully");
 				} else {
 					setError(`Change network to ${CONFIG.NETWORK.NAME}.`);
 				}
 			} catch (error) {
 				if (error.code === 4001) {
-					alert("Gimme PERMISSION Boii >(-<-)<");
+					alert(error.message);
 				} else {
 					console.error(error);
 				}

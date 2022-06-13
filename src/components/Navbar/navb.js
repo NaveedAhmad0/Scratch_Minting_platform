@@ -1,7 +1,6 @@
 import React from "react";
 import "../Navbar/nav.css";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
-
 function Navbar({ connect, address }) {
 	return (
 		<div id="nbn" className="container">
@@ -42,6 +41,11 @@ function Navbar({ connect, address }) {
 						<li className="nav-item">
 							<a className="nav-link" href="#faq">
 								FAQ
+							</a>
+						</li>
+						<li className="nav-item">
+							<a className="nav-link" href="/staking">
+								Staking
 							</a>
 						</li>
 					</ul>

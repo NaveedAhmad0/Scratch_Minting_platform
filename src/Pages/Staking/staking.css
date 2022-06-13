@@ -1,0 +1,84 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/src/assets/bg.png');
+    background-size: 100% 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 33%;
+    height: 400px;
+    border: 2px solid red;
+
+    border-radius: 12px;
+    background-image: url(https://imgs.search.brave.com/Q0lyzErCXBknsUxGW3OWUFEWfX0LgdLoRIK5V2mxkd8/rs:fit:1200:700:1/g:ce/aHR0cDovLzMuYnAu/YmxvZ3Nwb3QuY29t/Ly1qQTliWktGc3Bk/WS9VWUZyWDBPQ25U/SS9BQUFBQUFBQUtL/US90QVBLNU5vdEti/US9zMTYwMC93ZWJz/aXRlX2JhY2tncm91/bmRfYnlfbW9kc29m/dC1kMzMwMmp6MS5w/bmc);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 20px;
+    color: white;
+    
+  
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    background-image: url(https://imgs.search.brave.com/Xd8_dNypPlzMahx0-Pij7FBEKZj7N1ME4iyhGEEtF_8/rs:fit:800:600:1/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJzLzkxMTcy/NC9zY3JlZW5zaG90/cy80NDk1NDM5L2Js/b2NrY2hhaW4tbG9n/by1leHBsb3JhdGlv/bnMuanBn);
+    background-position: center;
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    box-shadow:"2px 2px 5px #000000";
+    background-color: "#ffffff00";
+  }
+  
+  .modalContainer .footer button {
+    width: 200px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color:forestgreen;
+    color:white;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    font-size:x-large;
+    
+  }
+  
+  

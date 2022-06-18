@@ -1,0 +1,16 @@
+.card-btn1 {
+    display: flex;
+    justify-content: space-around;
+    
+  }
+
+.input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    margin-top: 7px;
+    align-items: left;
+  }
+.logo{
+    width: 100%;
+
+}

@@ -1,403 +1,130 @@
-import React from "react";
-// import Navbar from "../../components/Navbar/navb";
+import React, { useState } from "react";
+import Navbar from "../../components/Navbar/navb";
+import logo1 from "../../assets/smart-city-assets/1.svg";
+import logo2 from "../../assets/smart-city-assets/2.svg";
+import logo3 from "../../assets/smart-city-assets/3.svg";
+import logo4 from "../../assets/smart-city-assets/4.svg";
 import "./staking.css";
-const VAULTABI = [
-	{
-		inputs: [
-			{
-				internalType: "contract Collection",
-				name: "_nft",
-				type: "address",
-			},
-			{
-				internalType: "contract N2DRewards",
-				name: "_token",
-				type: "address",
-			},
-		],
-		stateMutability: "nonpayable",
-		type: "constructor",
-	},
-	{
-		anonymous: false,
-		inputs: [
-			{
-				indexed: false,
-				internalType: "address",
-				name: "owner",
-				type: "address",
-			},
-			{
-				indexed: false,
-				internalType: "uint256",
-				name: "amount",
-				type: "uint256",
-			},
-		],
-		name: "Claimed",
-		type: "event",
-	},
-	{
-		anonymous: false,
-		inputs: [
-			{
-				indexed: false,
-				internalType: "address",
-				name: "owner",
-				type: "address",
-			},
-			{
-				indexed: false,
-				internalType: "uint256",
-				name: "tokenId",
-				type: "uint256",
-			},
-			{
-				indexed: false,
-				internalType: "uint256",
-				name: "value",
-				type: "uint256",
-			},
-		],
-		name: "NFTStaked",
-		type: "event",
-	},
-	{
-		anonymous: false,
-		inputs: [
-			{
-				indexed: false,
-				internalType: "address",
-				name: "owner",
-				type: "address",
-			},
-			{
-				indexed: false,
-				internalType: "uint256",
-				name: "tokenId",
-				type: "uint256",
-			},
-			{
-				indexed: false,
-				internalType: "uint256",
-				name: "value",
-				type: "uint256",
-			},
-		],
-		name: "NFTUnstaked",
-		type: "event",
-	},
-	{
-		anonymous: false,
-		inputs: [
-			{
-				indexed: true,
-				internalType: "address",
-				name: "previousOwner",
-				type: "address",
-			},
-			{
-				indexed: true,
-				internalType: "address",
-				name: "newOwner",
-				type: "address",
-			},
-		],
-		name: "OwnershipTransferred",
-		type: "event",
-	},
-	{
-		inputs: [
-			{
-				internalType: "address",
-				name: "account",
-				type: "address",
-			},
-		],
-		name: "balanceOf",
-		outputs: [
-			{
-				internalType: "uint256",
-				name: "",
-				type: "uint256",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "uint256[]",
-				name: "tokenIds",
-				type: "uint256[]",
-			},
-		],
-		name: "claim",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "address",
-				name: "account",
-				type: "address",
-			},
-			{
-				internalType: "uint256[]",
-				name: "tokenIds",
-				type: "uint256[]",
-			},
-		],
-		name: "claimForAddress",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "uint256[]",
-				name: "tokenIds",
-				type: "uint256[]",
-			},
-		],
-		name: "earningInfo",
-		outputs: [
-			{
-				internalType: "uint256[1]",
-				name: "info",
-				type: "uint256[1]",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "address",
-				name: "",
-				type: "address",
-			},
-			{
-				internalType: "address",
-				name: "from",
-				type: "address",
-			},
-			{
-				internalType: "uint256",
-				name: "",
-				type: "uint256",
-			},
-			{
-				internalType: "bytes",
-				name: "",
-				type: "bytes",
-			},
-		],
-		name: "onERC721Received",
-		outputs: [
-			{
-				internalType: "bytes4",
-				name: "",
-				type: "bytes4",
-			},
-		],
-		stateMutability: "pure",
-		type: "function",
-	},
-	{
-		inputs: [],
-		name: "owner",
-		outputs: [
-			{
-				internalType: "address",
-				name: "",
-				type: "address",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-	{
-		inputs: [],
-		name: "renounceOwnership",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "uint256[]",
-				name: "tokenIds",
-				type: "uint256[]",
-			},
-		],
-		name: "stake",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "address",
-				name: "account",
-				type: "address",
-			},
-		],
-		name: "tokensOfOwner",
-		outputs: [
-			{
-				internalType: "uint256[]",
-				name: "ownerTokens",
-				type: "uint256[]",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-	{
-		inputs: [],
-		name: "totalStaked",
-		outputs: [
-			{
-				internalType: "uint256",
-				name: "",
-				type: "uint256",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "address",
-				name: "newOwner",
-				type: "address",
-			},
-		],
-		name: "transferOwnership",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "uint256[]",
-				name: "tokenIds",
-				type: "uint256[]",
-			},
-		],
-		name: "unstake",
-		outputs: [],
-		stateMutability: "nonpayable",
-		type: "function",
-	},
-	{
-		inputs: [
-			{
-				internalType: "uint256",
-				name: "",
-				type: "uint256",
-			},
-		],
-		name: "vault",
-		outputs: [
-			{
-				internalType: "uint24",
-				name: "tokenId",
-				type: "uint24",
-			},
-			{
-				internalType: "uint48",
-				name: "timestamp",
-				type: "uint48",
-			},
-			{
-				internalType: "address",
-				name: "owner",
-				type: "address",
-			},
-		],
-		stateMutability: "view",
-		type: "function",
-	},
-];
-
-var account = null;
-var contract = null;
-var vaultcontract = null;
-
-const STAKINGCONTRACT = "0xe8DCcaB339512F86d052558C7515cEb10CDf480b";
-const apikey = "33QYH2H847QF4WQMTXTM661GGVUKW1S9GM";
-const endpoint = "https://api-rinkeby.etherscan.io/api";
-const nftpng =
-	"https://ipfs.io/ipfs/QmetESUb7wTPr8mBHWFsiSKMw6HTLWUGoL8DrkcaY9TTyh/";
-
-async function stakeit() {
-	var tokenids = Number(document.querySelector("[name=stkid]").value);
-	vaultcontract.methods.stake([tokenids]).send({ from: account });
-}
-
-async function unstakeit() {
-	var tokenids = Number(document.querySelector("[name=stkid]").value);
-	vaultcontract.methods.unstake([tokenids]).send({ from: account });
-}
-
+import VAULTABI from "./VAULTABI.json";
+import StakingCard from "../../components/Staking Card/StakingCard";
+import { useEffect } from "react";
 function Staking() {
+	const [currentTab, setCurrentTab] = useState("");
+	const [nfts, setNfts] = useState([]);
+
+	const i = [
+		{
+			id: 1,
+			title: "Stake",
+			content: (
+				<div>
+					<div>
+						<h5
+							style={{
+								marginTop: "6%",
+								textAlign: "left",
+								marginLeft: "10%",
+								marginBottom: "3%",
+							}}>
+							Choose from your NFTs for staking
+						</h5>
+						<div className="container">
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{nfts.map((nft) => (
+									<StakingCard nft={nft} />
+								))}
+							</div>
+						</div>
+						<div className="btn-main">
+							<button className="button37">Approve</button>
+							<button className="button37">Stake Your NFT</button>
+						</div>
+					</div>
+				</div>
+			),
+		},
+
+		{
+			id: 2,
+			title: "Claim",
+			content: (
+				<div>
+					<div>
+						<h5
+							style={{
+								marginTop: "6%",
+								textAlign: "left",
+								marginLeft: "10%",
+								marginBottom: "3%",
+							}}>
+							Choose NFTs for claiming Rewards
+						</h5>
+						<div className="container">
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{nfts.map((nft) => (
+									<StakingCard nft={nft} />
+								))}
+							</div>
+						</div>
+						<div className="btn-main">
+							<button className="button37">Claim Your Rewards</button>
+						</div>
+					</div>
+				</div>
+			),
+		},
+
+		{
+			id: 3,
+			title: "Unstake",
+			content: (
+				<div>
+					<div>
+						<h5
+							style={{
+								marginTop: "6%",
+								textAlign: "left",
+								marginLeft: "10%",
+								marginBottom: "3%",
+							}}>
+							Choose from your NFTs for Unstaking
+						</h5>
+						<div className="container">
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{nfts.map((nft) => (
+									<StakingCard nft={nft} />
+								))}
+							</div>
+						</div>
+						<div className="btn-main">
+							<button className="button37">Approve</button>
+							<button className="button37">Unstake and Get Your Rewards</button>
+						</div>
+					</div>
+				</div>
+			),
+		},
+	];
+
 	return (
-		<div className="">
-			{/* <Navbar /> */}
-			<div className="container-fluid modalBackground">
-				<div className=" col-4 modalContainer">
-					<div className="title text-white">
-						<h1>Your Stake NFT</h1>
-					</div>
-					<div className="body">
-						<p>Your Staked NFTs !</p>
-					</div>
-					<div>
-						<button className="btn btn-success" onClick={stakeit}>
-							Stake NFTs
+		<div className="stack-main">
+			<Navbar />
+			<div className="btn-main">
+				{i.map((tab) => {
+					return (
+						<button
+							onClick={() => {
+								if (currentTab.id !== tab.id) {
+									setCurrentTab(tab);
+								}
+							}}
+							className="button37">
+							{tab.title}
 						</button>
-					</div>
-				</div>
-				{/* <br></br> */}
-				<div className="col-4 modalContainer">
-					<div className="title text-white">
-						<h1>Your UnStake NFT</h1>
-					</div>
-					<div className="body">
-						<p>Your UnStaked NFTs !</p>
-					</div>
-					<div>
-						<button className="btn btn-success" onClick={unstakeit}>
-							UnStake NFTs
-						</button>
-					</div>
-				</div>
-				{/* <br></br> */}
-				<div className="col-4 modalContainer">
-					<div className="title text-white">
-						<h1>Your Claim Rewards</h1>
-					</div>
-					<div className="body">
-						<p>Claim Your Rewards !</p>
-					</div>
-					<div>
-						<button className="btn btn-success">Claim</button>
-					</div>
-					{/* <br></br> */}
-				</div>
-				{/* <div className="container"></div> */}
+					);
+				})}
 			</div>
+			<div>{currentTab.content}</div>
 		</div>
 	);
 }

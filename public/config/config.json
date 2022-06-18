@@ -1,5 +1,6 @@
 {
     "CONTRACT_ADDRESS": "0x8Cd78bbEE154734F64897EcaD541104D68ab8602",
+    "STAKING_CONTRACT": "0x5d7dEbc37CbbbFd1364769b5fAd834389FfbC20D",
     "NETWORK": {
       "NAME": "Rinkeby Test Network",
       "SYMBOL": "ETH",

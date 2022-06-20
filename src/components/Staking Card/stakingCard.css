@@ -1,16 +1,63 @@
 .card-btn1 {
-    display: flex;
-    justify-content: space-around;
-    
-  }
+  display: flex;
+  justify-content: space-around;
+}
 
-.input[type=checkbox] {
-    height: 20px;
-    width: 20px;
-    margin-top: 7px;
-    align-items: left;
-  }
-.logo{
-    width: 100%;
+.logo {
+  width: 350px;
+  height: 200px;
+  margin-left: -83px;
+}
+.card2 {
+  overflow: hidden;
+  width: 200px;
+  margin-right: 20px;
+  padding-top: 0;
+  border-radius: 10px;
+  border: 1px solid #4caf50;
+  box-shadow: 3px 3px 8px 0px rgba(97, 158, 136, 0.75);
+  -webkit-box-shadow: 3px 3px 8px 0px rgba(97, 158, 136, 0.75);
+  -moz-box-shadow: 3px 3px 8px 0px rgba(97, 158, 136, 0.75);
+}
 
+.card2 :hover {
+  opacity: 0.8;
+}
+
+.dark {
+  opacity: 0.7;
+}
+
+.light {
+  opacity: 1;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox:active,
+.checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked {
+  background-color: #62c382;
+  border: 1px solid #62c382;
+}
+
+.checkbox:checked:after {
+  content: "\2714";
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: #62c382;
 }

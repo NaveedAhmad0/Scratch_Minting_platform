@@ -1,27 +1,26 @@
-html,body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-
-
 .stack-main {
-  background-image: url('/src/assets/bg.png');
+  background-image: url("/src/assets/bg.png");
   height: 100vh;
   min-height: 100%;
   background-size: cover;
-  display: block;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .btn-main {
+  width: 200px;
   display: flex;
-  justify-content: space-around;
-  margin-right: 15%;
-  margin-left: 15%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .stake-btn {
@@ -30,14 +29,15 @@ html,body {
 }
 
 .card-btn {
-   background-color: #13aa52;
+  background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   outline: none;
@@ -55,10 +55,9 @@ html,body {
 .card-btn1 {
   display: flex;
   justify-content: space-around;
-  
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   height: 20px;
   width: 20px;
   margin-top: 7px;
@@ -68,11 +67,12 @@ input[type=checkbox] {
   background-color: #13aa52;
   border: 1px solid #13aa52;
   border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
   font-size: 16px;
   font-weight: 400;
   outline: none;
@@ -87,6 +87,18 @@ input[type=checkbox] {
 }
 
 .button37:hover {
-  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
   transform: translateY(-2px);
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.bg-green {
+  width: 200px;
+  background-color: #13aa52;
+  border-radius: 10px;
 }

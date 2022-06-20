@@ -1,7 +1,9 @@
 import React from "react";
 import "../Navbar/nav.css";
 import logo from "../../assets/smart-city-assets/Vector Smart logo.svg";
-function Navbar({ connect, address }) {
+import { Link } from "react-router-dom";
+
+function Navbar({ connect, address}) {
 	return (
 		<div id="nbn" className="container">
 			<nav className="navbar navbar-expand-lg m-auto">
@@ -19,9 +21,9 @@ function Navbar({ connect, address }) {
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav m-auto">
 						<li className="nav-item active">
-							<a className="nav-link" href="#home">
+						  <Link to="/" className="nav-link">
 								Home
-							</a>
+							</Link>
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" href="#about">
@@ -44,11 +46,12 @@ function Navbar({ connect, address }) {
 							</a>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="/staking">
-								Staking
-							</a>
+							<Link to="/staking" className="nav-link">
+								staking
+							</Link>
 						</li>
 					</ul>
+
 					<button
 						className="button37"
 						id="btn"

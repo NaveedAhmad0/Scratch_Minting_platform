@@ -10,7 +10,7 @@ function StakingCard({ id, register }) {
 	return (
 		<div className={`cardStake ${selected ? "dark" : "light"}`}>
 			<img
-				src={`https://gateway.pinata.cloud/ipfs/QmauJREwT16RDJcdxVUGmuN7yshfm6JzpvvV34LVjW1NaF/${id}.png`}
+				src={`https://gateway.pinata.cloud/ipfs/QmVpaepvn3PyWYUjGM1aHvN7jGiYQTXftUnNWCU9odW8LT/${id}.png`}
 				alt=""
 				className="logoStake"
 			/>

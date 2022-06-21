@@ -1,26 +1,24 @@
-import { useState,createContext } from "react";
+import { useState, createContext } from "react";
 import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
 import abi from "config/abi.json";
 import abi2 from "config/abi2.json";
 import { useEffect } from "react";
 
+const userContext = createContext();
 
-const userContext=createContext()
-
-export const UserProvider=({children})=>{
+export const UserProvider = ({ children }) => {
 	const [account, setAccount] = useState("");
 	const [smartContract, setSmartContract] = useState(null);
-    const [stakingContract,setStakingContract]=useState(null)
+	const [stakingContract, setStakingContract] = useState(null);
 	const [web3data, setWeb3data] = useState();
 	const [error, setError] = useState("");
-	const [tokenids,setTokenids]=useState([])
-	const [stakedTokenids,setStakedTokenids]=useState([])
-
+	const [tokenids, setTokenids] = useState([]);
+	const [stakedTokenids, setStakedTokenids] = useState([]);
 
 	const [CONFIG, SET_CONFIG] = useState({
 		CONTRACT_ADDRESS: "",
-        STAKING_CONTRACT: "",
+		STAKING_CONTRACT: "",
 		NETWORK: {
 			NAME: "Rinkeby Test Network",
 			SYMBOL: "ETH",
@@ -55,7 +53,6 @@ export const UserProvider=({children})=>{
 		SET_CONFIG(config);
 	};
 
-
 	const connect = async () => {
 		if (metamaskIsInstalled) {
 			Web3EthContract.setProvider(ethereum);
@@ -70,20 +67,22 @@ export const UserProvider=({children})=>{
 					method: "net_version",
 				});
 				alert("Connected to the wallet Successfully");
-
+				// console.log("clicked");
+				// console.log(networkId == CONFIG.NETWORK.ID);
+				// console.log(networkId);
 				if (networkId == CONFIG.NETWORK.ID) {
-                
 					const SmartContractObj = new web3.eth.Contract(
 						abi,
 						CONFIG.CONTRACT_ADDRESS
 					);
-                    const SmartContractObj2=new web3.eth.Contract(
-                        abi2,
-                        CONFIG.STAKING_CONTRACT
-                    )
+					const SmartContractObj2 = new web3.eth.Contract(
+						abi2,
+						CONFIG.STAKING_CONTRACT
+					);
 					setSmartContract(SmartContractObj);
-                    setStakingContract(SmartContractObj2)
-                    console.log(SmartContractObj2)
+					setStakingContract(SmartContractObj2);
+					console.log(SmartContractObj);
+					console.log(SmartContractObj2);
 					setWeb3data(web3data);
 				} else {
 					setError(`Change network to ${CONFIG.NETWORK.NAME}.`);
@@ -102,39 +101,56 @@ export const UserProvider=({children})=>{
 		}
 	};
 
+	const getTokenIds = async () => {
+		await smartContract.methods
+			.walletOfOwner(account)
+			.call()
+			.then((res) => {
+				setTokenids(res.map((item) => parseInt(item)));
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
-    const getTokenIds=async()=>{
-		await smartContract.methods.walletOfOwner(account).call().then((res)=>{
-		setTokenids(res.map((item)=>parseInt(item)))
+	const getStakedTokenIds = async () => {
+		await stakingContract.methods
+			.tokensOfOwner(account)
+			.call()
+			.then((res) => {
+				setStakedTokenids(res.map((item) => parseInt(item)));
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
-	}).catch((error)=>{
-		console.log(error)
-	}) 	   
-}
+	useEffect(() => {
+		if (smartContract != "" && account !== "") {
+			getTokenIds();
+			getStakedTokenIds();
+		}
+	}, [smartContract]);
 
-const getStakedTokenIds=async()=>{
-	await stakingContract.methods.tokensOfOwner(account).call().then((res)=>{
-		setStakedTokenids(res.map((item)=>parseInt(item)))
-	}).catch((error)=>{
-		console.log(error)
-	}) 	  
-}
-
-
-useEffect(()=>{
-    if(smartContract != '' && account !== ''){
-        getTokenIds()
-		getStakedTokenIds()
-    }
-},[smartContract])
-
-
-
-
-       return(
-           <userContext.Provider value={{connect,account,smartContract,stakingContract,web3data,error,getConfig,CONFIG,tokenids,stakedTokenids,getTokenIds,getStakedTokenIds}}>{children}</userContext.Provider>
-       )  
-}
-
+	return (
+		<userContext.Provider
+			value={{
+				connect,
+				account,
+				smartContract,
+				stakingContract,
+				web3data,
+				error,
+				getConfig,
+				CONFIG,
+				tokenids,
+				stakedTokenids,
+				getTokenIds,
+				getStakedTokenIds,
+			}}>
+			{children}
+		</userContext.Provider>
+	);
+};
 
 export default userContext;

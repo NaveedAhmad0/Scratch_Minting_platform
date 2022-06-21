@@ -11,14 +11,19 @@ import { useContext } from "react";
 import userContext from "../../context/userContext";
 
 function HomePage() {
-	const {connect,account,smartContract,CONFIG,getConfig}=useContext(userContext)
+	const { connect, account, smartContract, CONFIG, error, getConfig } =
+		useContext(userContext);
 
 	useEffect(() => {
 		getConfig();
 	}, []);
-    
 
-
+	useEffect(() => {
+		if (error) {
+			alert(error);
+			console.log(error);
+		}
+	}, [error]);
 
 	return (
 		<div>

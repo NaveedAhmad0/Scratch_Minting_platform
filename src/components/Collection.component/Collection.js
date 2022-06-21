@@ -54,6 +54,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 				setFeedback(
 					`WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
 				);
+				alert(feedback);
 				setClaimingNft(false);
 				setTimeout(() => {
 					setFeedback("");

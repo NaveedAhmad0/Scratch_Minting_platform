@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import image from "../../assets/Group 889.png";
 import "../Collection.component/Collection.css";
 import Navbar from "../../components/Navbar/navb";
 import img1 from "../../assets/smart-city-assets/v.png";

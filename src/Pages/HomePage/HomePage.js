@@ -9,6 +9,7 @@ import Roadmap from "../../components/Roadmap/Roadmap";
 import Team from "../../components/Team component/Team";
 import { useContext } from "react";
 import userContext from "../../context/userContext";
+import Video from "../../components/Teaser/video";
 
 function HomePage() {
 	const { connect, account, smartContract, CONFIG, error, getConfig } =
@@ -36,10 +37,13 @@ function HomePage() {
 				CONFIG={CONFIG}
 			/>
 			{/* </div> */}
+			<Video />
+			<br />
 			<br />
 			<Card />
 			<br></br>
 			<br></br>
+
 			<About />
 			<br />
 			<Roadmap />

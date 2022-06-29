@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/navb";
-import logo1 from "../../assets/smart-city-assets/1.svg";
-import logo2 from "../../assets/smart-city-assets/2.svg";
-import logo3 from "../../assets/smart-city-assets/3.svg";
-import logo4 from "../../assets/smart-city-assets/4.svg";
 import "./staking.css";
 import StakingCard from "../../components/Staking Card/StakingCard";
 import { useEffect } from "react";
@@ -13,7 +9,6 @@ import { useForm } from "react-hook-form";
 
 function Staking() {
 	const [currentTab, setCurrentTab] = useState("");
-	const [nfts, setNfts] = useState([]);
 	const [selected, setSelected] = useState(false);
 
 	const {

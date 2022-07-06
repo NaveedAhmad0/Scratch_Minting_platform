@@ -223,6 +223,7 @@
 		"outputs": [
 			{ "internalType": "uint24", "name": "tokenId", "type": "uint24" },
 			{ "internalType": "uint48", "name": "timestamp", "type": "uint48" },
+			{ "internalType": "uint48", "name": "stakedOn", "type": "uint48" },
 			{ "internalType": "address", "name": "owner", "type": "address" }
 		],
 		"stateMutability": "view",

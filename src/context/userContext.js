@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
 import abi from "config/abi.json";
-import abi2 from "config/abi2.json";
+import abi2 from "config/NFTSTAKINGabi.json";
 import { useEffect } from "react";
 
 const userContext = createContext();

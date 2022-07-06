@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useContext } from "react";
+
+//components
 import About from "../../components/About/About";
 import Card from "../../components/card component/Card.component";
 import Collection from "../../components/Collection.component/Collection";
@@ -7,7 +10,6 @@ import Faq from "../../components/FAQ/Faq";
 import Footer from "../../components/Footer/Footer";
 import Roadmap from "../../components/Roadmap/Roadmap";
 import Team from "../../components/Team component/Team";
-import { useContext } from "react";
 import userContext from "../../context/userContext";
 import Video from "../../components/Teaser/video";
 
@@ -28,15 +30,12 @@ function HomePage() {
 
 	return (
 		<div>
-			{/* <div className="" style={{backgroundColor:"#1F2F4A"}}> */}
-			{/* <Navbar /> */}
 			<Collection
 				connect={connect}
 				account={account}
 				smartContract={smartContract}
 				CONFIG={CONFIG}
 			/>
-			{/* </div> */}
 			<Video />
 			<br />
 			<br />

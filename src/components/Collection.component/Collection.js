@@ -7,7 +7,7 @@ import img3 from "../../assets/smart-city-assets/d.png";
 import axios from "axios";
 
 function Collection({ connect, account, smartContract, CONFIG }) {
-	const [feedback, setFeedback] = useState("");
+	const [feedback, setFeedback] = useState(``);
 	const [claimingNft, setClaimingNft] = useState("");
 
 	const mintNFTs = async () => {
@@ -34,7 +34,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 				setClaimingNft(false);
 				setTimeout(() => {
 					setFeedback("");
-				}, 3000);
+				}, 10000);
 			})
 			.then((res) => {
 				console.log(res);
@@ -51,13 +51,12 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 						console.log(error);
 					});
 				setFeedback(
-					`WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+					`Mint Successfull, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
 				);
-				alert(feedback);
 				setClaimingNft(false);
 				setTimeout(() => {
 					setFeedback("");
-				}, 3000);
+				}, 10000);
 			})
 			.catch((error) => {
 				if (error.code === 4001) {
@@ -71,6 +70,8 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 	return (
 		<div id="home" className="mystyle">
 			<Navbar connect={connect} address={account} />
+			{feedback.length > 0 && <div className="result">{feedback}</div>}
+
 			<div className="container mt-5 mb-3 d-flex" id="collection">
 				<div className="row">
 					<div className="col-sm-12 col-md-6 col-lg-6">
@@ -87,6 +88,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 								Mint is live until{" "}
 								<span style={{ color: "#61A62D" }}>23 apr 04:00H</span>
 							</h6>
+
 							<br></br>
 							<button
 								className="button123"
@@ -122,6 +124,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 						/>
 					</div>
 				</div>
+				{/* {feedback.length > 0 && <div className="result">{feedback}</div>} */}
 			</div>
 		</div>
 	);

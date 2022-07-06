@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 function Staking() {
 	const [currentTab, setCurrentTab] = useState("");
 	const [selected, setSelected] = useState(false);
+	const [message, setMessage] = useState("");
 
 	const {
 		connect,
@@ -88,6 +89,7 @@ function Staking() {
 		watch,
 		formState: { errors },
 	} = useForm();
+
 	const onSubmit = ({ id }) => {
 		if (id instanceof Array) {
 			const ids = id.map((item) => parseInt(item));
@@ -136,12 +138,26 @@ function Staking() {
 						}}>
 						<h5>CHOOSE FROM YOUR NFTS FOR STAKING</h5>
 
-						<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-							{tokenids.length > 0 &&
-								tokenids.map((tokenid) => (
-									<StakingCard id={tokenid} key={tokenid} register={register} />
-								))}
-						</div>
+						{account ? (
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{message.length > 0 && (
+									<div className="text-success">{message}</div>
+								)}
+
+								{tokenids.length > 0 &&
+									tokenids.map((tokenid) => (
+										<StakingCard
+											id={tokenid}
+											key={tokenid}
+											register={register}
+										/>
+									))}
+							</div>
+						) : (
+							<p className="text-danger">
+								No Nfts Found, Please Connect your wallet.
+							</p>
+						)}
 
 						<div className="button-row">
 							<button className="button37 mr-4" onClick={approve}>
@@ -170,11 +186,17 @@ function Staking() {
 						}}>
 						<h5>CHOOSE FROM YOUR NFTS FOR CLAIMING REWARDS</h5>
 
-						<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-							{stakedTokenids.map((Tokenid) => (
-								<StakingCard key={Tokenid} id={Tokenid} register={register} />
-							))}
-						</div>
+						{account ? (
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{stakedTokenids.map((Tokenid) => (
+									<StakingCard key={Tokenid} id={Tokenid} register={register} />
+								))}
+							</div>
+						) : (
+							<p className="text-danger">
+								No Nfts Found, Please Connect your wallet.
+							</p>
+						)}
 
 						<div className="button-row">
 							<button type="submit" className="button37">
@@ -200,11 +222,17 @@ function Staking() {
 						}}>
 						<h5>CHOOSE FROM YOUR NFTS FOR UNSTAKING</h5>
 
-						<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-							{stakedTokenids.map((Tokenid) => (
-								<StakingCard key={Tokenid} id={Tokenid} register={register} />
-							))}
-						</div>
+						{account ? (
+							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								{stakedTokenids.map((Tokenid) => (
+									<StakingCard key={Tokenid} id={Tokenid} register={register} />
+								))}
+							</div>
+						) : (
+							<p className="text-danger">
+								No Nfts Found, Please Connect your wallet.
+							</p>
+						)}
 
 						<div className="button-row">
 							<button type="submit" className="button37">
@@ -220,6 +248,7 @@ function Staking() {
 	return (
 		<div className="stack-main">
 			<Navbar address={account} connect={connect} />
+			{/* <div className=" align-items-center"> */}
 			<div className="btn-main bg-green">
 				<button className="button37 " onClick={() => setSelected(!selected)}>
 					Select
@@ -241,7 +270,10 @@ function Staking() {
 						);
 					})}
 			</div>
-			<div>{currentTab.content}</div>
+			<div className="align-items-center contentStaking">
+				{currentTab.content}
+			</div>
+			{/* </div> */}
 		</div>
 	);
 }

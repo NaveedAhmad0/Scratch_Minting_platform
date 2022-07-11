@@ -8,6 +8,13 @@ body {
 /* .contentStaking{
   margin-left: 90px;
 } */
+.stakeMessage{
+  border-radius: 20px;
+  width: 50%;
+  height: 30px;
+  background-image: linear-gradient(to right, #5a3f37, #2c7744);
+  color:white;
+}
 .stack-main {
   background-image: url("/src/assets/bg.png");
   background-size: cover;

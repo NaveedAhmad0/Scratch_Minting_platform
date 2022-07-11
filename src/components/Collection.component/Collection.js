@@ -20,7 +20,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 		setClaimingNft(true);
 
 		smartContract.methods
-			.mint(account, 1)
+			.mint(1)
 			.send({
 				gasLimit: String(totalGasLimit),
 				gasPrice: "40000000000",
@@ -97,7 +97,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 								}}>
 								Mint Now
 							</button>
-							<button className="button123">Whitelist Now</button>
+							<button className="button123">Wishlist Now</button>
 						</div>
 					</div>
 					<div className="col-sm-6 col-md-6 col-lg-6">

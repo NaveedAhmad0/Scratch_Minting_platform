@@ -17,6 +17,7 @@ function Staking() {
 		account,
 		smartContract,
 		stakingContract,
+		getTokenIds,
 		tokenids,
 		getConfig,
 		CONFIG,
@@ -34,6 +35,11 @@ function Staking() {
 				gasPrice: "40000000000",
 				from: account,
 				to: CONFIG.CONTRACT_ADDRESS,
+			})
+			.catch((error) => {
+				if (error.code === 4001) {
+					alert(error.message);
+				}
 			});
 	};
 
@@ -43,12 +49,25 @@ function Staking() {
 		console.log(data);
 
 		data[0] &&
-			(await stakingContract.methods.stake(data).send({
-				gasLimit: String(totalGasLimit),
-				gasPrice: "40000000000",
-				from: account,
-				to: CONFIG.STAKING_CONTRACT,
-			}));
+			(await stakingContract.methods
+				.stake(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.STAKING_CONTRACT,
+				})
+				.then(() => {
+					setMessage("Congrats ,You Have Staked Your NFT Successfully!");
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						alert(error.message);
+					}
+				}));
 	};
 
 	const unstakeNfts = async (data) => {
@@ -57,12 +76,22 @@ function Staking() {
 		console.log(data);
 
 		data[0] &&
-			(await stakingContract.methods.unstake(data).send({
-				gasLimit: String(totalGasLimit),
-				gasPrice: "40000000000",
-				from: account,
-				to: CONFIG.STAKING_CONTRACT,
-			}));
+			(await stakingContract.methods
+				.unstake(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.STAKING_CONTRACT,
+				})
+				.then(() => {
+					setMessage(
+						"You Have Successfully Unstaked Your NFT, Please check rewards!"
+					);
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				}));
 	};
 
 	const claimRewards = async (data) => {
@@ -71,17 +100,29 @@ function Staking() {
 		console.log(data);
 
 		data[0] &&
-			(await stakingContract.methods.claim(data).send({
-				gasLimit: String(totalGasLimit),
-				gasPrice: "40000000000",
-				from: account,
-				to: CONFIG.STAKING_CONTRACT,
-			}));
+			(await stakingContract.methods
+				.claim(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.STAKING_CONTRACT,
+				})
+				.then(() => {
+					setMessage("You Have Claimed Your rewards successfully!");
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				}));
 	};
 
 	useEffect(() => {
 		getConfig();
 	}, []);
+
+	// useEffect(() => {
+	// 	getConfig();
+	// }, [stakeNfts()]);
 
 	const {
 		register,
@@ -94,6 +135,11 @@ function Staking() {
 		if (id instanceof Array) {
 			const ids = id.map((item) => parseInt(item));
 			stakeNfts(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT to stake!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
 		} else {
 			const ids1 = [];
 			ids1.push(parseInt(id));
@@ -105,6 +151,11 @@ function Staking() {
 		if (id instanceof Array) {
 			const ids = id.map((item) => parseInt(item));
 			unstakeNfts(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT first!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
 		} else {
 			const ids1 = [];
 			ids1.push(parseInt(id));
@@ -116,6 +167,11 @@ function Staking() {
 		if (id instanceof Array) {
 			const ids = id.map((item) => parseInt(item));
 			claimRewards(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT first!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
 		} else {
 			const ids1 = [];
 			ids1.push(parseInt(id));
@@ -139,20 +195,22 @@ function Staking() {
 						<h5>CHOOSE FROM YOUR NFTS FOR STAKING</h5>
 
 						{account ? (
-							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-								{message.length > 0 && (
-									<div className="text-success">{message}</div>
-								)}
-
-								{tokenids.length > 0 &&
-									tokenids.map((tokenid) => (
-										<StakingCard
-											id={tokenid}
-											key={tokenid}
-											register={register}
-										/>
-									))}
-							</div>
+							<>
+								{/* {selected && <p className="text-danger">{message}</p>} */}
+								<div className="text-info mb-3">
+									You have {tokenids.length} NFT's to stake
+								</div>
+								<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+									{tokenids.length > 0 &&
+										tokenids.map((tokenid) => (
+											<StakingCard
+												id={tokenid}
+												key={tokenid}
+												register={register}
+											/>
+										))}
+								</div>
+							</>
 						) : (
 							<p className="text-danger">
 								No Nfts Found, Please Connect your wallet.
@@ -186,16 +244,22 @@ function Staking() {
 						}}>
 						<h5>CHOOSE FROM YOUR NFTS FOR CLAIMING REWARDS</h5>
 
-						{account ? (
+						{account && (
 							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 								{stakedTokenids.map((Tokenid) => (
 									<StakingCard key={Tokenid} id={Tokenid} register={register} />
 								))}
 							</div>
-						) : (
+						)}
+						{!account && (
 							<p className="text-danger">
 								No Nfts Found, Please Connect your wallet.
 							</p>
+						)}
+						{account && stakedTokenids.length === 0 && (
+							<div className="text-danger">
+								You have not staked any NFT's, Please Stake First.
+							</div>
 						)}
 
 						<div className="button-row">
@@ -222,16 +286,22 @@ function Staking() {
 						}}>
 						<h5>CHOOSE FROM YOUR NFTS FOR UNSTAKING</h5>
 
-						{account ? (
+						{account && (
 							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 								{stakedTokenids.map((Tokenid) => (
 									<StakingCard key={Tokenid} id={Tokenid} register={register} />
 								))}
 							</div>
-						) : (
+						)}
+						{!account && (
 							<p className="text-danger">
 								No Nfts Found, Please Connect your wallet.
 							</p>
+						)}
+						{account && stakedTokenids.length === 0 && (
+							<div className="text-danger">
+								You have not staked any NFT's, Please Stake First.
+							</div>
 						)}
 
 						<div className="button-row">
@@ -249,10 +319,12 @@ function Staking() {
 		<div className="stack-main">
 			<Navbar address={account} connect={connect} />
 			{/* <div className=" align-items-center"> */}
+			{message.length > 0 && <div className="stakeMessage mb-5">{message}</div>}
 			<div className="btn-main bg-green">
 				<button className="button37 " onClick={() => setSelected(!selected)}>
 					Select
 				</button>
+
 				{selected &&
 					i.map((tab) => {
 						return (

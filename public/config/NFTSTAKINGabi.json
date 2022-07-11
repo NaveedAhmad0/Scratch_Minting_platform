@@ -15,6 +15,7 @@
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
+	{ "inputs": [], "name": "StakingPeriodIsNotOver", "type": "error" },
 	{
 		"anonymous": false,
 		"inputs": [
@@ -137,7 +138,7 @@
 		],
 		"name": "earningInfo",
 		"outputs": [
-			{ "internalType": "uint256[2]", "name": "info", "type": "uint256[2]" }
+			{ "internalType": "uint256[1]", "name": "info", "type": "uint256[1]" }
 		],
 		"stateMutability": "view",
 		"type": "function"

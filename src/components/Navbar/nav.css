@@ -6,7 +6,8 @@ a {
   color: white !important;
 }
 /* #nbn{
-  padding-top: 1%;
+  position:relative;
+  z-index: 2;
 } */
 #navimg {
   height: 7rem !important;

@@ -27,7 +27,7 @@ function Navbar({ connect, address }) {
 						</li>
 						<li className="nav-item">
 							<a className="nav-link" href="#about">
-								about
+								About
 							</a>
 						</li>
 						<li className="nav-item">

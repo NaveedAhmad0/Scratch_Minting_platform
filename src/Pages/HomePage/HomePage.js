@@ -6,10 +6,8 @@ import About from "../../components/About/About";
 import Card from "../../components/card component/Card.component";
 import Collection from "../../components/Collection.component/Collection";
 import Community from "../../components/Community Component/Community";
-import Faq from "../../components/FAQ/Faq";
 import Footer from "../../components/Footer/Footer";
 import Roadmap from "../../components/Roadmap/Roadmap";
-import Team from "../../components/Team component/Team";
 import userContext from "../../context/userContext";
 import Video from "../../components/Teaser/video";
 
@@ -46,13 +44,6 @@ function HomePage() {
 			<About />
 			<br />
 			<Roadmap />
-			<br></br>
-			<br></br>
-			<br></br>
-			<br />
-			<Team />
-			<br />
-			<Faq />
 			<br />
 			<Community />
 			{/* <br /> */}

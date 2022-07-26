@@ -1,10 +1,21 @@
 .community{
-    background-color: #c9dec5;
-    padding-top: 10%;
-    padding-bottom: 8%;
+    /* background-color: #c9dec5; */
+    background-image: url(../../assets/6.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top: -5%;
     font-family:'Poppins', sans-serif;
 }
-
+.community h1,p {
+    color: whitesmoke;
+    font-family: 'Chakra Petch', sans-serif;
+}
 .join-btn {
     background-color: green;
+    color: white;
+    padding: 8px 15px;
+    border: 1px solid white;
 }

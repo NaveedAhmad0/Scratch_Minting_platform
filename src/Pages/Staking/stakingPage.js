@@ -17,7 +17,6 @@ function Staking() {
 		account,
 		smartContract,
 		stakingContract,
-		getTokenIds,
 		tokenids,
 		getConfig,
 		CONFIG,
@@ -120,9 +119,9 @@ function Staking() {
 		getConfig();
 	}, []);
 
-	// useEffect(() => {
-	// 	getConfig();
-	// }, [stakeNfts()]);
+	// useEffect(()  => {
+	//   	 console.log('clicked');
+	// }, []);
 
 	const {
 		register,
@@ -318,7 +317,6 @@ function Staking() {
 	return (
 		<div className="stack-main">
 			<Navbar address={account} connect={connect} />
-			{/* <div className=" align-items-center"> */}
 			{message.length > 0 && <div className="stakeMessage mb-5">{message}</div>}
 			<div className="btn-main bg-green">
 				<button className="button37 " onClick={() => setSelected(!selected)}>

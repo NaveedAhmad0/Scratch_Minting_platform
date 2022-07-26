@@ -1,164 +1,95 @@
 import React from "react";
 import "./roadmap.css";
-import img1 from "../../assets/Group 889.png";
-import logo1 from "../../assets/smart-city-assets/1.svg";
-import logo2 from "../../assets/smart-city-assets/2.svg";
-import logo3 from "../../assets/smart-city-assets/3.svg";
-import logo4 from "../../assets/smart-city-assets/4.svg";
+// import img1 from "../../assets/Group 889.png";
+import logo1 from "../../assets/2.jpeg";
+import logo2 from "../../assets/3.jpeg";
+import logo3 from "../../assets/4.jpeg";
+import logo4 from "../../assets/5.jpeg";
+import roadmap from "../../assets/roadmap-line.png";
 
 function Roadmap() {
 	return (
-		<div id="roadmap">
-			<div style={{ paddingTop: "4%" }}>
-				<h5 className="text-black">
-					<span style={{ color: "#61A62D" }}>Our</span> Goals
-				</h5>
+		<div className="backgroundRoadmap">
+			<div className="road-title">
 				<h1>
-					<span style={{ color: "#61A62D" }}>Our </span>Roadmaps
+					<span style={{ color: "green" }}>OUR</span> ROADMAPS
 				</h1>
 			</div>
-			<br />
-			<div className="container">
-				<div className="row g-0">
-					<div className="col-sm-6 col-md-10" style={{ padding: "1%" }}>
-						<div className="card">
-							<div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
-								<div className="box">
-									<h2 style={{ fontWeight: "900" }}>10%</h2>
-								</div>
-								<div className="text RoadMapText container text-left">
-									<h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
-									<p>
-										Contrarytopopularbelief,Lorem Ipsumisnotsimplyrandom
-										text.IthasrootsinapieceofclassicalLatinliteraturefrom45BC,makingitover2000yearsold.
-										RichardMcClintock,aLatinprofessoratHampden-SydneyCollegeinVirginia,lookeduponeo
-									</p>
-								</div>
+			<div className="roadmap">
+				<div className="roadmap-container">
+					<div className="roadmap-content1">
+						<div className="timeline1">
+							<div className="content-img">
+								<img src={logo1} alt="logo"></img>
 							</div>
-						</div>
-					</div>
-					<div className="col-6 col-md-2 cssroadimg" style={{ padding: "1%" }}>
-						<div className="" id="">
-							<img
-								src={logo3}
-								className="logo1"
-								height={155}
-								width={155}
-								alt="nft"
-							/>
-						</div>
-					</div>
-					<div className="col-sm-6 col-md-10" style={{ padding: "1%" }}>
-						<div className="card">
-							<div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
-								<div className="box">
-									<h2 style={{ fontWeight: "900" }}>20%</h2>
-								</div>
-								<div className="text container RoadMapText text-left">
-									<h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
-									<p>
-										Contrarytopopularbelief,Lorem Ipsumisnotsimplyrandom
-										text.IthasrootsinapieceofclassicalLatinliteraturefrom45BC,makingitover2000yearsold.
-										RichardMcClintock,aLatinprofessoratHampden-SydneyCollegeinVirginia,lookeduponeo
-									</p>
-								</div>
+							<div className="myCircle text-white">
+								<p>10%</p>
 							</div>
-						</div>
-					</div>
-					<div className="col-6 col-md-2 cssroadimg" style={{ padding: "1%" }}>
-						<div className="" id="">
-							<img
-								src={logo1}
-								className="logo1"
-								height={155}
-								width={155}
-								alt="nft"
-							/>
-						</div>
-					</div>
-					<div className="col-sm-6 col-md-10" style={{ padding: "1%" }}>
-						<div className="card">
-							<div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
-								<div className="box">
-									<h2 style={{ fontWeight: "900" }}>50%</h2>
-								</div>
-								<div className="text container RoadMapText text-left">
-									<h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
-									<p>
-										Contrarytopopularbelief,Lorem Ipsumisnotsimplyrandom
-										text.IthasrootsinapieceofclassicalLatinliteraturefrom45BC,makingitover2000yearsold.
-										RichardMcClintock,aLatinprofessoratHampden-SydneyCollegeinVirginia,lookeduponeo
-									</p>
-								</div>
+							<div className="content-textCard">
+								<h3>NEQUE PORRO QUISQUAM</h3>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and
+									typesetting industry. Lorem Ipsum has been the industry's
+									standard dummy text ever since the 1500s
+								</p>
 							</div>
-						</div>
-					</div>
-					<div className="col-6 col-md-2 cssroadimg" style={{ padding: "1%" }}>
-						<div className="" id="">
-							<img
-								src={logo2}
-								className="logo1"
-								height={155}
-								width={155}
-								alt="nft"
-							/>
-						</div>
-					</div>
-					<div className="col-sm-6 col-md-10" style={{ padding: "1%" }}>
-						<div className="card">
-							<div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
-								<div className="box">
-									<h2 style={{ fontWeight: "900" }}>70%</h2>
-								</div>
-								<div className="text container RoadMapText text-left">
-									<h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
-									<p>
-										Contrarytopopularbelief,Lorem Ipsumisnotsimplyrandom
-										text.IthasrootsinapieceofclassicalLatinliteraturefrom45BC,makingitover2000yearsold.
-										RichardMcClintock,aLatinprofessoratHampden-SydneyCollegeinVirginia,lookeduponeo
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="col-6 col-md-2 cssroadimg" style={{ padding: "1%" }}>
-						<div className="" id="">
-							<img
-								src={logo3}
-								className="logo1"
-								height={155}
-								width={155}
-								alt="nft"
-							/>
 						</div>
 					</div>
 
-					<div className="col-sm-6 col-md-10" style={{ padding: "1%" }}>
-						<div className="card">
-							<div style={{ padding: "2%" }} className="col-10 d-flex cssroad">
-								<div className="box text-white">
-									<h2 style={{ fontWeight: "900" }}>100%</h2>
-								</div>
-								<div className="text container RoadMapText text-left">
-									<h4 style={{ fontWeight: "bolder" }}>Neque porro quisquam</h4>
-									<p>
-										Contrarytopopularbelief,Lorem Ipsumisnotsimplyrandom
-										text.IthasrootsinapieceofLatinliteraturefrom45BC,makingitover2000yearsold.
-										RichardMcClintock,aLatinprofessoratHampden-SydneyCollegeinVirginia,lookeduponeo
-									</p>
-								</div>
+					<div className="roadmap-content2">
+						<div className="timeline2">
+							<div className="content-textCard">
+								<h3>NEQUE PORRO QUISQUAM</h3>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and
+									typesetting industry. Lorem Ipsum has been the industry's
+									standard dummy text ever since the 1500s
+								</p>
+							</div>
+							<div className="myCircle text-white">
+								<p>25%</p>
+							</div>
+							<div className="content-img">
+								<img src={logo2} alt="logo"></img>
 							</div>
 						</div>
 					</div>
-					<div className="col-6 col-md-2 cssroadimg" style={{ padding: "1%" }}>
-						<div className="" id="">
-							<img
-								src={logo4}
-								className="logo1"
-								height={155}
-								width={155}
-								alt="nft"
-							/>
+
+					<div className="roadmap-content3">
+						<div className="timeline3">
+							<div className="content-img">
+								<img src={logo3} alt="logo"></img>
+							</div>
+							<div className="myCircle text-white">
+								<p>50%</p>
+							</div>
+							<div className="content-textCard">
+								<h3>NEQUE PORRO QUISQUAM</h3>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and
+									typesetting industry. Lorem Ipsum has been the industry's
+									standard dummy text ever since the 1500s
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="roadmap-content4">
+						<div className="timeline4">
+							<div className="content-textCard">
+								<h3>NEQUE PORRO QUISQUAM</h3>
+								<p>
+									Lorem Ipsum is simply dummy text of the printing and
+									typesetting industry. Lorem Ipsum has been the industry's
+									standard dummy text ever since the 1500s
+								</p>
+							</div>
+							<div className="myCircle text-white">
+								<p>100%</p>
+							</div>
+							<div className="content-img">
+								<img src={logo4} alt="logo"></img>
+							</div>
 						</div>
 					</div>
 				</div>

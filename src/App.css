@@ -1,6 +1,8 @@
 @import "bootstrap/dist/css/bootstrap.css";
 .App {
   text-align: center;
+  background-color: #000000;
+
 }
 
 .App-logo {

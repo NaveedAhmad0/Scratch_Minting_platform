@@ -1,9 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap');
+
+#aboutroboto{
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 900;
+    font-size: 3.3vw;
+  }
 .circle{
     width: 100px;
     height:100px;
     padding: 20px;
     border-radius: 50% 50%;
     background-color: green;
+}
+#about{
+    /* background-image: url(../../assets/roboto\ nft\ assets/about-bg.png);
+     */
+     background-image: url(../../assets/about-bg.png);
+    height: 120vh;
+    background-size: 100% 132%;
+          /* background-repeat: "no-repeat" !important; */
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+  }
+.aboutus{
+    margin-top: -9%;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    /* height: 40%; */
+    margin-bottom: 6%;
+    margin-block: auto;
 }
 .dashline{
     margin-top: 40px;
@@ -33,6 +60,10 @@
 .card-title{
     font-size: medium;
     font-weight: 500;
+}
+.pic55{
+    margin-top: -40%;
+
 }
 .card-text{
     font-size: small;
@@ -125,6 +156,12 @@
        margin-left: 8%;
        margin-bottom: 2%;
     }
+    .pic55{
+        margin-left: -2rem;
+        margin-top: -3rem;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+      }
     /* #css1111{
         margin-left: -3.5in;
     } */

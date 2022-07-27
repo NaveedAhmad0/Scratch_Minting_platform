@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Chakra Petch'); */
+/* @import url('../../fonts-for-roboto/Chakra_Petch/ChakraPetch-Bold.ttf'); */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap');
 #icon123{
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: 1px;
-  font-weight: bolder;
-  font-size: 4.3vw;
+  font-family: 'Chakra Petch', sans-serif;
+  /* font-family:"";*/
+  /* src: url('../../fonts-for-roboto/Chakra_Petch/ChakraPetch-Bold.ttf');  */
+  letter-spacing: 3px;
+  font-weight: revert;
+    font-size: 3.3vw;
+    margin-top: 24px;
 }
 .result {
   background-color: #434343;
@@ -47,8 +53,8 @@
   }
   
   #css1{
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: -10%;
+    margin-left: 34%;
   }
   .img2{
     margin-top: 48%;
@@ -62,6 +68,10 @@
   .img4 {
     margin-top: -107%;
     margin-left: 75%;
+}
+.img5{
+  margin-top: -21%;
+    margin-left: 27px;
 }
 @media only screen and (max-width: 700px) {
   #icon123{
@@ -87,20 +97,34 @@
 #collection{
   margin-top: 20px; 
 }
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap');
-#icon123{
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: 3px;
-  font-weight: bolder;
-  font-size: 4.3vw;
+#home {
+  
 }
+
 .mystyle{
-  background-image: url(../../assets/smart-city-assets/bg.png);
-		/* height: 120vh; */
-		background-size: "cover";
-		background-repeat: "no-repeat";
+  /* background:linear-gradient(to bottom, rgba(0,0,0,0), #151515) !important; */
+  background-image: url(../../assets/roboto\ nft\ assets/hero-beackground.jpg);
+		height: 120vh;
+		background-size: 100% 132%;
+		background-repeat: "no-repeat" !important;
     width: 100%;
+
+    
 }
+.backimg{
+  background:linear-gradient(to bottom, rgba(0,0,0,0)) !important;
+}
+/* .mystyle:before{
+	content: '';
+	position: absolute;
+  display: flex;
+	left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom , rgb(0, 0, 0) 30%, rgb(255, 255, 255) 100%);
+  opacity: .5;
+} */
 .button123 {
     background: transparent;
     border-radius: 5px;
@@ -116,7 +140,9 @@
     transition-duration: 0.4s;
     cursor: pointer;
   }
-  
+  .buttondivtag{
+    width: max-content;
+  }
 
   
   .button123:hover {
@@ -124,11 +150,11 @@
     color: white;
   }
   #css1{
-    margin-top: 5%;
+    /* margin-top: 5%; */
     text-align: left;
   }
   #css1 h6{
-    font-weight: 300;
+    font-weight: 500;
   }
   .img2{
     margin-top: 28%;
@@ -168,4 +194,14 @@
   #icon123{
     font-size: 7vw;
   }
+  .img5{
+    margin-top: -23% !important;
+    margin-left: -111px !important;
+    height: 34rem;
+    width: -webkit-fill-available;
+  }
+  #css1{
+    margin-left: 0rem !important;
+  }
+  
 }

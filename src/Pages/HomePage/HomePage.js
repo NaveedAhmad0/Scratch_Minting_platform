@@ -10,6 +10,8 @@ import Footer from "../../components/Footer/Footer";
 import Roadmap from "../../components/Roadmap/Roadmap";
 import userContext from "../../context/userContext";
 import Video from "../../components/Teaser/video";
+import CardsonConnect from "../../components/cardsonConnect/cardsconnect";
+import Paggination from "../../components/Pagginnation/index";
 
 function HomePage() {
 	const { connect, account, smartContract, CONFIG, error, getConfig } =
@@ -34,14 +36,19 @@ function HomePage() {
 				smartContract={smartContract}
 				CONFIG={CONFIG}
 			/>
+			<About />
 			<Video />
 			<br />
 			<br />
-			<Card />
+			<br />
+			<Paggination />
+			<br></br>
+			{/* <Roadmap /> */}
 			<br></br>
 			<br></br>
-
-			<About />
+			<CardsonConnect />
+			<br />
+			<br />
 			<br />
 			<Roadmap />
 			{/* <br /> */}

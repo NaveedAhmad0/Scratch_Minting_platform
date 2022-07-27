@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap');
+#mystylevideo{
+    background-image: url(../../assets/roboto\ nft\ assets/video-background.png);
+    height: 120vh;
+    background-size: 100% 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    /* background-position-y: bottom; */
+    /* background-size: contain; */
+}
+#videroboto{
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 900;
+    font-size: 4vw;
+}
+@media(max-width:480px) {
+#mystylevideo {
+    background-image: none;
+    height: auto;
+}
+.video{
+    width: -webkit-fill-available;
+}
+}

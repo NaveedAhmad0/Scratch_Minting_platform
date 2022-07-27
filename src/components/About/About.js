@@ -3,24 +3,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import pic2 from "../../assets/smart-city-assets/artist1.png";
 import pic3 from "../../assets/smart-city-assets/artist2.png";
+import pic55 from "../../assets/roboto nft assets/about-robot-img.png";
 import "./about.css";
 
 function About() {
 	return (
 		<>
 			<div id="about" className="container">
+				<h6 className="aboutus text-white">ABOUT US -------&gt; </h6>
 				<div className="row">
 					<div className="col-sm-6">
 						<div className="text-left">
-							<p>
+							{/* <p>
 								<span style={{ color: "#61A62D" }}>The </span>Story
-							</p>
-							<h1 className="text-black">
-								<span style={{ color: "#61A62D" }}>About</span> Smart
+							</p> */}
+							<h1 id="aboutroboto" className="text-white">
+								<span style={{ color: "#61A62D" }}>ABOUT</span> SMART
 								<br />
-								Money revolution
+								MONEY REVOLUTION
 							</h1>
-							<p style={{ fontSize: "" }}>
+							<p className="text-white" style={{ fontSize: "" }}>
 								Contrary to popular belief,Lorem Ipsum is not simply random
 								text. It has roots in a piece of classical Latin literature from
 								45BC,making it over 2000 years old. Richard McClintock, a Latin
@@ -28,31 +30,39 @@ function About() {
 								the more obscure Latin words,consectetur,from a Lorem Ipsum
 								passage,
 							</p>
-							<p>
+							<p className="text-white">
 								<FontAwesomeIcon
 									style={{ color: "#61A62D" }}
 									icon={faCircleCheck}
 								/>{" "}
 								Nullanonorciajustoefficiturmaximus.
 							</p>
-							<p>
+							<p className="text-white">
 								<FontAwesomeIcon
 									style={{ color: "#61A62D" }}
 									icon={faCircleCheck}
 								/>{" "}
 								Inidantequiserattempusluctus.
 							</p>
-							<p>
+							<p className="text-white">
 								<FontAwesomeIcon
 									style={{ color: "#61A62D" }}
 									icon={faCircleCheck}
 								/>{" "}
 								Duisviverranislegetmattisgravida.
 							</p>
+							<button style={{marginLeft:""}}className="button123">READ MORE</button>
 						</div>
 					</div>
 					<div className="col-sm-6">
-						<h6 className="meet text-left">
+					<img
+						src={pic55}
+						className="pic55"
+						alt="imge"
+						width={730}
+						height={780}
+						/>
+						{/* <h6 className="meet text-left">
 							<span style={{ color: "#61A62D" }}>Meet</span> The Artist
 						</h6>
 						<br></br>
@@ -85,10 +95,10 @@ function About() {
 									</p>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
-				<div className="container mt-5 text-left">
+				{/* <div className="container mt-5 text-left">
 					<p>
 						<span style={{ color: "#61A62D" }}>Easy</span> Steps
 					</p>
@@ -138,7 +148,7 @@ function About() {
 						<br />
 						<h5 className="text-black">Receive Your NFTs</h5>
 					</div>
-				</div>
+				</div> */}
 			</div>
 			{/* </div> */}
 		</>

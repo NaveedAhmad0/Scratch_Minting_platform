@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+
+
+.Container12 {
+  font-size: x-large;
+  font-family: 'Chakra Petch', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image:url(../../images/crazy-minting-nft.png);
+  background-position: bottom;
+}
+
+.grUxXV {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  direction: ltr;
+  height: -webkit-fill-available;
+  margin-top:-5rem;
+}
+.pag123{
+  flex-direction: column;
+}
+.paginnationcom{
+  /* margin-top: -57% !important;
+  margin-right: -20% !important; */
+  margin-bottom: 120px;
+  max-width: -webkit-fill-available !important;
+}
+#head{
+font-family: 'Chakra Petch', sans-serif;
+margin: 25px;
+margin-top: 25px;
+margin-right: 25px;
+text-align: center;
+/* margin-top: -25rem; */
+margin-right: -20rem;
+font-weight:900;
+font-size: xx-large;
+}
+
+/* .card{
+  position:fixed;
+  width: 80px;
+  height: 5px;
+  margin-bottom: -20rem;
+ margin-left:-117rem;
+} */
+
+.image:hover{
+  border: 15px solid white !important;
+  border-radius: 50% !important;
+
+}
+
+
+.lhFzqP {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.6em;
+  background-color:green;
+  color:green;
+  box-shadow: 0 0 2px 0px white;
+  border-radius: 50%;
+  border: none;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  line-height: 50px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  cursor: pointer;
+  outline: none;
+}
+

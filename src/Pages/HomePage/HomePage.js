@@ -44,7 +44,7 @@ function HomePage() {
 			<About />
 			<br />
 			<Roadmap />
-			<br />
+			{/* <br /> */}
 			<Community />
 			{/* <br /> */}
 			<Footer />

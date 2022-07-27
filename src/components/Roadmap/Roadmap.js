@@ -7,6 +7,61 @@ import logo3 from "../../assets/4.jpeg";
 import logo4 from "../../assets/5.jpeg";
 import roadmap from "../../assets/roadmap-line.png";
 
+const RoadmapComp = ({ percent, logo, margin, bot }) => {
+	return (
+		<div className="container roadmapCompOne">
+			<div className="col-5 content-img text-right">
+				<img src={logo} alt="logo"></img>
+			</div>
+			<div className="col-2 justify-content-center">
+				<div
+					className="roadmappercentage"
+					style={{
+						marginLeft: `${margin}`,
+						marginBottom: `${bot}`,
+					}}>
+					<p style={{ alignSelf: "center", paddingTop: "10px" }}>{percent}%</p>
+				</div>
+			</div>
+			<div className="col-5 justify-content-center">
+				<div className="content-textCard ">
+					<h3>NEQUE PORRO QUISQUAM</h3>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s
+					</p>
+				</div>
+			</div>
+		</div>
+	);
+};
+const RoadmapCompTwo = (props) => {
+	return (
+		<div className="container roadmapCompTwo">
+			<div className="col-5 text-right" style={{ alignItems: "flex-start" }}>
+				<div className="content-textCard text-right m-auto">
+					<h3>NEQUE PORRO QUISQUAM</h3>
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s
+					</p>
+				</div>
+			</div>
+			<div className="col-2 justify-content-right">
+				<div className="m-auto roadmappercentage2">
+					<p style={{ alignSelf: "center", paddingTop: "10px" }}>
+						{props.percent}%
+					</p>
+				</div>
+			</div>
+			<div className="col-5 content-img text-left">
+				<img src={props.logo} alt="logo"></img>
+			</div>
+		</div>
+	);
+};
 function Roadmap() {
 	return (
 		<div className="backgroundRoadmap">
@@ -15,83 +70,12 @@ function Roadmap() {
 					<span style={{ color: "green" }}>OUR</span> ROADMAPS
 				</h1>
 			</div>
-			<div className="roadmap">
-				<div className="roadmap-container">
-					<div className="roadmap-content1">
-						<div className="timeline1">
-							<div className="content-img">
-								<img src={logo1} alt="logo"></img>
-							</div>
-							<div className="myCircle text-white">
-								<p>10%</p>
-							</div>
-							<div className="content-textCard">
-								<h3>NEQUE PORRO QUISQUAM</h3>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className="roadmap-content2">
-						<div className="timeline2">
-							<div className="content-textCard">
-								<h3>NEQUE PORRO QUISQUAM</h3>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s
-								</p>
-							</div>
-							<div className="myCircle text-white">
-								<p>25%</p>
-							</div>
-							<div className="content-img">
-								<img src={logo2} alt="logo"></img>
-							</div>
-						</div>
-					</div>
-
-					<div className="roadmap-content3">
-						<div className="timeline3">
-							<div className="content-img">
-								<img src={logo3} alt="logo"></img>
-							</div>
-							<div className="myCircle text-white">
-								<p>50%</p>
-							</div>
-							<div className="content-textCard">
-								<h3>NEQUE PORRO QUISQUAM</h3>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className="roadmap-content4">
-						<div className="timeline4">
-							<div className="content-textCard">
-								<h3>NEQUE PORRO QUISQUAM</h3>
-								<p>
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s
-								</p>
-							</div>
-							<div className="myCircle text-white">
-								<p>100%</p>
-							</div>
-							<div className="content-img">
-								<img src={logo4} alt="logo"></img>
-							</div>
-						</div>
-					</div>
+			<div className=" roadmap">
+				<div className="blabla">
+					<RoadmapComp logo={logo4} percent="10" margin="75px" bot="90px" />
+					<RoadmapCompTwo logo={logo3} percent="25" />
+					<RoadmapComp logo={logo2} percent="50" margin="70px" />
+					<RoadmapCompTwo logo={logo1} percent="100" />
 				</div>
 			</div>
 		</div>

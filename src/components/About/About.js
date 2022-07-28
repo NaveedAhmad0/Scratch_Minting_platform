@@ -11,7 +11,7 @@ function About() {
 		<>
 			<div id="about" className="container">
 				<h6 className="aboutus text-white">ABOUT US -------&gt; </h6>
-				<div className="row">
+				<div className="row rowabout123">
 					<div className="col-sm-6">
 						<div className="text-left">
 							{/* <p>

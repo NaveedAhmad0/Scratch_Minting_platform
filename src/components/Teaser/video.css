@@ -13,6 +13,15 @@
     font-weight: 900;
     font-size: 4vw;
 }
+@media(max-width:850px) {
+    #mystylevideo {
+        background-image: none;
+        height: auto;
+    }
+    .video{
+        width: -webkit-fill-available;
+    }
+}
 @media(max-width:480px) {
 #mystylevideo {
     background-image: none;

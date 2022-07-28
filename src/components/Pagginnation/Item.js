@@ -7,8 +7,8 @@ export default styled.div`
   height: 300px;
   width: 300%;
   padding:30px 50px
-  margin:0rem 10px;
-  font-size: 4em;
+  margin:0rem 10px; 
+  font-size: 3.3vw;
   clip-path: circle();
   
  

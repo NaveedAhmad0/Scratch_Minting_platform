@@ -20,13 +20,13 @@ function Pagination() {
 	return (
 		<div className="Container12 pag123 text-center">
 			<div className="paginnationcom">
-				<h1 className=" text-center">
+				<h1 className="fontpagg text-center">
 					<span style={{ color: "#61A62D" }}>CRAZY </span>{" "}
 					<span style={{ color: "white" }}>MINTING NFTs</span>
 					{/* <span style={{ color: "white" }}>NFTs</span> */}
 				</h1>
 			</div>
-			<Carousel breakPoints={breakPoints} pagination={false} mode="gallery">
+			<Carousel className="buttoncarousel" breakPoints={breakPoints} pagination={false} mode="gallery">
 				<Item>
 					<img src={image1} className="image" alt="" style={{ height: 300 }} />
 				</Item>

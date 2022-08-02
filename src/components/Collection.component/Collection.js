@@ -7,10 +7,13 @@ import Navbar from "../../components/Navbar/navb";
 import img4 from "../../assets/roboto nft assets/herorobot.png";
 // import img6 from "../../assets/roboto nft assets/hero-beackground.jpg";
 import axios from "axios";
+import { useEffect } from "react";
 
 function Collection({ connect, account, smartContract, CONFIG }) {
 	const [feedback, setFeedback] = useState(``);
 	const [claimingNft, setClaimingNft] = useState("");
+	const [nftSupply, setNftSupply] = useState(0);
+	const [nftMinted, setNftMinted] = useState(0);
 
 	const mintNFTs = async () => {
 		console.log("Smart Contract", smartContract);
@@ -69,6 +72,17 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 			});
 	};
 
+	const totalSupply = async () => {
+		const nftsply = await smartContract.methods.maxSupply().call();
+		setNftSupply(nftsply);
+		const nftminted = await smartContract.methods.totalSupply().call();
+		setNftMinted(nftminted);
+	};
+
+	useEffect(() => {
+		totalSupply();
+	}, []);
+
 	return (
 		<div id="home" className="mystyle">
 			<Navbar connect={connect} address={account} />
@@ -77,50 +91,27 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 			<div className="container mt-5 mb-3 d-flex" id="collection">
 				<div className="row">
 					<div className="col-sm-6 col-md-6 col-lg-6">
-						{/* <img
-							src={img2}
-							className="img2"
-							alt="imge"
-							width={250}
-							height={260}
-						/> */}
-						{/* <img
-							src={img3}
-							className="img3"
-							alt="imge"
-							width={350}
-							height={400}
-						/>
 						<img
-							src={img1}
-							className="img4"
+							src={img4}
+							className="img5"
 							alt="imge"
-							width={230}
-							height={270}
-						/> */}
-						<img
-						src={img4}
-						className="img5"
-						alt="imge"
-						width={730}
-						height={680}
+							width={730}
+							height={680}
 						/>
-						{/* <img
-						src={img6}
-						className="img6"
-						alt="imge"
-						// width={700}
-						// height={650}
-						/> */}
 					</div>
 					<div className="col-sm-12 col-md-6 col-lg-6">
-						<div className="text-left colllec" style={{marginLeft:"12rem"}}id="css1">
+						<div
+							className="text-left colllec"
+							style={{ marginLeft: "12rem" }}
+							id="css1">
 							<h1 id="icon123" className="text-white">
-								CRAZY MINTING <br />{" "}
-								NFT COLLECTION{" "}
+								CRAZY MINTING <br /> NFT COLLECTION{" "}
 							</h1>
-							<h3 className="" style={{ color: "#61A62D" }}>2499/4000 
-							<span className="text-white" style={{paddingLeft:"1rem"}}>MINTED</span>
+							<h3 className="" style={{ color: "#61A62D" }}>
+								{nftMinted}/{nftSupply}
+								<span className="text-white" style={{ paddingLeft: "1rem" }}>
+									MINTED
+								</span>
 							</h3>
 							<h6 className="text-white">
 								Max 2 nft per wallet. price 0.03 ETH + GAS
@@ -132,14 +123,16 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 
 							<br></br>
 							<div className="buttondivtag">
-							<button
-								className="button123"
-								onClick={() => {
-									mintNFTs();
-								}}>
-								Mint Now
-							</button> 
-							<button style={{marginLeft:"1rem"}}className="button123">Wishlist Now</button>
+								<button
+									className="button123"
+									onClick={() => {
+										mintNFTs();
+									}}>
+									Mint Now
+								</button>
+								<button style={{ marginLeft: "1rem" }} className="button123">
+									Wishlist Now
+								</button>
 							</div>
 						</div>
 					</div>

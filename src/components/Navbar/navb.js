@@ -35,19 +35,15 @@ function Navbar({ connect, address }) {
 								Roadmap
 							</a>
 						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#team">
-								Team
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#faq">
-								FAQ
-							</a>
-						</li>
+
 						<li className="nav-item">
 							<Link to="/staking" className="nav-link">
 								Staking
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link to="/leasing" className="nav-link">
+								Leasing
 							</Link>
 						</li>
 					</ul>

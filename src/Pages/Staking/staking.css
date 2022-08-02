@@ -1,8 +1,9 @@
-html,
+
 body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+  background-color: black;
   padding: 0;
 }
 /* .contentStaking{
@@ -16,7 +17,7 @@ body {
   color:white;
 }
 .stack-main {
-  background-image: url("/src/assets/bg.png");
+  /* background-image: url("/src/assets/bg.png"); */
   background-size: cover;
   margin-right: auto;
   width: 100%;
@@ -34,7 +35,7 @@ body {
   width: 200px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 20px;
 }
 
@@ -46,7 +47,7 @@ body {
 .card-btn {
   background-color: #13aa52;
   border: 1px solid #13aa52;
-  border-radius: 4px;
+  /* border-radius: 4px;   */
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: #fff;
@@ -79,9 +80,9 @@ input[type="checkbox"] {
   align-items: left;
 }
 .button37 {
-  background-color: #13aa52;
-  border: 1px solid #13aa52;
-  border-radius: 4px;
+  background-color: #61B42E;
+  border: 1px solid #61B42E;
+  /* border-radius: 4px; */
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   box-sizing: border-box;
   color: #fff;
@@ -114,6 +115,6 @@ input[type="checkbox"] {
 
 .bg-green {
   width: 200px;
-  background-color: #13aa52;
-  border-radius: 10px;
+  background-color: #61B42E;
+  /* border-radius: 10px; */
 }

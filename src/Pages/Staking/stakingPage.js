@@ -322,7 +322,6 @@ function Staking() {
 				<button className="button37 " onClick={() => setSelected(!selected)}>
 					Select
 				</button>
-
 				{selected &&
 					i.map((tab) => {
 						return (
@@ -343,7 +342,6 @@ function Staking() {
 			<div className="align-items-center contentStaking">
 				{currentTab.content}
 			</div>
-			{/* </div> */}
 		</div>
 	);
 }

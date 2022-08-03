@@ -8,12 +8,16 @@ import wallet from "../../assets/roboto nft assets/wallet.png";
 const cards = () => {
 	return (
 		<div id="cardsconnect" className="container">
-			<div className="aboutrobotocard">
-				<div className="text-white">
-					<span style={{ color: "#69B330", paddingRight: "1rem" }}>ABOUT</span>
+			<div className="aboutrobotocard text-white">
+				<p className="cardsText">
+					<span
+						className="cardsText"
+						style={{ color: "#69B330", paddingRight: "1rem" }}>
+						ABOUT
+					</span>
 					SMART
-				</div>
-				<div className="text-white">MONEY REVALUTION</div>
+				</p>
+				<p className="cardsText text-white"> MONEY REVALUTION</p>
 			</div>
 			<div className="cards-list">
 				<div className="card 1">

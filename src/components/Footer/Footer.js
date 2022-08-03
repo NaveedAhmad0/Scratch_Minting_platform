@@ -1,81 +1,110 @@
 import React from "react";
 import logo from "../../assets/VectorLogo.svg";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaTelegramPlane } from "react-icons/fa";
+// import { Container, Row, Col } from "react-bootstrap";
+// import { FaTelegramPlane } from "react-icons/fa";
 import "./footer.css";
 
 function Footer() {
 	return (
-		<footer className="footer">
-			<Container>
-				<Row>
-					<Col lg="3" md="6" sm="6">
-						<div className="logo-footer">
-							<img src={logo} alt="Logo" />
-							<p className="text-left text-left1">
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-								Exercitationem, provident!
-							</p>
+		<footer className="footer-section">
+			<div className="container">
+				<div className="footer-content py-5">
+					<div className="row">
+						<div className="col-lg-4">
+							<div className="footer-widget">
+								<div className="footer-logo">
+									<a href="#">
+										<img src={logo} alt="Logo" className="img-fluid" />
+									</a>
+								</div>
+								<div className="footer-social-icon">
+									<a href="#">
+										<i class="fab fa-facebook-f social-bg"></i>
+									</a>
+									<a href="#">
+										<i class="fab fa-twitter social-bg"></i>
+									</a>
+									<a href="#">
+										<i class="fab fa-linkedin-in social-bg"></i>
+									</a>
+									<a href="#">
+										<i class="fab fa-instagram social-bg"></i>
+									</a>
+								</div>
+							</div>
 						</div>
-					</Col>
-
-					<Col lg="2" md="3" sm="6" className="sitemap-style">
-						<h5>Sitemap</h5>
-						<div className="list__item">
-							<h6 className="css1234">
-								<a href="#home">Home</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#about">About</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#roadmap">Roadmap</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#faq">FAQ</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#articles">Articles</a>
-							</h6>
+						<div className="col-lg-4">
+							<div className="footer-widget">
+								<div className="footer-widget-heading">
+									<h3>SITEMAP</h3>
+								</div>
+								<ul>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Home
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Home
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>About
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>About
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Roadmap
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Roadmap
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Articles
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span> &#62;&nbsp; </span>Articles
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</Col>
-
-					<Col lg="2" md="3" sm="6" className="sitemap-style">
-						<h5>Sitemap</h5>
-						<div className="list__item">
-							<h6 className="css1234">
-								<a href="#home">Home</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#about">About</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#roadmap">Roadmap</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#faq">FAQ</a>
-							</h6>
-							<h6 className="css1234">
-								<a href="#articles">Articles</a>
-							</h6>
+						<div className="col-lg-4">
+							<div className="footer-widget-heading">
+								<h3>NEWSLETTER</h3>
+							</div>
+							<div className="footer-text">
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+							</div>
+							<div className="subscribe-form">
+								<form>
+									<input type="text" placeholder="Enter Email here..." />
+									<button>
+										<i className="fab fa-telegram-plane"></i>
+									</button>
+								</form>
+							</div>
 						</div>
-					</Col>
-
-					<Col lg="2" md="3" sm="6" className="sitemap-style">
-						<h5>Sitemap</h5>
-						<div className="list_box">
-							<input
-								type="text"
-								className="newsletter"
-								placeholder="Email address"
-							/>
-							<button id="footerbutton" className="btn btn-success fly-btn">
-								<FaTelegramPlane />
-							</button>
-						</div>
-					</Col>
-				</Row>
-			</Container>
+					</div>
+				</div>
+			</div>
+			<hr></hr>
+			<div className="copywrite">
+				<p>&#169; COPYRIGHT 2022, ALL RIGHTS RESERVED</p>
+			</div>
 		</footer>
 	);
 }

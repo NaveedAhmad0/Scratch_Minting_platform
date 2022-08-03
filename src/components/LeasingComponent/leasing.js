@@ -11,6 +11,7 @@ import Navbar from "../Navbar/navb";
 import LeasingCard from "../Leasing-card-component/LeasingCard";
 import userContext from "../../context/userContext";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 // const LeasingCardDeck = ({ id }) => {
 // 	return (
@@ -30,14 +31,19 @@ const Leasing = () => {
 		connect,
 		account,
 		smartContract,
-		stakingContract,
+		rentalContract,
 		tokenids,
 		getConfig,
 		CONFIG,
-		stakedTokenids,
 	} = useContext(userContext);
-
-	console.log(tokenids.length);
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
+	// console.log(rentalContract);
+	// console.log(tokenids);
 
 	const i = [
 		{
@@ -54,7 +60,9 @@ const Leasing = () => {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE FROM YOUR NFTS TO DEPOSITE AS RENT</h5>
+						<h5 className="text-white">
+							CHOOSE FROM YOUR NFTS TO DEPOSITE AS RENT
+						</h5>
 
 						{account ? (
 							<>
@@ -69,7 +77,7 @@ const Leasing = () => {
 												id={tokenid}
 												// image={Nftimg3}
 												key={tokenid}
-												// register={register}
+												register={register}
 											/>
 										))}
 								</div>
@@ -104,15 +112,15 @@ const Leasing = () => {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE THE NFT YOU WANT TO RENT</h5>
+						<h5 className="text-white">CHOOSE THE NFT YOU WANT TO RENT</h5>
 
 						{account && (
 							<div className="cardDdeck">
 								{/* {stakedTokenids.map((Tokenid) => ( */}
-								<LeasingCard image={Nftimg3} />
-								<LeasingCard image={Nftimg2} />
-								<LeasingCard image={Nftimg} />
-								<LeasingCard image={Nftimg1} />
+								<LeasingCard image={Nftimg3} register={register} />
+								<LeasingCard image={Nftimg2} register={register} />
+								<LeasingCard image={Nftimg} register={register} />
+								<LeasingCard image={Nftimg1} register={register} />
 								{/* //  key={Tokenid}
 							//  id={Tokenid}
 							//  register={register} */}
@@ -154,15 +162,15 @@ const Leasing = () => {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE AN NFT TO RETURN</h5>
+						<h5 className="text-white">CHOOSE AN NFT TO RETURN</h5>
 
 						{account && (
 							<div className="cardDdeck">
 								{/* {stakedTokenids.map((Tokenid) => ( */}
-								<LeasingCard image={Nftimg} />
-								<LeasingCard image={Nftimg1} />
-								<LeasingCard image={Nftimg2} />
-								<LeasingCard image={Nftimg3} />
+								<LeasingCard image={Nftimg} register={register} />
+								<LeasingCard image={Nftimg1} register={register} />
+								<LeasingCard image={Nftimg2} register={register} />
+								<LeasingCard image={Nftimg3} register={register} />
 								{/* // id={Tokenid}
 									// register={register} */}
 								{/* ))} */}
@@ -191,34 +199,36 @@ const Leasing = () => {
 	];
 
 	return (
-		<div className="container">
+		<>
 			<Navbar connect={connect} address={account} />
-			<div className="btn-main m-auto mb-4 bg-green">
-				<button className="button37 " onClick={() => setSelected(!selected)}>
-					Select
-				</button>
+			<div className="lease-main">
+				<div className="btn-main m-auto mb-4 bg-green">
+					<button className="button37 " onClick={() => setSelected(!selected)}>
+						Select
+					</button>
 
-				{selected &&
-					i.map((tab) => {
-						return (
-							<button
-								onClick={() => {
-									if (currentTab.id !== tab.id) {
-										setCurrentTab(tab);
-										setSelected(false);
-									}
-								}}
-								className=" button37 hover"
-								key={tab.id}>
-								{tab.title}
-							</button>
-						);
-					})}
+					{selected &&
+						i.map((tab) => {
+							return (
+								<button
+									onClick={() => {
+										if (currentTab.id !== tab.id) {
+											setCurrentTab(tab);
+											setSelected(false);
+										}
+									}}
+									className=" button37 hover"
+									key={tab.id}>
+									{tab.title}
+								</button>
+							);
+						})}
+				</div>
+				<div className="align-items-center contentStaking">
+					{currentTab.content}
+				</div>
 			</div>
-			<div className="align-items-center contentStaking">
-				{currentTab.content}
-			</div>
-		</div>
+		</>
 	);
 };
 

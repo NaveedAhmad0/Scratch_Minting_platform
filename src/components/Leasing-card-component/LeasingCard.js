@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-function LeasingCard({ id, title, image }) {
+function LeasingCard({ id, title, image, register }) {
+	const [selected, setSelected] = useState(false);
+
 	return (
-		<div className="card cardsdesign">
+		<div className={`card cardsdesign ${selected ? "dark" : "light"}`}>
 			<img
 				className="card-img-top nftimage"
 				src={
@@ -23,7 +25,18 @@ function LeasingCard({ id, title, image }) {
 						<p className="" style={{ color: "green" }}>
 							Roboto Minting
 						</p>
-						<input type="checkbox" />
+						<input
+							type="checkbox"
+							className="checkbox"
+							value={id}
+							{...register("id")}
+							onChange={(e) => {
+								if (e.target.checked) {
+									setSelected(true);
+								} else {
+									setSelected(false);
+								}
+							}}></input>
 					</div>
 					<div className="text-right">
 						<div class="dropdown">

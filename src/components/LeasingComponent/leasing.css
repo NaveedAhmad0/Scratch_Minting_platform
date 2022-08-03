@@ -22,6 +22,11 @@
     width: max-content;
     
 }
+.lease-main{
+  align-items: center;
+  padding-left: 20px;
+
+}
 .dot{
     height: 15px;
     padding: 2px;

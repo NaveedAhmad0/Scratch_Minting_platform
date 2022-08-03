@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/navb";
 import "./staking.css";
@@ -191,7 +192,7 @@ function Staking() {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE FROM YOUR NFTS FOR STAKING</h5>
+						<h5 className="text-white">CHOOSE FROM YOUR NFTS FOR STAKING</h5>
 
 						{account ? (
 							<>
@@ -199,7 +200,7 @@ function Staking() {
 								<div className="text-info mb-3">
 									You have {tokenids.length} NFT's to stake
 								</div>
-								<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+								<div className="StakeCardDeck row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 									{tokenids.length > 0 &&
 										tokenids.map((tokenid) => (
 											<StakingCard
@@ -241,7 +242,9 @@ function Staking() {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE FROM YOUR NFTS FOR CLAIMING REWARDS</h5>
+						<h5 className="text-white">
+							CHOOSE FROM YOUR NFTS FOR CLAIMING REWARDS
+						</h5>
 
 						{account && (
 							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
@@ -283,7 +286,7 @@ function Staking() {
 							justifyContent: "center",
 							flexDirection: "column",
 						}}>
-						<h5>CHOOSE FROM YOUR NFTS FOR UNSTAKING</h5>
+						<h5 className="text-white">CHOOSE FROM YOUR NFTS FOR UNSTAKING</h5>
 
 						{account && (
 							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
@@ -293,7 +296,7 @@ function Staking() {
 							</div>
 						)}
 						{!account && (
-							<p className="text-danger">
+							<p className="text-danger ">
 								No Nfts Found, Please Connect your wallet.
 							</p>
 						)}
@@ -315,34 +318,38 @@ function Staking() {
 	];
 
 	return (
-		<div className="stack-main">
+		<>
 			<Navbar address={account} connect={connect} />
-			{message.length > 0 && <div className="stakeMessage mb-5">{message}</div>}
-			<div className="btn-main bg-green">
-				<button className="button37 " onClick={() => setSelected(!selected)}>
-					Select
-				</button>
-				{selected &&
-					i.map((tab) => {
-						return (
-							<button
-								onClick={() => {
-									if (currentTab.id !== tab.id) {
-										setCurrentTab(tab);
-										setSelected(false);
-									}
-								}}
-								className="button37 hover"
-								key={tab.id}>
-								{tab.title}
-							</button>
-						);
-					})}
+			<div className="stack-main">
+				{message.length > 0 && (
+					<div className="stakeMessage mb-5">{message}</div>
+				)}
+				<div className="btn-main bg-green">
+					<button className="button37 " onClick={() => setSelected(!selected)}>
+						Select
+					</button>
+					{selected &&
+						i.map((tab) => {
+							return (
+								<button
+									onClick={() => {
+										if (currentTab.id !== tab.id) {
+											setCurrentTab(tab);
+											setSelected(false);
+										}
+									}}
+									className="button37 hover"
+									key={tab.id}>
+									{tab.title}
+								</button>
+							);
+						})}
+				</div>
+				<div className="align-items-center contentStaking">
+					{currentTab.content}
+				</div>
 			</div>
-			<div className="align-items-center contentStaking">
-				{currentTab.content}
-			</div>
-		</div>
+		</>
 	);
 }
 

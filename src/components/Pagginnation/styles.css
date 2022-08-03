@@ -59,6 +59,10 @@ font-size: xx-large;
  margin-left:-117rem;
 } */
 
+/* .image{
+  width: 300px;
+  height: 300px;
+} */
 .image:hover{
   border: 15px solid white !important;
   border-radius: 50% !important;

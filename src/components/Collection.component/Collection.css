@@ -1,6 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Condensed:wght@700&family=Seymour+One&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css?family=Chakra Petch'); */
-/* @import url('../../fonts-for-roboto/Chakra_Petch/ChakraPetch-Bold.ttf'); */
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap');
 #icon123{
   font-family: 'Chakra Petch', sans-serif;
@@ -104,7 +101,7 @@
 .mystyle{
   /* background:linear-gradient(to bottom, rgba(0,0,0,0), #151515) !important; */
   background-image: url(../../assets/roboto\ nft\ assets/hero-beackground.jpg);
-		height: 120vh;
+		height: 135vh;
 		background-size: 100% 132%;
 		background-repeat: "no-repeat" !important;
     width: 100%;
@@ -170,13 +167,38 @@
     margin-left: 60%;
 }
 
-@media (max-width: 800px) {
-  .img2{
-    width: 25vw;
+@media (max-width: 850px) {
+  .fontstylesize{
+    font-size: 4.3vw;
   }
+  .button123{
+    font-size: x-large
+  }
+  .rowcontainer123{
+    flex-flow: column-reverse !important;
+  }
+  .img5 {
+    margin-top: -21%;
+    margin-left: -108px;
 }
-@media (max-width: 753px) {
-  .img2{
+.collectioncss{
+  width: -webkit-fill-available !important;
+}
+#css1{
+  margin-left: 4rem !important;
+}
+#icon123 {
+  font-family: 'Chakra Petch', sans-serif;
+  /* font-family: ""; */
+  letter-spacing: 3px;
+  font-weight: revert;
+  font-size: 7.3vw;
+  margin-top: 24px;
+}
+
+}
+@media (max-width: 760px) {
+  /* .img2{
     display: none;
    
   }
@@ -187,10 +209,8 @@
   .img4{
     /* width: 22vw;
      */
-    display: none;
-  }
-}
-@media(max-width:480px) {
+    /* display: none; */
+  /* }  */
   #icon123{
     font-size: 7vw;
   }
@@ -199,9 +219,37 @@
     margin-left: -111px !important;
     height: 34rem;
     width: -webkit-fill-available;
+    /* display: none; */
   }
   #css1{
     margin-left: 0rem !important;
+    margin-top: 5rem;
   }
+  
+}
+@media(max-width:480px) {
+  #icon123{
+    font-size: 7vw;
+  }
+  .mystyle{
+    height: 125vh;
+  }
+  .img5{
+    margin-top: -24% !important;
+    margin-left: -21px !important;
+    height: 170%;
+    width: 100%;
+}
+  #css1{
+    margin-left: 0rem !important;
+    padding-bottom: 5rem;
+
+  }
+  .button123{
+    font-size: unset !important;
+}
+#collection{
+  /* padding-top: 5rem; */
+}
   
 }

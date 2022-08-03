@@ -1,89 +1,164 @@
-.footer {
-    padding-top: 70px;
-    background-color: black;
-    min-height: 50vh;
-    display: flex;
-    justify-content: space-evenly;
+.footer-section {
+    margin-left: -1%;
+    margin-right: -1%;
 }
 
-.footer p,h5 {
-    font-size: 1.1rem;
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-section {
+    width: 100%;
+    background: black;
+    margin-top: auto;
+
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    max-width: 300px;
+}
+
+.footer-logo {
+    margin-top: -5%;
+    margin-left: -25%;
+}
+
+.footer-text p {
+    margin-bottom: 14px;
+    font-size: 20px;
     color: white;
+    line-height: 28px;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
-h5 {
-    padding-bottom: 30px;
+.social-bg {
+    background: #403e3e;
 }
 
-.css1234{
+.footer-social-icon a {
+    color: white;
+    font-size: 15px;
+    margin-right: 13px;
+
+}
+
+.footer-social-icon i {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white
+}
+
+.footer-social-icon i:hover {
+    background-color: green;
+}
+
+.footer-social-icon {
+    margin-top: -10%;
+    margin-left: -38%;
+}
+
+.footer-widget-heading h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    position: relative;
+    padding-top: 10%;
     text-align: left;
-    padding-left: 50px;
+    font-family: 'Chakra Petch', sans-serif;
+
 }
 
-.list__item {
-    background: transparent !important;
-    padding-left: 0 !important;
-    border: none !important;
+.footer-widget ul li {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    margin-bottom: 12px;
+    text-align: left;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
-.list__item a {
+.footer-text p {
+    text-align: left;
+    margin-bottom: 5%;
+    font-size: 1rem;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.footer-widget ul li a {
+    color: aqua;
+}
+
+.footer-widget ul li a:hover {
+    color: red;
     text-decoration: none;
-    color: #fff;
-    opacity: 85%;
-    font-size: 0.9rem;
-    text-align: left;
-    font-family:'Poppins', sans-serif;
 }
 
-.newsletter {
-    color: #fff;
-    padding: 7px 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    font-size: 0.8rem;
-    background: #1c1c1c;
-    border-radius: 0%;
-    
+.subscribe-form {
+    position: relative;
+    overflow: hidden;
 }
 
-
-.list_box {
-    padding-left: 50px;
-    display: flex;
-}
-
-
-.fly-btn {
-    margin-top: 18%;
-    margin-left: 1%;
-    width: 50px;
-    height: 32px;
-    padding: 2px 8px;
-    border-radius: 0%;
-}
-
-::placeholder {
+.subscribe-form input {
+    width: 100%;
+    padding: 8px 15px;
+    background-color: white;
+    /* border: 1px solid lightgrey; */
     color: white;
+    border: none;
 }
 
-.logo-footer {
-    margin-top: -46px;
-    margin-right: 5%;
-    margin-left: -10%;
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background-color:green;
+    padding: 10px 12px;
+    border: none;
 }
 
-.sitemap-style {
-    margin-right: 1%;
-    margin-left: 4%;
-    font-family:'Poppins', sans-serif;
+.subscribe-form button i {
+    color: white;
+    font-size: 25px;
+    transform: rotate(-6deg);
 }
 
-.text-left1 {
-    font-family:'Poppins', sans-serif;
-    margin-left: 5%;
+::placeholder{
+    color: black;
+    font-family: 'Chakra Petch', sans-serif;
 }
+
+hr {
+    width: 85%;
+    margin-left: 8%;
+    margin-top: 0%;
+    color: lightgrey;
+}
+
+
+.copywrite {
+    padding: 1.5%;
+}
+
+/* .fly-btn {
+    background-color:green;
+    padding: 5px 15px;
+    border-radius: 0%;
+    border: 1px solid grey;
+} */
+
 @media only screen and (max-width: 400px) {
    #footerbutton{
        margin-top: 21px;

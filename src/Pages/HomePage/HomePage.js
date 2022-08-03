@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 //components
 import About from "../../components/About/About";
-import Card from "../../components/card component/Card.component";
+// import Card from "../../components/card component/Card.component";
 import Collection from "../../components/Collection.component/Collection";
 import Community from "../../components/Community Component/Community";
 import Footer from "../../components/Footer/Footer";

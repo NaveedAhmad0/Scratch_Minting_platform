@@ -3,6 +3,7 @@ import Web3EthContract from "web3-eth-contract";
 import Web3 from "web3";
 import abi from "config/abi.json";
 import abi2 from "config/NFTSTAKINGabi.json";
+import abi3 from "config/RentalAbi.json";
 import { useEffect } from "react";
 
 const userContext = createContext();
@@ -11,6 +12,7 @@ export const UserProvider = ({ children }) => {
 	const [account, setAccount] = useState("");
 	const [smartContract, setSmartContract] = useState(null);
 	const [stakingContract, setStakingContract] = useState(null);
+	const [rentalContract, setRentalContract] = useState(null);
 	const [web3data, setWeb3data] = useState();
 	const [error, setError] = useState("");
 	const [tokenids, setTokenids] = useState([]);
@@ -19,6 +21,7 @@ export const UserProvider = ({ children }) => {
 	const [CONFIG, SET_CONFIG] = useState({
 		CONTRACT_ADDRESS: "",
 		STAKING_CONTRACT: "",
+		RENTAL_CONTRACT: "",
 		NETWORK: {
 			NAME: "Rinkeby Test Network",
 			SYMBOL: "ETH",
@@ -79,10 +82,16 @@ export const UserProvider = ({ children }) => {
 						abi2,
 						CONFIG.STAKING_CONTRACT
 					);
+					const SmartContractObj3 = new web3.eth.Contract(
+						abi3,
+						CONFIG.RENTAL_CONTRACT
+					);
 					setSmartContract(SmartContractObj);
 					setStakingContract(SmartContractObj2);
+					setRentalContract(SmartContractObj3);
 					console.log(SmartContractObj);
 					console.log(SmartContractObj2);
+					console.log(SmartContractObj3);
 					setWeb3data(web3data);
 				} else {
 					setError(`Change network to ${CONFIG.NETWORK.NAME}.`);
@@ -139,6 +148,7 @@ export const UserProvider = ({ children }) => {
 				account,
 				smartContract,
 				stakingContract,
+				rentalContract,
 				web3data,
 				error,
 				getConfig,

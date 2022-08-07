@@ -3,6 +3,14 @@ import React, { useState } from "react";
 function LeasingCard({ id, title, image, register }) {
 	const [selected, setSelected] = useState(false);
 
+	// console.log("price", id);
+	let nftPrice;
+	if (id <= 10) {
+		nftPrice = "0.26";
+	} else {
+		nftPrice = "0.13";
+	}
+
 	return (
 		<div className={`card cardsdesign ${selected ? "dark" : "light"}`}>
 			<img
@@ -20,7 +28,7 @@ function LeasingCard({ id, title, image, register }) {
 					<div className="text-left">
 						<h5 className="card-text">{title}</h5>
 						<p className="card-text" style={{ marginTop: "-33px" }}>
-							0.08 ETH 1/20
+							{nftPrice} ETH | Token-id : {id}
 						</p>
 						<p className="" style={{ color: "green" }}>
 							Roboto Minting

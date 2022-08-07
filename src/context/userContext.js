@@ -17,6 +17,9 @@ export const UserProvider = ({ children }) => {
 	const [error, setError] = useState("");
 	const [tokenids, setTokenids] = useState([]);
 	const [stakedTokenids, setStakedTokenids] = useState([]);
+	const [depositedTokenids, setDepositedTokenids] = useState([]);
+	const [onRentTokenids, setOnRentTokenids] = useState([]);
+	const [onLeaseTokenids, setOnLeaseTokenids] = useState([]);
 
 	const [CONFIG, SET_CONFIG] = useState({
 		CONTRACT_ADDRESS: "",
@@ -134,10 +137,48 @@ export const UserProvider = ({ children }) => {
 			});
 	};
 
+	const getLeaseAvailableToken = async () => {
+		await rentalContract.methods
+			.tokensAvailableForLease()
+			.call()
+			.then((res) => {
+				setDepositedTokenids(res.map((item) => parseInt(item)));
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+	const getOnLeaseToken = async () => {
+		await rentalContract.methods
+			.tokensOfOwner(account)
+			.call()
+			.then((res) => {
+				setOnLeaseTokenids(res.map((item) => parseInt(item)));
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	const getRentedTokenIds = async () => {
+		await rentalContract.methods
+			.rentalTokensOfOwner(account)
+			.call()
+			.then((res) => {
+				setOnRentTokenids(res.map((item) => parseInt(item)));
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	useEffect(() => {
 		if (smartContract != "" && account !== "") {
 			getTokenIds();
 			getStakedTokenIds();
+			getLeaseAvailableToken();
+			getRentedTokenIds();
+			getOnLeaseToken();
 		}
 	}, [smartContract]);
 
@@ -153,8 +194,11 @@ export const UserProvider = ({ children }) => {
 				error,
 				getConfig,
 				CONFIG,
+				depositedTokenids,
 				tokenids,
 				stakedTokenids,
+				onRentTokenids,
+				onLeaseTokenids,
 				getTokenIds,
 				getStakedTokenIds,
 			}}>

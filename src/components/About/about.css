@@ -33,7 +33,7 @@
         margin-top: -9%;
         writing-mode: vertical-lr;
         align-items: center;
-        margin-left: 550px;
+        margin-right: -550px !important;
         text-orientation: mixed;
         /* height: 40%; */
         /* margin-bottom: 6%; */

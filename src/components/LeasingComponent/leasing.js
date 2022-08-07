@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./leasing.css";
 import Nftimg from "../../assets/3.jpeg";
 import Nftimg1 from "../../assets/4.jpeg";
@@ -13,88 +13,314 @@ import userContext from "../../context/userContext";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-// const LeasingCardDeck = ({ id }) => {
-// 	return (
-// 		<div className="card-deck">
-// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg} />
-// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg1} />
-// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg3} />
-// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg2} />
-// 		</div>
-// 	);
-// };
-
 const Leasing = () => {
 	const [currentTab, setCurrentTab] = useState("");
 	const [selected, setSelected] = useState(false);
+	const [message, setMessage] = useState("");
 	const {
 		connect,
 		account,
 		smartContract,
 		rentalContract,
+		depositedTokenids,
+		onRentTokenids,
+		onLeaseTokenids,
 		tokenids,
 		getConfig,
 		CONFIG,
 	} = useContext(userContext);
+
+	console.log(depositedTokenids == 1);
+
 	const {
 		register,
 		handleSubmit,
 		watch,
 		formState: { errors },
 	} = useForm();
+
+	const approve = async () => {
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalGasLimit = String(gasLimit);
+
+		await smartContract.methods
+			.setApprovalForAll(CONFIG.RENTAL_CONTRACT, true)
+			.send({
+				gasLimit: String(totalGasLimit),
+				gasPrice: "40000000000",
+				from: account,
+				to: CONFIG.CONTRACT_ADDRESS,
+			})
+			.catch((error) => {
+				if (error.code === 4001) {
+					alert(error.message);
+				}
+			});
+	};
+
+	const DepositNfts = async (data) => {
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalGasLimit = String(gasLimit);
+		console.log(data);
+
+		data[0] &&
+			(await rentalContract.methods
+				.depositNft(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.RENTAL_CONTRACT,
+				})
+				.then(() => {
+					setMessage("Congrats ,You Have Deposited Your NFT Successfully!");
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						alert(error.message);
+					}
+					console.log(error);
+				}));
+	};
+	const RentNfts = async (data) => {
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalGasLimit = String(gasLimit);
+		console.log(data);
+		let price;
+		if (depositedTokenids <= 10) {
+			price = CONFIG.PREMIUM_NFT_PRICE;
+			console.log("non regular");
+		} else if (depositedTokenids > 10) {
+			price = CONFIG.REGULAR_NFT_PRICE;
+			console.log("regular");
+		}
+		data[0] &&
+			(await rentalContract.methods
+				.depositEth(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					value: price,
+					from: account,
+					to: CONFIG.RENTAL_CONTRACT,
+				})
+				.then(() => {
+					setMessage("Congrats ,You Have Rented an NFT Successfully!");
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						alert(error.message);
+					}
+					console.log(error);
+				}));
+		// console.log("data is", data[0]);
+	};
+	const ReturnNfts = async (data) => {
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalGasLimit = String(gasLimit);
+		console.log(data);
+
+		data[0] &&
+			(await rentalContract.methods
+				.returnNft(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.RENTAL_CONTRACT,
+				})
+				.then(() => {
+					setMessage("Congrats ,You Have Returned Your NFT Successfully!");
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						alert(error.message);
+					}
+					console.log(error);
+				}));
+		// console.log("data is", data[0]);
+	};
+	const WithdrawCollateral = async (data) => {
+		let gasLimit = CONFIG.GAS_LIMIT;
+		let totalGasLimit = String(gasLimit);
+		console.log(data);
+
+		data[0] &&
+			(await rentalContract.methods
+				.withdrawCollateral(data)
+				.send({
+					gasLimit: String(totalGasLimit),
+					gasPrice: "40000000000",
+					from: account,
+					to: CONFIG.RENTAL_CONTRACT,
+				})
+				.then(() => {
+					setMessage(
+						"Congrats ,You Have Withdrawn Your Collateral Successfully!"
+					);
+					setTimeout(() => {
+						setMessage("");
+					}, 10000);
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						alert(error.message);
+					}
+					console.log(error);
+				}));
+		// console.log("data is", data[0]);
+	};
+
+	const onSubmit = ({ id }) => {
+		if (id instanceof Array) {
+			const ids = id.map((item) => parseInt(item));
+			DepositNfts(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT to stake!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
+		} else {
+			const ids1 = [];
+			ids1.push(parseInt(id));
+			DepositNfts(ids1);
+		}
+	};
+
+	const onSubmitRent = ({ id }) => {
+		if (id instanceof Array) {
+			const ids = id.map((item) => parseInt(item));
+			RentNfts(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT first!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
+		} else {
+			const ids1 = [];
+			ids1.push(parseInt(id));
+			RentNfts(ids1);
+		}
+	};
+	const onSubmitReturn = ({ id }) => {
+		if (id instanceof Array) {
+			const ids = id.map((item) => parseInt(item));
+			ReturnNfts(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT first!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
+		} else {
+			const ids1 = [];
+			ids1.push(parseInt(id));
+			ReturnNfts(ids1);
+		}
+	};
+	const onSubmitWithdrawCollateral = ({ id }) => {
+		if (id instanceof Array) {
+			const ids = id.map((item) => parseInt(item));
+			WithdrawCollateral(ids);
+		} else if (id == 0) {
+			setMessage("Please select an NFT first!");
+			setTimeout(() => {
+				setMessage("");
+			}, 5000);
+		} else {
+			const ids1 = [];
+			ids1.push(parseInt(id));
+			WithdrawCollateral(ids1);
+		}
+	};
+
 	// console.log(rentalContract);
-	// console.log(tokenids);
 
 	const i = [
 		{
 			id: 1,
 			title: "Deposit NFT",
 			content: (
-				<form
-				//  onSubmit={handleSubmit(onSubmit)}
-				>
-					<div
-						style={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-							flexDirection: "column",
-						}}>
-						<h5 className="text-white">
-							CHOOSE FROM YOUR NFTS TO DEPOSITE AS RENT
-						</h5>
+				<>
+					<form onSubmit={handleSubmit(onSubmit)}>
+						<div
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+								flexDirection: "column",
+							}}>
+							<h5 className="text-white">
+								CHOOSE FROM YOUR NFTS TO DEPOSIT FOR RENT
+							</h5>
 
-						{account ? (
-							<>
-								{/* {selected && <p className="text-danger">{message}</p>} */}
-								<div className="text-info mb-3">
-									You have {tokenids.length} NFT's to Deposit for renting
-								</div>
-								<div className=" cardDdeck">
-									{tokenids.length > 0 &&
-										tokenids.map((tokenid) => (
-											<LeasingCard
-												id={tokenid}
-												// image={Nftimg3}
-												key={tokenid}
-												register={register}
-											/>
-										))}
-								</div>
-							</>
-						) : (
-							<p className="text-danger">
-								No Nfts Found, Please Connect your wallet.
-							</p>
-						)}
+							{account ? (
+								<>
+									{/* {selected && <p className="text-danger">{message}</p>} */}
+									<div className="text-info mb-3">
+										You have {tokenids.length} NFT's to Deposit for renting
+									</div>
+									<div className=" cardDdeck">
+										{tokenids.length > 0 &&
+											tokenids.map((tokenid) => (
+												<LeasingCard
+													id={tokenid}
+													key={tokenid}
+													register={register}
+												/>
+											))}
+									</div>
+								</>
+							) : (
+								<p className="text-danger">
+									No Nfts Found, Please Connect your wallet.
+								</p>
+							)}
 
-						<div className="button-row mb-5">
-							<button type="submit" className="button37">
-								Deposit Your NFT
-							</button>
+							<div className="button-row mb-5">
+								<button className="button37 mr-4" onClick={approve}>
+									Approve
+								</button>
+								<button type="submit" className="button37">
+									Deposit Your NFT
+								</button>
+							</div>
+							<br />
+							{onLeaseTokenids > 0 && (
+								<>
+									<h2 className="text-white">
+										BELOW ARE THE TOKENS YOU HAVE GIVEN ON LEASE!
+									</h2>
+									<div className=" cardDdeck mt-5">
+										{onLeaseTokenids.length > 0 &&
+											onLeaseTokenids.map((tokenid) => (
+												<LeasingCard
+													id={tokenid}
+													key={tokenid}
+													register={register}
+												/>
+											))}
+									</div>
+									<div className="button-row mb-5">
+										<button
+											className="button37"
+											onClick={handleSubmit(onSubmitWithdrawCollateral)}>
+											Withdraw Collateral
+										</button>
+									</div>
+								</>
+							)}
 						</div>
-					</div>
-				</form>
+					</form>
+				</>
 			),
 		},
 
@@ -102,9 +328,7 @@ const Leasing = () => {
 			id: 2,
 			title: "Rent",
 			content: (
-				<form
-				// onSubmit={handleSubmit(onSubmitClaim)}
-				>
+				<form onSubmit={handleSubmit(onSubmitRent)}>
 					<div
 						style={{
 							display: "flex",
@@ -116,15 +340,9 @@ const Leasing = () => {
 
 						{account && (
 							<div className="cardDdeck">
-								{/* {stakedTokenids.map((Tokenid) => ( */}
-								<LeasingCard image={Nftimg3} register={register} />
-								<LeasingCard image={Nftimg2} register={register} />
-								<LeasingCard image={Nftimg} register={register} />
-								<LeasingCard image={Nftimg1} register={register} />
-								{/* //  key={Tokenid}
-							//  id={Tokenid}
-							//  register={register} */}
-								{/* ))} */}
+								{depositedTokenids.map((Tokenid) => (
+									<LeasingCard register={register} key={Tokenid} id={Tokenid} />
+								))}
 							</div>
 						)}
 						{!account && (
@@ -132,13 +350,14 @@ const Leasing = () => {
 								No Nfts Found, Please Connect your wallet.
 							</p>
 						)}
-						{/* {account && stakedTokenids.length === 0 && (
-							<div className="text-danger">
-								You have not staked any NFT's, Please Stake First.
-							</div>
-						)} */}
+						{account && depositedTokenids.length === 0 && (
+							<div className="text-danger">No NFT's available for rent!</div>
+						)}
 
 						<div className="button-row mb-5">
+							<button className="button37 mr-4" onClick={approve}>
+								Approve
+							</button>
 							<button type="submit" className="button37">
 								Rent NFT
 							</button>
@@ -152,9 +371,7 @@ const Leasing = () => {
 			id: 3,
 			title: "Return",
 			content: (
-				<form
-				//  onSubmit={handleSubmit(onSubmitUnstake)}
-				>
+				<form onSubmit={handleSubmit(onSubmitReturn)}>
 					<div
 						style={{
 							display: "flex",
@@ -166,14 +383,13 @@ const Leasing = () => {
 
 						{account && (
 							<div className="cardDdeck">
-								{/* {stakedTokenids.map((Tokenid) => ( */}
-								<LeasingCard image={Nftimg} register={register} />
-								<LeasingCard image={Nftimg1} register={register} />
-								<LeasingCard image={Nftimg2} register={register} />
-								<LeasingCard image={Nftimg3} register={register} />
-								{/* // id={Tokenid}
-									// register={register} */}
-								{/* ))} */}
+								{onRentTokenids.map((Tokenid) => (
+									<LeasingCard
+										image={Nftimg}
+										register={register}
+										id={Tokenid}
+									/>
+								))}
 							</div>
 						)}
 						{!account && (
@@ -181,11 +397,11 @@ const Leasing = () => {
 								No Nfts Found, Please Connect your wallet.
 							</p>
 						)}
-						{/* {account && stakedTokenids.length === 0 && (
+						{account && onRentTokenids.length === 0 && (
 							<div className="text-danger">
-								You have not staked any NFT's, Please Stake First.
+								You don't have any rented NFT's.
 							</div>
-						)} */}
+						)}
 
 						<div className="button-row mb-5">
 							<button type="submit" className="button37">
@@ -202,6 +418,9 @@ const Leasing = () => {
 		<>
 			<Navbar connect={connect} address={account} />
 			<div className="lease-main">
+				{message.length > 0 && (
+					<div className="leaseMessage m-auto mb-5">{message}</div>
+				)}
 				<div className="btn-main m-auto mb-4 bg-green">
 					<button className="button37 " onClick={() => setSelected(!selected)}>
 						Select
@@ -233,3 +452,14 @@ const Leasing = () => {
 };
 
 export default Leasing;
+
+// const LeasingCardDeck = ({ id }) => {
+// 	return (
+// 		<div className="card-deck">
+// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg} />
+// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg1} />
+// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg3} />
+// 			<LeasingCard id={id} title="Roboto Minting" image={Nftimg2} />
+// 		</div>
+// 	);
+// };

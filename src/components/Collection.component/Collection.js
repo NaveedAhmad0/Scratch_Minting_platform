@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../Collection.component/Collection.css";
 import Navbar from "../../components/Navbar/navb";
 // import img1 from "../../assets/smart-city-assets/v.png";
@@ -8,6 +8,7 @@ import img4 from "../../assets/roboto nft assets/herorobot.png";
 // import img6 from "../../assets/roboto nft assets/hero-beackground.jpg";
 import axios from "axios";
 import { useEffect } from "react";
+import userContext from "../../context/userContext";
 
 function Collection({ connect, account, smartContract, CONFIG }) {
 	const [feedback, setFeedback] = useState(``);
@@ -15,9 +16,15 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 	const [nftSupply, setNftSupply] = useState(0);
 	const [nftMinted, setNftMinted] = useState(0);
 
+	const { tokenids } = useContext(userContext);
 	const mintNFTs = async () => {
 		console.log("Smart Contract", smartContract);
-		let cost = CONFIG.WEI_COST;
+		let cost = CONFIG.WEI_COST2;
+		// if (tokenids <= 10) {
+		// 	cost = CONFIG.WEI_COST;
+		// } else if (tokenids > 10) {
+		// 	cost = CONFIG.WEI_COST2;
+		// }
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalCostWei = String(cost);
 		let totalGasLimit = String(gasLimit);
@@ -29,9 +36,9 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 			.send({
 				gasLimit: String(totalGasLimit),
 				gasPrice: "40000000000",
+				value: totalCostWei,
 				from: account,
 				to: CONFIG.CONTRACT_ADDRESS,
-				value: totalCostWei,
 			})
 			.once("error", (err) => {
 				console.log(err);
@@ -128,7 +135,7 @@ function Collection({ connect, account, smartContract, CONFIG }) {
 									onClick={() => {
 										mintNFTs();
 									}}>
-									Mint Now
+									MINT NOW
 								</button>
 								<button style={{ marginLeft: "1rem" }} className="button123">
 									Wishlist Now

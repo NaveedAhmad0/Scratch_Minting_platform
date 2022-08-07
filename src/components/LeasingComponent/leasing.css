@@ -27,6 +27,13 @@
   padding-left: 20px;
 
 }
+.leaseMessage{
+  border-radius: 20px;
+  width: 50%;
+  height: 30px;
+  background-image: linear-gradient(to right, #5a3f37, #2c7744);
+  color:white;
+}
 .dot{
     height: 15px;
     padding: 2px;

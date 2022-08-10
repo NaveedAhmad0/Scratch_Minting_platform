@@ -26,11 +26,14 @@ const Leasing = () => {
 		onRentTokenids,
 		onLeaseTokenids,
 		tokenids,
-		getConfig,
+		deposited,
+		setDeposited,
+		rented,
+		setRented,
+		returned,
+		setReturned,
 		CONFIG,
 	} = useContext(userContext);
-
-	console.log(depositedTokenids == 1);
 
 	const {
 		register,
@@ -62,7 +65,9 @@ const Leasing = () => {
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalGasLimit = String(gasLimit);
 		console.log(data);
-
+		if (data.length > 1) {
+			return alert("Please select one NFT only!");
+		}
 		data[0] &&
 			(await rentalContract.methods
 				.depositNft(data)
@@ -77,6 +82,7 @@ const Leasing = () => {
 					setTimeout(() => {
 						setMessage("");
 					}, 10000);
+					setDeposited(!deposited);
 				})
 				.catch((error) => {
 					if (error.code === 4001) {
@@ -88,14 +94,22 @@ const Leasing = () => {
 	const RentNfts = async (data) => {
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalGasLimit = String(gasLimit);
-		console.log(data);
+		console.log("data is", data);
+		console.log("data length is", data.length);
+		console.log("data total price is", data.length * CONFIG.REGULAR_NFT_PRICE);
+
 		let price;
-		if (depositedTokenids <= 10) {
-			price = CONFIG.PREMIUM_NFT_PRICE;
+		if (depositedTokenids.some((e) => e <= 10)) {
+			price = data.length * CONFIG.PREMIUM_NFT_PRICE;
 			console.log("non regular");
-		} else if (depositedTokenids > 10) {
-			price = CONFIG.REGULAR_NFT_PRICE;
+		}
+		if (depositedTokenids.some((e) => e > 10)) {
+			price = data.length * CONFIG.REGULAR_NFT_PRICE;
 			console.log("regular");
+		}
+		console.log("price =", price);
+		if (data.length > 1) {
+			return alert("Please select one NFT only!");
 		}
 		data[0] &&
 			(await rentalContract.methods
@@ -112,6 +126,7 @@ const Leasing = () => {
 					setTimeout(() => {
 						setMessage("");
 					}, 10000);
+					setRented(!rented);
 				})
 				.catch((error) => {
 					if (error.code === 4001) {
@@ -125,7 +140,9 @@ const Leasing = () => {
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalGasLimit = String(gasLimit);
 		console.log(data);
-
+		if (data.length > 1) {
+			return alert("Please select one NFT only!");
+		}
 		data[0] &&
 			(await rentalContract.methods
 				.returnNft(data)
@@ -140,6 +157,7 @@ const Leasing = () => {
 					setTimeout(() => {
 						setMessage("");
 					}, 10000);
+					setReturned(!returned);
 				})
 				.catch((error) => {
 					if (error.code === 4001) {
@@ -294,7 +312,7 @@ const Leasing = () => {
 								</button>
 							</div>
 							<br />
-							{onLeaseTokenids > 0 && (
+							{onLeaseTokenids.length > 0 && (
 								<>
 									<h2 className="text-white">
 										BELOW ARE THE TOKENS YOU HAVE GIVEN ON LEASE!
@@ -355,9 +373,6 @@ const Leasing = () => {
 						)}
 
 						<div className="button-row mb-5">
-							<button className="button37 mr-4" onClick={approve}>
-								Approve
-							</button>
 							<button type="submit" className="button37">
 								Rent NFT
 							</button>
@@ -404,6 +419,9 @@ const Leasing = () => {
 						)}
 
 						<div className="button-row mb-5">
+							<button className="button37 mr-4" onClick={approve}>
+								Approve
+							</button>
 							<button type="submit" className="button37">
 								Return Nft
 							</button>

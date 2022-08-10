@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import userContext from "../../context/userContext";
 import { useForm } from "react-hook-form";
-
+import { Navigate } from "react-router-dom";
 function Staking() {
 	const [currentTab, setCurrentTab] = useState("");
 	const [selected, setSelected] = useState(false);
@@ -19,8 +19,13 @@ function Staking() {
 		smartContract,
 		stakingContract,
 		tokenids,
+		getTokenIds,
 		getConfig,
 		CONFIG,
+		staked,
+		setStaked,
+		unStaked,
+		setUnStaked,
 		stakedTokenids,
 	} = useContext(userContext);
 
@@ -59,9 +64,13 @@ function Staking() {
 				})
 				.then(() => {
 					setMessage("Congrats ,You Have Staked Your NFT Successfully!");
+					// window.location.reload();
 					setTimeout(() => {
 						setMessage("");
 					}, 10000);
+					setStaked(!staked);
+					<Navigate to="/staking" />;
+					setCurrentTab(currentTab == 3);
 				})
 				.catch((error) => {
 					if (error.code === 4001) {
@@ -69,7 +78,7 @@ function Staking() {
 					}
 				}));
 	};
-
+	console.log(currentTab.id);
 	const unstakeNfts = async (data) => {
 		let gasLimit = CONFIG.GAS_LIMIT;
 		let totalGasLimit = String(gasLimit);
@@ -88,9 +97,12 @@ function Staking() {
 					setMessage(
 						"You Have Successfully Unstaked Your NFT, Please check rewards!"
 					);
+
 					setTimeout(() => {
 						setMessage("");
 					}, 10000);
+					setUnStaked(!unStaked);
+					setCurrentTab(currentTab.id === 1);
 				}));
 	};
 
@@ -120,9 +132,9 @@ function Staking() {
 		getConfig();
 	}, []);
 
-	// useEffect(()  => {
-	//   	 console.log('clicked');
-	// }, []);
+	useEffect(() => {
+		getTokenIds();
+	}, [tokenids]);
 
 	const {
 		register,
@@ -247,7 +259,7 @@ function Staking() {
 						</h5>
 
 						{account && (
-							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+							<div className=" StakeCardDeck row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 								{stakedTokenids.map((Tokenid) => (
 									<StakingCard key={Tokenid} id={Tokenid} register={register} />
 								))}
@@ -289,7 +301,7 @@ function Staking() {
 						<h5 className="text-white">CHOOSE FROM YOUR NFTS FOR UNSTAKING</h5>
 
 						{account && (
-							<div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+							<div className=" StakeCardDeck row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 								{stakedTokenids.map((Tokenid) => (
 									<StakingCard key={Tokenid} id={Tokenid} register={register} />
 								))}

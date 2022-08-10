@@ -10,20 +10,20 @@ import roadmap from "../../assets/roadmap-line.png";
 const RoadmapComp = ({ percent, logo, margin, bot }) => {
 	return (
 		<div className="container roadmapCompOne">
-			<div className="col-5 content-img text-right">
+			<div className="col-5 content-img ">
 				<img src={logo} alt="logo"></img>
 			</div>
-			<div className="col-2 justify-content-center">
+			<div className="col-2 roadmap-card">
 				<div
 					className="roadmappercentage"
 					style={{
 						marginLeft: `${margin}`,
 						marginBottom: `${bot}`,
 					}}>
-					<p style={{ alignSelf: "center", paddingTop: "10px" }}>{percent}%</p>
+					<p style={{ alignSelf: "center", paddingTop: "14px" }}>{percent}%</p>
 				</div>
 			</div>
-			<div className="col-5 justify-content-center">
+			<div className="col-5 roadmap-content-card">
 				<div className="content-textCard ">
 					<h3>NEQUE PORRO QUISQUAM</h3>
 					<p>
@@ -39,8 +39,8 @@ const RoadmapComp = ({ percent, logo, margin, bot }) => {
 const RoadmapCompTwo = (props) => {
 	return (
 		<div className="container roadmapCompTwo">
-			<div className="col-5 text-right" style={{ alignItems: "flex-start" }}>
-				<div className="content-textCard text-right m-auto">
+			<div className="col-5 roadmap-content-card">
+				<div className="content-textCard">
 					<h3>NEQUE PORRO QUISQUAM</h3>
 					<p>
 						Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -49,9 +49,9 @@ const RoadmapCompTwo = (props) => {
 					</p>
 				</div>
 			</div>
-			<div className="col-2 justify-content-right">
+			<div className="col-2 roadmap-card">
 				<div className="m-auto roadmappercentage2">
-					<p style={{ alignSelf: "center", paddingTop: "10px" }}>
+					<p style={{ alignSelf: "center", paddingTop: "14px" }}>
 						{props.percent}%
 					</p>
 				</div>
@@ -74,7 +74,7 @@ function Roadmap() {
 				<div className="blabla">
 					<RoadmapComp logo={logo4} percent="10" margin="75px" bot="90px" />
 					<RoadmapCompTwo logo={logo3} percent="25" />
-					<RoadmapComp logo={logo2} percent="50" margin="70px" />
+					<RoadmapComp logo={logo2} percent="50" margin="70px" bot="100px" />
 					<RoadmapCompTwo logo={logo1} percent="100" />
 				</div>
 			</div>

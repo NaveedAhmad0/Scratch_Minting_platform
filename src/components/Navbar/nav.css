@@ -50,3 +50,8 @@ a {
 .nav-item {
   padding: 10px;
 }
+@media (max-width:500px) {
+  .navbarrrr{
+    padding: 0 15px;
+  }
+}

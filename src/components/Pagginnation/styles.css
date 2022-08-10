@@ -90,3 +90,27 @@ font-size: xx-large;
   outline: none;
 }
 
+@media (max-width: 822px) {
+  .Container12 {
+    height: 58vh;
+    background-image: none;
+  }
+}
+@media (max-width: 769px) {
+  .Container12 {
+    height: 58vh;
+    background-image: none;
+  }
+}
+@media (max-width: 513px) {
+  .Container12 {
+    height: 58vh;
+    background-image: none;
+  }
+}
+@media (max-width: 413px) {
+  .Container12 {
+    height: 58vh;
+    background-image: none;
+  }
+}

@@ -33,10 +33,13 @@ function StakingCard({ id, register }) {
 		<div className={`card  ${selected ? "dark" : "light"}`}>
 			<img
 				className="card-img-top nftimage"
-				src={`https://gateway.pinata.cloud/ipfs/QmVpaepvn3PyWYUjGM1aHvN7jGiYQTXftUnNWCU9odW8LT/${id}.png`}
-				alt="Card cap"
+				src={`https://gateway.pinata.cloud/ipfs/QmSvt5KbmfmGzpr82wCMrWw36i4qZ1QaB4DpaztHshirxj/${id}.jpeg`}
+				alt="Your NFTs"
 			/>
 			<div className="card-body">
+				<p className="card-text" style={{ marginTop: "-33px" }}>
+					Token-id : {id}
+				</p>
 				<input
 					type="checkbox"
 					className="checkbox"

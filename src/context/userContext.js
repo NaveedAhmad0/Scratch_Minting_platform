@@ -20,6 +20,12 @@ export const UserProvider = ({ children }) => {
 	const [depositedTokenids, setDepositedTokenids] = useState([]);
 	const [onRentTokenids, setOnRentTokenids] = useState([]);
 	const [onLeaseTokenids, setOnLeaseTokenids] = useState([]);
+	const [tokenIdsMinted, setTokenIdsMinted] = useState(null);
+	const [staked, setStaked] = useState(false);
+	const [unStaked, setUnStaked] = useState(false);
+	const [deposited, setDeposited] = useState(false);
+	const [rented, setRented] = useState(false);
+	const [returned, setReturned] = useState(false);
 
 	const [CONFIG, SET_CONFIG] = useState({
 		CONTRACT_ADDRESS: "",
@@ -58,6 +64,8 @@ export const UserProvider = ({ children }) => {
 		const config = await configResponse.json();
 		SET_CONFIG(config);
 	};
+
+	//Connect wallet
 
 	const connect = async () => {
 		if (metamaskIsInstalled) {
@@ -113,6 +121,8 @@ export const UserProvider = ({ children }) => {
 		}
 	};
 
+	//Get Users Nft Token Ids
+
 	const getTokenIds = async () => {
 		await smartContract.methods
 			.walletOfOwner(account)
@@ -124,6 +134,8 @@ export const UserProvider = ({ children }) => {
 				console.log(error);
 			});
 	};
+
+	//Get Users staked Nft Token Ids
 
 	const getStakedTokenIds = async () => {
 		await stakingContract.methods
@@ -137,6 +149,8 @@ export const UserProvider = ({ children }) => {
 			});
 	};
 
+	//Get Available Nft Token Ids for rent
+
 	const getLeaseAvailableToken = async () => {
 		await rentalContract.methods
 			.tokensAvailableForLease()
@@ -148,6 +162,9 @@ export const UserProvider = ({ children }) => {
 				console.log(error);
 			});
 	};
+
+	//Get given for rent Nft Token Ids
+
 	const getOnLeaseToken = async () => {
 		await rentalContract.methods
 			.tokensOfOwner(account)
@@ -159,6 +176,8 @@ export const UserProvider = ({ children }) => {
 				console.log(error);
 			});
 	};
+
+	//Get already rent Nft Token Ids for leasing
 
 	const getRentedTokenIds = async () => {
 		await rentalContract.methods
@@ -182,6 +201,30 @@ export const UserProvider = ({ children }) => {
 		}
 	}, [smartContract]);
 
+	useEffect(() => {
+		getTokenIds();
+		getStakedTokenIds();
+	}, [staked]);
+	useEffect(() => {
+		getTokenIds();
+		getStakedTokenIds();
+	}, [unStaked]);
+
+	useEffect(() => {
+		getTokenIds();
+		getLeaseAvailableToken();
+	}, [deposited]);
+
+	useEffect(() => {
+		getTokenIds();
+		getLeaseAvailableToken();
+		getRentedTokenIds();
+	}, [rented]);
+	useEffect(() => {
+		getTokenIds();
+		getRentedTokenIds();
+	}, [returned]);
+
 	return (
 		<userContext.Provider
 			value={{
@@ -193,8 +236,20 @@ export const UserProvider = ({ children }) => {
 				web3data,
 				error,
 				getConfig,
+				setTokenIdsMinted,
+				tokenIdsMinted,
 				CONFIG,
 				depositedTokenids,
+				staked,
+				setStaked,
+				unStaked,
+				setUnStaked,
+				deposited,
+				setDeposited,
+				rented,
+				setRented,
+				returned,
+				setReturned,
 				tokenids,
 				stakedTokenids,
 				onRentTokenids,

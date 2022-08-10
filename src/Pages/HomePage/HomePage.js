@@ -42,14 +42,14 @@ function HomePage() {
 			<br />
 			<br />
 			<Paggination />
-			<br></br>
+			{/* <br></br> */}
 			{/* <Roadmap /> */}
-			<br></br>
-			<br></br>
+			{/* <br></br> */}
+			{/* <br></br> */}
 			<CardsonConnect />
+			{/* <br />
 			<br />
-			<br />
-			<br />
+			<br /> */}
 			<Roadmap />
 			{/* <br /> */}
 			<Community />

@@ -71,7 +71,7 @@ function Navbar1({ connect, address }) {
 		// 	<br />
 		// </div>
 
-		<Navbar collapseOnSelect expand="lg" variant="light">
+		<Navbar collapseOnSelect expand="lg" className="navbarrrr" variant="light">
 			<Container>
 				<Navbar.Brand href="#home">
 					<img id="navimg" className="navbar-brand" src={logo} alt="LOGO" />

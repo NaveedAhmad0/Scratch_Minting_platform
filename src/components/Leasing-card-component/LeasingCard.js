@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function LeasingCard({ id, title, image, register }) {
 	const [selected, setSelected] = useState(false);
-
+	// console.log(selected);
 	// console.log("price", id);
 	let nftPrice;
 	if (id <= 10) {
@@ -16,9 +16,10 @@ function LeasingCard({ id, title, image, register }) {
 			<img
 				className="card-img-top nftimage"
 				src={
-					id
-						? `https://gateway.pinata.cloud/ipfs/QmVpaepvn3PyWYUjGM1aHvN7jGiYQTXftUnNWCU9odW8LT/${id}.png`
-						: image
+					// id
+					// ?
+					`https://gateway.pinata.cloud/ipfs/QmSvt5KbmfmGzpr82wCMrWw36i4qZ1QaB4DpaztHshirxj/${id}.jpeg`
+					// : image
 				}
 				// src={image}
 				alt="Card cap"

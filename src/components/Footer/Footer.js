@@ -1,7 +1,5 @@
 import React from "react";
 import logo from "../../assets/VectorLogo.svg";
-// import { Container, Row, Col } from "react-bootstrap";
-// import { FaTelegramPlane } from "react-icons/fa";
 import "./footer.css";
 
 function Footer() {
@@ -83,19 +81,23 @@ function Footer() {
 							</div>
 						</div>
 						<div className="col-lg-4">
-							<div className="footer-widget-heading">
-								<h3>NEWSLETTER</h3>
-							</div>
-							<div className="footer-text">
-								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-							</div>
-							<div className="subscribe-form">
-								<form>
-									<input type="text" placeholder="Enter Email here..." />
-									<button>
-										<i className="fab fa-telegram-plane"></i>
-									</button>
-								</form>
+							<div className="footer-widget">
+								<div className="footer-widget-heading">
+									<h3>NEWSLETTER</h3>
+								</div>
+								<div className="footer-text">
+									<p>
+										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+									</p>
+								</div>
+								<div className="subscribe-form">
+									<form>
+										<input type="text" placeholder="Enter Email here..." />
+										<button>
+											<i className="fa fa-paper-plane"></i>
+										</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

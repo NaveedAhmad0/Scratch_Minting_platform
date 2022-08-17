@@ -9,17 +9,17 @@ import "./about.css";
 function About() {
 	return (
 		<>
-			<div className="aboutus text-white">ABOUT US -------&gt; </div>
 			<div id="about" className="container">
-				<div className="row">
+				<h6 className="aboutus text-white">ABOUT US -------&gt; </h6>
+				<div className="row rowabout " style={{ marginTop: "5%" }}>
 					<div className="col-sm-6">
-						<div className="text-left">
+						<div className=" aboutsmart">
 							<h1 id="aboutroboto" className="text-white">
 								<span style={{ color: "#61A62D" }}>ABOUT</span> SMART
 								<br />
 								MONEY REVOLUTION
 							</h1>
-							<p className="text-white" style={{ fontSize: "" }}>
+							<p className="text-white">
 								Contrary to popular belief,Lorem Ipsum is not simply random
 								text. It has roots in a piece of classical Latin literature from
 								45BC,making it over 2000 years old. Richard McClintock, a Latin
@@ -54,13 +54,13 @@ function About() {
 							<button className="button123">READ MORE</button>
 						</div>
 					</div>
-					<div className="col-sm-6">
+					<div className=" col-sm-6">
 						<img
 							src={pic55}
 							className="pic55"
 							alt="imge"
-							width={730}
-							height={780}
+							width={570}
+							height={630}
 						/>
 					</div>
 				</div>

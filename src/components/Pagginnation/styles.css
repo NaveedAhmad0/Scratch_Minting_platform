@@ -6,11 +6,13 @@
   font-size: x-large;
   font-family: 'Chakra Petch', sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  /* align-items: center;
+  justify-content: center; */
+  height: 130vh !important;
   background-image:url(../../images/crazy-minting-nft.png);
-  background-position: bottom;
+  background-position: bottom !important;
+  /* background-position-y: bottom !important; */
+  background-repeat: no-repeat;
 }
 
 .grUxXV {
@@ -28,14 +30,16 @@
   width: 100%;
   direction: ltr;
   height: -webkit-fill-available;
-  margin-top:-5rem;
+  margin-top:-3rem;
 }
 .pag123{
   flex-direction: column;
 }
-.paginnationcom{
+.paginnationcom1{
   /* margin-top: -57% !important;
   margin-right: -20% !important; */
+  font-weight: 900;
+  font-size: 3.3vw;
   margin-bottom: 120px;
   max-width: -webkit-fill-available !important;
 }
@@ -68,6 +72,16 @@ font-size: xx-large;
   border-radius: 50% !important;
 
 }
+.rec.rec-arrow-left,
+.rec.rec-arrow-right{
+    background-color: white;
+    /* box-shadow: 0 0 1px 3px var(--clr-primary-400); */
+}
+.rec.rec-arrow-left:hover:enabled,
+.rec.rec-arrow-right:hover:enabled{
+    background-color: green;
+    /* box-shadow: 0 0 1px 3px var(--clr-primary-400); */
+}
 
 
 .lhFzqP {
@@ -89,28 +103,56 @@ font-size: xx-large;
   cursor: pointer;
   outline: none;
 }
+/* .eWjCzc:hover:enabled, .eWjCzc:focus:enabled {
+  color: rgb(255, 255, 255);
+  background-color: green;
+  box-shadow: rgb(51 51 51) 0px 0px 2px 0px;
+} */
+@media only screen and (max-width:1440px) {
+  .Container12{
+    height: 105vh;
+  }
+}
+@media (max-width:1370px) {
+  .Container12{
+    height: 123vh;
+  }
+}
+@media (max-width:1280px) {
+  .Container12{
+    height:95vh !important;
+  }
+}
+@media (max-width:1100px) {
+  .Container12{
+    height: 50vh !important;
+  }
+}
+@media (max-width:850px) {
+  .Container12{
+  font-size: x-large;
+    font-family: 'Chakra Petch', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-image: url(http://localhost:3000/static/media/crazy-minting-nft.1680a0b….png);
+    background-position: bottom;
+}
+}
+@media (max-width:480px) {
+  .paginnationcom1{
+    font-size: 1em !important;
+    font-weight: 900 !important;
 
-@media (max-width: 822px) {
-  .Container12 {
-    height: 58vh;
-    background-image: none;
   }
+.Container12 {
+  height: 62vh !important;
+  margin-bottom: 4rem !important;
 }
-@media (max-width: 769px) {
-  .Container12 {
-    height: 58vh;
-    background-image: none;
-  }
 }
-@media (max-width: 513px) {
-  .Container12 {
-    height: 58vh;
-    background-image: none;
-  }
+@media (max-width: 375px){
+.Container12 {
+    height: 77vh !important;
 }
-@media (max-width: 413px) {
-  .Container12 {
-    height: 58vh;
-    background-image: none;
-  }
 }

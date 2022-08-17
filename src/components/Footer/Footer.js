@@ -86,9 +86,7 @@ function Footer() {
 									<h3>NEWSLETTER</h3>
 								</div>
 								<div className="footer-text">
-									<p>
-										Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-									</p>
+									<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 								</div>
 								<div className="subscribe-form">
 									<form>

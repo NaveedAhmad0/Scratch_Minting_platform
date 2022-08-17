@@ -1,194 +1,346 @@
-    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Oswald:wght@700&family=Roboto+Condensed:wght@700&display=swap");
 
-    #aboutroboto{
-        font-family: 'Chakra Petch', sans-serif;
-        font-weight: 900;
-        font-size: 3.3vw;
-
-    }
-    .button123{
-        border-radius:0 !important;
-    }
-    .circle{
-        width: 100px;
-        height:100px;
-        padding: 20px;
-        border-radius: 50% 50%;
-        background-color: green;
-    }
-    #about{
-        /* background-image: url(../../assets/roboto\ nft\ assets/about-bg.png);
+#aboutroboto {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 900;
+  font-size: 3.3vw;
+}
+.button123 {
+  border-radius: 0 !important;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 50% 50%;
+  background-color: green;
+}
+#about {
+  /* background-image: url(../../assets/roboto\ nft\ assets/about-bg.png);
         */
-        background-image: url(../../assets/about-bg.png);
-        height: 120vh;
-        background-size: 100% 132%;
-            /* background-repeat: "no-repeat" !important; */
-        width: 100%;
-        /* margin-bottom: 20%; */
-        background-repeat: no-repeat;
-        background-position-y: bottom;
-        background-size: contain;
-    }
-    .aboutus{
-        margin-top: -6%;
-        writing-mode: vertical-lr;
-        align-items: center;
-        margin-left: 670px !important;
-        text-orientation: mixed;
-        /* height: 40%; */
-        /* margin-bottom: 6%; */
-        /* margin-block: auto; */
-    }
-    .dashline{
-        margin-top: 40px;
-        width: 518px;
-        height: 0px;
-        border: 1px dashed green;
-    }
-    #csscard{
-        width: 17rem;
-        /* height: 320rem; */
-        padding: 3%;
-        margin-right: 4%;
-        /* border: none; */
-        border: 1px solid lightgrey;
-        /* border-bottom-style: ridge; */
-    }
-    #csscard1{
-        width: 22rem;
-        border: none;
-        border-right-style: inset;
-        border-bottom-style: ridge;
-    }
-    #aboutImage{
-        width: 13rem !important;
-        height: 14rem !important;
-    }
-    .card-title{
-        font-size: medium;
-        font-weight: 500;
-    }
-    .pic55{
-        margin-top: -40%;
-
-    }
-    .card-text{
-        font-size: small;
-    }
-    .card1{
-        border: 1px solid #D9D9D9;
-    }
-    .meet{
-        min-width: fit-content;
-        /* margin-right: 25rem; */
-        font-weight: 400;
-    }
-    @media only screen and (max-width: 1300px) {
-        #csscard1{
-            margin-right: -15%;
-        }
-    }
-    @media only screen and (max-width: 1200px) {
-    #csscard1{
-        margin-right: -11%;
-    }
-    .aboutus{
-        margin-left: 425px;
-    }
-    }
-    @media only screen and (max-width: 1100px) {
-        #csscard1{
-            margin-right: -14%;
-        }
-        /* .cssabout1{
+  background-image: url(../../assets/about-bg.png);
+  height: 155vh;
+  background-size: 100% 132%;
+  /* background-repeat: "no-repeat" !important; */
+  width: 100%;
+  /* margin-bottom: 20%; */
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+}
+.aboutus {
+  margin-top: -5%;
+  writing-mode: vertical-lr;
+  align-items: center;
+  margin-left: 520px;
+  text-orientation: mixed;
+  /* height: 40%; */
+  /* margin-bottom: 6%; */
+  /* margin-block: auto; */
+}
+.dashline {
+  margin-top: 40px;
+  width: 518px;
+  height: 0px;
+  border: 1px dashed green;
+}
+#csscard {
+  width: 17rem;
+  /* height: 320rem; */
+  padding: 3%;
+  margin-right: 4%;
+  /* border: none; */
+  border: 1px solid lightgrey;
+  /* border-bottom-style: ridge; */
+}
+.aboutsmart{
+  text-align: left ;
+}
+#csscard1 {
+  width: 22rem;
+  border: none;
+  border-right-style: inset;
+  border-bottom-style: ridge;
+}
+#aboutImage {
+  width: 13rem !important;
+  height: 14rem !important;
+}
+.card-title {
+  font-size: medium;
+  font-weight: 500;
+}
+.pic55 {
+  margin-top: -23%;
+}
+.card-text {
+  font-size: small;
+}
+.card1 {
+  border: 1px solid #d9d9d9;
+}
+.meet {
+  min-width: fit-content;
+  /* margin-right: 25rem; */
+  font-weight: 400;
+}
+@media only screen and (max-width:1440px) {
+  #about{
+    height:127vh ;
+  }
+}
+@media only screen and (max-width: 1370px) {
+  #csscard1 {
+    margin-right: -15%;
+  }
+  #about{
+    height: 144vh;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #csscard1 {
+    margin-right: -11%;
+  }
+  .pic55 {
+    margin-top: -40%;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+.aboutsmart{
+    margin-top: -7rem;
+}
+.aboutus{
+    margin-left: 425px;
+}
+#about{
+  height:90vh !important;
+}
+}
+@media only screen and (max-width: 1100px) {
+  #csscard1 {
+    margin-right: -14%;
+  }
+  /* .cssabout1{
             flex-direction: column;
         } */
-        #csscard1{
-            width: 16rem;
-            /* border: none;
+  #csscard1 {
+    width: 16rem;
+    /* border: none;
             border-right-style: inset;
             border-bottom-style: ridge; */
-        }
-        
-        #aboutImage{
-            height: 20rem !important;
-        }
-        .list_box {
-            padding-left: 2px !important;
-            /* display: flex; */
-        }
-    }
-    @media only screen and (max-width: 1000px) {
-        .cssabout1{
-            flex-flow: wrap;
-        }
-    }
-    @media only screen and (max-width: 700px) {
-        .dashline{
-            display: none;
-        }
-        .circleline{
-            flex-direction: column;
-        }
-        .circle{
-            margin-left: 1in !important;
-        }
-        .cssabout1{
-        flex-direction: column;
-        }
-        #csscard{
-            width: 17rem !important;
-        }
-        /* #css1111{
+  }
+
+  #aboutImage {
+    height: 20rem !important;
+  }
+  .list_box {
+    padding-left: 2px !important;
+    /* display: flex; */
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .cssabout1 {
+    flex-flow: wrap;
+  }
+  .rowabout {
+    flex-direction: column;
+  }
+  #about{
+    height: 105vh !important;
+  }
+  .pic55 {
+    margin-top: -19%;
+    height: 33%;
+    width: 150%;
+    margin-left: 4rem;
+  }
+}
+@media only screen and (max-width: 920px) {
+  .aboutsmart{
+    margin-top: -5rem;
+  }
+  .rowabout {
+    flex-direction: column;
+  }
+
+  .pic55 {
+    margin-top: -28%;
+    height: 91% !important;
+    width: 711px !important;
+    margin-left: -1rem;
+}
+  .aboutus {
+    margin-top: -9%;
+    writing-mode: vertical-lr;
+    align-items: center;
+    margin-left: 354px;
+    text-orientation: mixed;
+  }
+  #aboutroboto {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+}
+}
+@media only screen and (max-width: 850px) {
+#about {
+    height: 125vh !important;
+}
+  .aboutsmart{
+    text-align: left;
+    width: 200% !important;
+  }
+  .aboutsmart p{
+    width: 100% !important;
+  }
+  .rowabout {
+    flex-direction: column;
+  }
+
+.pic55 {
+  margin-top: 2rem;
+  height: 100% !important;
+  width: 550px !important;
+  margin-left: 4rem;
+}
+  .aboutus {
+    margin-top: -9%;
+    writing-mode: vertical-lr;
+    align-items: center;
+    margin-left: 354px;
+    text-orientation: mixed;
+  }
+  #aboutroboto {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+}
+}
+@media only screen and (max-width: 700px) {
+  .dashline {
+    display: none;
+  }
+  .circleline {
+    flex-direction: column;
+  }
+  .circle {
+    margin-left: 1in !important;
+  }
+  .aboutsmart p{
+    width: 100% !important;
+  }
+  .cssabout1 {
+    flex-direction: column;
+  }
+  #csscard {
+    width: 17rem !important;
+  }
+  /* #css1111{
             margin-left: -3.5in;
         } */
-    }
-    @media only screen and (max-width: 560px) {
-        .dashline{
-            display: none;
-        }
-        #aboutroboto{
-            font-weight: 900;
-            font-size: 5.3vw;
-        }
-        #aboutroboto span{
-            font-weight: 900;
-            font-size: 5.3vw;
-        }
-        .circleline{
-            flex-direction: column;
-        }
-        .circle{
-            margin-left: 1in !important;
-        }
-        .csscard{
-            width: 8rem  !important;
-        }
-        .cssabout1{
-        flex-direction: column;
-        }
-        #aboutImage{
-        width:15rem !important;
-        }
-        #csscard{
-        margin-left: 8%;
-        margin-bottom: 2%;
-        }
-        .pic55{
-            margin-left: -2rem;
-            margin-top: -14%;
-            width: 120%;
-            height:120%;
-        }
-        #about{
-           margin-top: 15%;
-            margin-bottom: 10%;
-        
-        }
-        .aboutus{
-            display: none;
-        }
-        /* #css1111{
+}
+@media only screen and (max-width: 560px) {
+  .dashline {
+    display: none;
+  }
+  #aboutroboto {
+    font-weight: 900;
+    font-size: 5.3vw;
+  }
+  .aboutsmart p{
+    width: 50% !important;
+  }
+  #aboutroboto span {
+    font-weight: 900;
+    font-size: 5.3vw;
+  }
+  .circleline {
+    flex-direction: column;
+  }
+  .circle {
+    margin-left: 1in !important;
+  }
+  .csscard {
+    width: 8rem !important;
+  }
+  .cssabout1 {
+    flex-direction: column;
+  }
+  #aboutImage {
+    width: 15rem !important;
+  }
+  #csscard {
+    margin-left: 8%;
+    margin-bottom: 2%;
+  }
+  .pic55 {
+    margin-left: -2rem;
+    margin-top: -24%;
+    width: 120%;
+    height: 120%;
+  }
+  #about {
+    margin-top: 23%;
+    margin-bottom: 10%;
+  }
+  .aboutus {
+    display: none;
+  }
+  /* #css1111{
             margin-left: -3.5in;
         } */
-    }
+}
+@media only screen and (max-width: 560px){
+  #about {
+    margin-top: 8%;
+    margin-bottom: 10%;
+    height: 126vh !important;
+      /* margin-left: 0rem; */
+  }
+  .pic55 {
+    margin-left: -1rem;
+    margin-top: -28%;
+  }
+  }
+  
+@media (max-width:480px) {
+  .aboutsmart{
+    margin-top: 2rem !important;
+  }
+  #about {
+    margin-top: -7%;
+    margin-bottom: 10%;
+    height: 100vh !important;
+  }
+  .pic55 {
+    margin-left: -5rem;
+    margin-top: -12%;
+    width: 200px;
+}
+#cardsconnect {
+  height: 183vh !important;
+}
+.roadmap {
+  margin-top: 0rem !important;
+  margin-left: 0.5rem !important;
+}
+}
+
+
+@media (max-width:400px) {
+    #about {
+        margin-top: 11%;
+        margin-bottom: 0%;
+        margin-left: 6px;
+      }
+      .pic55 {
+        margin-top: -5% !important;
+        width: 360px !important;
+        margin-left: -1rem !important;
+      }
+}
+@media (max-width:375px) {
+  #about{
+    height: 138vh !important;
+  }
+}

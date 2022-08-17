@@ -229,9 +229,9 @@ function Staking() {
 							</p>
 						)}
 
-						<div className="button-row">
+						<div className="button-row mb-5">
 							<button className="button37 mr-4" onClick={approve}>
-								Approve
+								Approve For All
 							</button>
 							<button type="submit" className="button37">
 								Stake Your NFT
@@ -276,7 +276,7 @@ function Staking() {
 							</div>
 						)}
 
-						<div className="button-row">
+						<div className="button-row mb-5">
 							<button type="submit" className="button37">
 								Claim Your Rewards
 							</button>
@@ -318,7 +318,7 @@ function Staking() {
 							</div>
 						)}
 
-						<div className="button-row">
+						<div className="button-row mb-5">
 							<button type="submit" className="button37">
 								Unstake and Get Your Rewards
 							</button>

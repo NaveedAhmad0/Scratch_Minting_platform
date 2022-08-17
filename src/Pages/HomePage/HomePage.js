@@ -37,10 +37,12 @@ function HomePage() {
 				CONFIG={CONFIG}
 			/>
 			<About />
+			<br/>
+			<br/>
 			<Video />
-			<br />
-			<br />
-			<br />
+			{/* <br />
+			<br /> */}
+			{/* <br /> */}
 			<Paggination />
 			{/* <br></br> */}
 			{/* <Roadmap /> */}
@@ -48,12 +50,12 @@ function HomePage() {
 			{/* <br></br> */}
 			<CardsonConnect />
 			{/* <br />
-			<br />
 			<br /> */}
+			{/* <br /> */}
 			<Roadmap />
 			{/* <br /> */}
 			<Community />
-			{/* <br /> */}
+			<br />
 			<Footer />
 		</div>
 	);

@@ -12,6 +12,9 @@ a {
 #navimg {
   height: 7rem !important;
 }
+.navbar{
+  width: 96%;
+}
 
 .button37 {
   background-color: #13aa52;
@@ -49,9 +52,4 @@ a {
 
 .nav-item {
   padding: 10px;
-}
-@media (max-width:500px) {
-  .navbarrrr{
-    padding: 0 15px;
-  }
 }

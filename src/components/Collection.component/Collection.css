@@ -9,6 +9,7 @@
     margin-top: 24px;
 }
 .result {
+  z-index: 1;
   background-color: #434343;
   display: flex;
   align-items: center;
@@ -25,19 +26,21 @@
   margin-bottom: 20px;
 }
 .button123 {
-    background-color: #61B42E;;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
+  background: transparent;
+  border-radius: 5px;
+  margin-right: 10px;
+  color: white;
+  padding: 10px 19px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid white;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}  
   .button123 {
     background-color: white; 
     color: black; 
@@ -67,10 +70,10 @@
     margin-left: 75%;
 }
 .img5{
-  margin-top: -21%;
-    margin-left: 27px;
+  margin-top: -20%;
+    margin-left: 85px;
 }
-/* @media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
   #icon123{
     font-size: 10.3vw;
   }
@@ -90,7 +93,7 @@
     display: none;
   }
   
-} */
+}
 #collection{
   margin-top: 20px; 
 }
@@ -123,20 +126,21 @@
   opacity: .5;
 } */
 .button123 {
-    background: transparent;
-    border-radius: 5px;
+  background: transparent;
+  border-radius: 5px;
   margin-right: 10px;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid white;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid white;
+  font-size: 12px;
+  font-weight: 900;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
   .buttondivtag{
     width: 100%;
   }
@@ -147,7 +151,7 @@
     color: white;
   }
   #css1{
-    /* margin-top: 5%; */
+    margin-top: -15%;
     text-align: left;
   }
   #css1 h6{
@@ -166,12 +170,21 @@
     margin-top: -87%;
     margin-left: 60%;
 }
-@media (max-width:1300px) {
+@media (max-width:1440px) {
+  .mystyle{
+    height: 99vh;
+  }
+}
+@media (max-width:1370px) {
   #collection{
     margin-top: 92px !important;
   }
+  .mystyle{
+    height: 116vh !important;
+    
+  }
 }
-@media (max-width:1200px) {
+@media (max-width:1280px) {
   .img5 {
     margin-top: -6%;
     margin-left: 27px;
@@ -185,13 +198,16 @@
 #collection {
   margin-top: 47px !important;
 }
+.mystyle{
+  height: 93vh !important;
+}
 }
 
 @media (max-width:1000px) {
   .mystyle {
     /* background: linear-gradient(to bottom, rgba(0,0,0,0), #151515) !important; */
     /* background-image: url(http://localhost:3000/static/media/hero-beackground.e877908….jpg); */
-    height: 86vh;
+    height: 114vh !important;
     /* background-size: 100% 132%;
     background-repeat: "no-repeat" !important;
     width: auto; */
@@ -264,6 +280,9 @@
 
 }
 @media (max-width: 850px) {
+  .mystyle{
+    height: 120vh !important;
+  }
   .rowcollection{
     flex-direction: column-reverse;
   }
@@ -296,7 +315,13 @@
 }
 
 }
+@media (max-width: 800px) {
+  .mystyle{
+    height: 135vh !important;
+  }
+}
 @media (max-width: 760px) {
+ 
   /* .img2{
     display: none;
    
@@ -331,7 +356,7 @@
     font-size: 7vw;
   }
   .mystyle{
-    height: 179vh;
+    height: 179vh !important;
     width: 103%;
   }
   .img5 {
@@ -358,11 +383,11 @@
     font-size: 7vw;
   }
   .mystyle{
-    height: 125vh;
+    height: 125vh !important;
   }
   .img5{
-    margin-top: -14% !important;
-    margin-left: -21px !important;
+    margin-top: -8% !important;
+    margin-left: -77px !important;
     height: 130%;
     width: 100%;
 }
@@ -386,9 +411,18 @@
     height: 130%;
     width: 100%;
 }
+.mystyle {
+  height: 152vh !important;
+}
+}
+@media (max-width:360px) {
+  .mystyle {
+    height: 135vh !important;
+}
 }
 @media (max-width:280px) {
   .button123{
     margin-left: 0rem !important;
   }
+  
 }

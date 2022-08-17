@@ -222,6 +222,7 @@ export const UserProvider = ({ children }) => {
 	}, [rented]);
 	useEffect(() => {
 		getTokenIds();
+		getLeaseAvailableToken();
 		getRentedTokenIds();
 	}, [returned]);
 

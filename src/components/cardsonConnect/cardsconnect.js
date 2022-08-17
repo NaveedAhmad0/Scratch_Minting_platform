@@ -17,7 +17,7 @@ const cards = () => {
 					</span>
 					SMART
 				</p>
-				<p className="cardsText text-white"> MONEY REVALUTION</p>
+				<p className="cardsText text-white" style={{marginTop: "-2rem"}}> MONEY REVALUTION</p>
 			</div>
 			<div className="cards-list">
 				<div className="card 1">

@@ -9,9 +9,13 @@ import roadmap from "../../assets/roadmap-line.png";
 
 const RoadmapComp = ({ percent, logo, margin, bot }) => {
 	return (
-		<div className="container roadmapCompOne">
+		<div className="container roadmapCompOne" id="Roadmap">
 			<div className="col-5 content-img ">
-				<img src={logo} alt="logo"></img>
+				<img
+					className="img5557"
+					style={{ marginLeft: "12rem" }}
+					src={logo}
+					alt="logo"></img>
 			</div>
 			<div className="col-2 roadmap-card">
 				<div
@@ -57,7 +61,7 @@ const RoadmapCompTwo = (props) => {
 				</div>
 			</div>
 			<div className="col-5 content-img text-left">
-				<img src={props.logo} alt="logo"></img>
+				<img className="img5558" src={props.logo} alt="logo"></img>
 			</div>
 		</div>
 	);

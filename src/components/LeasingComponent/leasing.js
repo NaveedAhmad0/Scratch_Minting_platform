@@ -305,7 +305,7 @@ const Leasing = () => {
 
 							<div className="button-row mb-5">
 								<button className="button37 mr-4" onClick={approve}>
-									Approve
+									Approve For All
 								</button>
 								<button type="submit" className="button37">
 									Deposit Your NFT
@@ -420,7 +420,7 @@ const Leasing = () => {
 
 						<div className="button-row mb-5">
 							<button className="button37 mr-4" onClick={approve}>
-								Approve
+								Approve For All
 							</button>
 							<button type="submit" className="button37">
 								Return Nft

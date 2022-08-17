@@ -13,12 +13,44 @@
     font-weight: 900;
     font-size: 4vw;
 }
+@media (max-width:1000px) {
+    .video{
+        width: 80%;
+        height: auto;
+    }
+    #mystylevideo{
+        height:50vh;
+    }
+}
+@media (max-width:820px) {
+    .video {
+        width: 83%;
+        height: auto;
+    }
+    #mystylevideo{
+        height:60vh !important;
+    }
+}
+@media (max-width:770px) {
+    .video {
+        width: 83%;
+        height: auto;
+    }
+    #mystylevideo{
+        height:60vh;
+    }
+}
 @media(max-width:480px) {
 #mystylevideo {
     background-image: none;
-    height: auto;
+    height: 48vh !important;
+    padding: 0 20px !important;
 }
 .video{
     width: -webkit-fill-available;
+}
+#videroboto{
+    font-size: 1.5em !important;
+    font-weight: 900 !important;
 }
 }

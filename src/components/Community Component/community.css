@@ -9,13 +9,28 @@
     margin-top: -5%;
     font-family:'Poppins', sans-serif;
 }
+.community h1{
+    font-weight: 900;
+  font-size: 3.3vw;
+}
 .community h1,p {
     color: whitesmoke;
     font-family: 'Chakra Petch', sans-serif;
+    
 }
 .join-btn {
-    background-color: green;
+    background-color: transparent;
     color: white;
     padding: 8px 15px;
     border: 1px solid white;
+}
+.join-btn:hover {
+    background-color: rgb(78, 196, 78);
+
+}
+@media (max-width:420px) {
+    .community h1{
+        /* font-weight: 1.5em; */
+      font-size: 1.5em;
+    }
 }
